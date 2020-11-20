@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm extending the base template!</h2>
+
     {% for check in checks %}
-        {{ check.check_name }}<br>
-        {{ check.test }}<br>
+        {{ check.dept_name }}<br>
+        {{ check.manager_name }}<br>
+        {{ check.max_total_time }}<br>
+        {{ check.screen_q1 }}<br>
+        {{ check.screen_q2 }}<br>
     {% endfor %}
-</body>
-</html>  
+
+{% endblock %} 
