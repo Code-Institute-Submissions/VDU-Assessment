@@ -9,6 +9,20 @@
                 <strong>{{ check.dept_name }}</strong> : {{ check.manager_name }}
             </div>
                 <div class="collapsible-body">
+                    {% if check.screen_q2 == "false" %}
+                    <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
+                        data-position="right" data-tooltip="URGENT!"></i>
+                        <p>{{"Glare and reflection on screen"}}</p>
+                    {% endif %}
+                    {% if check.screen_q1 == "false" %}
+                        <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
+                            data-position="right" data-tooltip="URGENT!"></i>
+                            <p>{{"Screen image stability"}}</p>
+                        {% else %}
+                        <i class="fas fa-thumbs-up light-blue-text text-lighten-2 tooltipped"
+                            data-position="right" data-tooltip="URGENT!"></i>
+                            <p>{{"Screen image stability"}}</p>
+                    {% endif %}
                     <strong>{{ check.max_continuous_time }}</strong>
                     <p>{{ check.max_total_time }}</p>
                 </div>
