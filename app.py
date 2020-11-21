@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -95,8 +96,24 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_check")
+@app.route("/add_check", methods=["GET", "POST"])
 def add_check():
+    if request.method == "POST":
+        screen_q1 = "true" if request.form.get("screen_q1") else "false"
+        now = datetime.now()
+        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        check = {
+            "manager_name": request.form.get("manager_name"),
+            "dept_name": request.form.get("dept_name"),
+            "max_total_time": request.form.get("max_total_time"),
+            "screen_q1": screen_q1,     
+            "created_by": session["user"],
+            "created_date": (dt_string)
+        }
+        mongo.db.checks.insert_one(check)
+        flash("Assessment Successfully Added")
+        return redirect(url_for("get_checks"))
+        
     managers = mongo.db.managers.find().sort("manager_name", 1)
     departments = mongo.db.departments.find().sort("dept_name", 1)
     return render_template("add_check.html", managers=managers, departments=departments)
