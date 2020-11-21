@@ -97,7 +97,9 @@ def logout():
 
 @app.route("/add_check")
 def add_check():
-    return render_template("add_check.html")
+    managers = mongo.db.managers.find().sort("manager_name", 1)
+    departments = mongo.db.departments.find().sort("dept_name", 1)
+    return render_template("add_check.html", managers=managers, departments=departments)
 
 
 if __name__ == "__main__":
