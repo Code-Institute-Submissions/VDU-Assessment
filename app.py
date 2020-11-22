@@ -118,6 +118,13 @@ def add_check():
     departments = mongo.db.departments.find().sort("dept_name", 1)
     return render_template("add_check.html", managers=managers, departments=departments)
 
+@app.route("/edit_check/<check_id>", methods=["GET", "POST"])
+def edit_check(check_id):
+    check = mongo.db.checks.find_one({"_id": ObjectId(check_id)})
+    managers = mongo.db.managers.find().sort("manager_name", 1)
+    departments = mongo.db.departments.find().sort("dept_name", 1)
+    return render_template("edit_check.html", check=check, managers=managers, departments=departments)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
