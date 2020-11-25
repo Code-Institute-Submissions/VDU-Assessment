@@ -75,18 +75,21 @@
                     </button>
                 </div>
             </div>
+            <!-- Hidden Created Date Time   -->
              <div class="row">
                 <div class="input-field col s12">
                     <input id="created_date" name="created_date" 
                     hidden value="{{ check.created_date }}" type="text" class="validate">
                 </div>
             </div>
+            <!-- Disabled Created Date Time for Display-->
             <div class="row">
                 <div class="input-field col s12">
                     <input disabled value="{{ check.dsp_created_date }}"  name="dsp_created_date" id="disabled" type="text" class="validate">
                     <label for="disabled">Date & Time Created</label>
                 </div>
            </div>
+            <!-- Disabled last updated Date Time for Display-->
           <div class="row">
             <div class="input-field col s12">
                 <input disabled value="{{ check.updated_date }}"  name="updated_date" id="disabled" type="text" class="validate">
