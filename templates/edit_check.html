@@ -11,9 +11,13 @@
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
 					<select id="manager_name" name="manager_name" class="validate" required>
-                        <option value="" disabled selected>Select your Manager</option>
+                        <option value="" disabled>Select your Manager</option>
                         {% for manager in managers %}
-                            <option value="{{ manager.manager_name }}">{{ manager.manager_name }}</option>
+                            {% if manager.manager_name == check.manager_name %}
+                             <option value="{{ manager.manager_name }}" selected>{{ manager.manager_name }}</option>
+                            {% else %}
+                                <option value="{{ manager.manager_name }}">{{ manager.manager_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
 					<label for="manager_name">Manager</label>
@@ -24,32 +28,48 @@
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
 					<select id="dept_name" name="dept_name" class="validate" required>
-                        <option value="" disabled selected>Select your Department</option>
+                        <option value="" disabled>Select your Department</option>
                         {% for dept in departments %}
-                            <option value="{{ dept.dept_name }}">{{ dept.dept_name }}</option>
+                            {% if dept.dept_name == check.dept_name %}
+                             <option value="{{ dept.dept_name }}" selected>{{ dept.dept_name }}</option>
+                            {% else %}
+                                <option value="{{ dept.dept_name }}">{{ dept.dept_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
-					<label for="manager_name">Department</label>
+					<label for="dept_name">Department</label>
 				</div>
 			</div>
             <!-- screen image stability -->
             <div class="row">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                        <label>
-                            <input type="checkbox" id="screen_q1" name="screen_q1">
-                            <span>Is the screen image stable and flicker free?</span>
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="screen_q1">
+                            {% if check.screen_q1 == "true" %}
+                                <input type="checkbox" id="screen_q1" name="screen_q1" checked>
+                            {% else %}
+                                <input type="checkbox" id="screen_q1" name="screen_q1">
+                            {% endif %}
+                            <span class="checkbox">Is the screen image stable and flicker free?</span>
                         </label>
-            </div>
+					</div>
+				</div>
+			</div>
             <!-- Max Total Time -->
             <div class="row">
                 <p class="range-field">
                     <label for="max_total_time">Maximum total hours spent on computer per working day:</label>
-                    <input type="range" id="max_total_time" name="max_total_time" min="1" max="24" />
+                    <input type="range" id="max_total_time" name="max_total_time" min="1" max="24" value="{{ check.max_total_time }}"/>
                 </p>
             </div>
-            <!-- submit button -->
+            <!-- buttons -->
             <div class="row">
                 <div class="col s12 center-align">
+                     <!-- cancel button -->
+                    <a href="{{ url_for('get_checks') }}" class="btn-large red text-shadow">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
+                    <!-- submit button -->
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
                         Edit Assessment <i class="fas fa-edit right"></i>
                     </button>
