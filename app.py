@@ -106,9 +106,10 @@ def add_check():
             "manager_name": request.form.get("manager_name"),
             "dept_name": request.form.get("dept_name"),
             "max_total_time": request.form.get("max_total_time"),
-            "screen_q1": screen_q1,     
+            "screen_q1": screen_q1,
             "created_by": session["user"],
-            "created_date": (dt_string)
+            "created_date": (dt_string),
+            "dsp_created_date": (dt_string)
         }
         mongo.db.checks.insert_one(check)
         flash("Assessment Successfully Added")
@@ -120,6 +121,24 @@ def add_check():
 
 @app.route("/edit_check/<check_id>", methods=["GET", "POST"])
 def edit_check(check_id):
+    if request.method == "POST":
+        screen_q1 = "true" if request.form.get("screen_q1") else "false"
+        now = datetime.now()
+        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        submit = {
+            "manager_name": request.form.get("manager_name"),
+            "dept_name": request.form.get("dept_name"),
+            "max_total_time": request.form.get("max_total_time"),
+            "created_date": request.form.get("created_date"),
+            "dsp_created_date": request.form.get("created_date"),
+            "screen_q1": screen_q1,
+            "created_by": session["user"],
+            "updated_date": (dt_string)
+        }
+        mongo.db.checks.update({"_id": ObjectId(check_id)}, submit)
+        flash("Assessment Successfully Updated")
+        return redirect(url_for("get_checks"))
+
     check = mongo.db.checks.find_one({"_id": ObjectId(check_id)})
     managers = mongo.db.managers.find().sort("manager_name", 1)
     departments = mongo.db.departments.find().sort("dept_name", 1)
