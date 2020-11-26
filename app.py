@@ -164,6 +164,31 @@ def get_departments():
     return render_template("departments.html", departments=departments)
 
 
+@app.route("/add_manager", methods=["GET", "POST"])
+def add_manager():
+    if request.method == "POST":
+        manager = {
+            "manager_name": request.form.get("manager_name")
+        }
+        mongo.db.managers.insert_one(manager)
+        flash("New Manager Added")
+        return redirect(url_for("get_managers"))
+
+    return render_template("add_manager.html")
+
+
+@app.route("/add_department", methods=["GET", "POST"])
+def add_department():
+    if request.method == "POST":
+        department = {
+            "dept_name": request.form.get("dept_name")
+        }
+        mongo.db.departments.insert_one(department)
+        flash("New Department Added")
+        return redirect(url_for("get_departments"))
+
+    return render_template("add_department.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

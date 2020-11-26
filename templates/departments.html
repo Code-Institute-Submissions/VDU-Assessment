@@ -3,6 +3,14 @@
 
     <h3 class="light-blue-text text-darken-4 center-align">Department Maintenance</h3>
 
+     <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_department') }}" class="btn-large light-blue darken-2 text-shadow">
+                Add Department <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+
     <div class="row">
         {% for department in departments %}
             <div class="col s12 m3">
