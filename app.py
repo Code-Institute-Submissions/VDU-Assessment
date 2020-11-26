@@ -152,6 +152,18 @@ def delete_check(check_id):
     return redirect(url_for("get_checks"))
 
 
+@app.route("/get_managers")
+def get_managers():
+    managers = list(mongo.db.managers.find().sort("manager_name", 1))
+    return render_template("managers.html", managers=managers)
+
+
+@app.route("/get_departments")
+def get_departments():
+    departments = list(mongo.db.departments.find().sort("dept_name", 1))
+    return render_template("departments.html", departments=departments)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
