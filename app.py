@@ -145,6 +145,13 @@ def edit_check(check_id):
     return render_template("edit_check.html", check=check, managers=managers, departments=departments)
 
 
+@app.route("/delete_check/<check_id>")
+def delete_check(check_id):
+    mongo.db.checks.remove({"_id": ObjectId(check_id)})
+    flash("Assessment Successfully Deleted")
+    return redirect(url_for("get_checks"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
