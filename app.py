@@ -221,6 +221,19 @@ def edit_department(department_id):
     return render_template("edit_department.html", department=department)
 
 
+@app.route("/delete_manager/<manager_id>")
+def delete_manager(manager_id):
+    mongo.db.managers.remove({"_id": ObjectId(manager_id)})
+    flash("Manager Successfully Deleted")
+    return redirect(url_for("get_managers"))
+
+@app.route("/delete_department/<department_id>")
+def delete_department(department_id):
+    mongo.db.departments.remove({"_id": ObjectId(department_id)})
+    flash("Department Successfully Deleted")
+    return redirect(url_for("get_departments"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
