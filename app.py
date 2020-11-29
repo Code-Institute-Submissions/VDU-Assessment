@@ -82,9 +82,12 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    user = mongo.db.users.find_one({"username": username.lower()})
+
+
+    if "user" in session:
+        return render_template(
+           "profile.html", user=user)
 
     return redirect(url_for("login"))
 
@@ -188,6 +191,35 @@ def add_department():
         return redirect(url_for("get_departments"))
 
     return render_template("add_department.html")
+
+
+@app.route("/edit_manager/<manager_id>", methods=["GET", "POST"])
+def edit_manager(manager_id):
+    if request.method == "POST":
+        submit = {
+            "manager_name": request.form.get("manager_name")
+        }
+        mongo.db.managers.update({"_id": ObjectId(manager_id)}, submit)
+        flash("Manager Successfully Updated")
+        return redirect(url_for("get_managers"))
+
+    manager = mongo.db.managers.find_one({"_id": ObjectId(manager_id)})
+    return render_template("edit_manager.html", manager=manager)
+
+
+@app.route("/edit_department/<department_id>", methods=["GET", "POST"])
+def edit_department(department_id):
+    if request.method == "POST":
+        submit = {
+            "dept_name": request.form.get("dept_name")
+        }
+        mongo.db.departments.update({"_id": ObjectId(department_id)}, submit)
+        flash("Department Successfully Updated")
+        return redirect(url_for("get_departments"))
+
+    department = mongo.db.departments.find_one({"_id": ObjectId(department_id)})
+    return render_template("edit_department.html", department=department)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
