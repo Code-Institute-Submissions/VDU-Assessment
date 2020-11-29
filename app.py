@@ -26,6 +26,14 @@ def get_checks():
     return render_template("checks.html", checks=checks)
 
 
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    checks = list(mongo.db.checks.find({"$text": {"$search": query}}))
+    return render_template("checks.html", checks=checks)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
