@@ -34,8 +34,15 @@
             <!-- Max Total Time -->
             <div class="row">
                 <p class="range-field">
-                    <label for="max_total_time">Maximum total hours spent on computer per working day:</label>
+                    <label for="max_total_time">Your maximum total hours spent on computer per working day:</label>
                     <input type="range" id="max_total_time" name="max_total_time" min="1" max="24" />
+                </p>
+            </div>
+            <!-- Max Continuous Time -->
+            <div class="row">
+                <p class="range-field">
+                    <label for="max_continuous_time">Your maximum continuous hours spent on computer before you change activity:</label>
+                    <input type="range" id="max_continuous_time" name="max_continuous_time" min="1" max="24" />
                 </p>
             </div>
             <!-- screen image stability -->
@@ -111,17 +118,6 @@
 						<label for="mouse_q1">
                             <input type="checkbox" id="mouse_q1" name="mouse_q1">
                             <span class="checkbox">Is the device (mouse or trackball etc.) you use separate from the keyboard and easy to use?</span>
-                        </label>
-					</div>
-				</div>
-			</div>
-            <!--  mouse  work smoothly  -->
-            <div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="mouse_q2">
-                            <input type="checkbox" id="mouse_q2" name="mouse_q2">
-                            <span class="checkbox">Does your device work smoothly and at a speed that is suitable to you?</span>
                         </label>
 					</div>
 				</div>
