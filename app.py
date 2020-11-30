@@ -111,6 +111,15 @@ def logout():
 def add_check():
     if request.method == "POST":
         screen_q1 = "true" if request.form.get("screen_q1") else "false"
+        screen_q2 = "true" if request.form.get("screen_q2") else "false"
+        chair_q1 = "true" if request.form.get("chair_q1") else "false"
+        chair_q2 = "true" if request.form.get("chair_q2") else "false"
+        keyboard_q1 = "true" if request.form.get("keyboard_q1") else "false"
+        keyboard_q2 = "true" if request.form.get("keyboard_q2") else "false"
+        mouse_q1 = "true" if request.form.get("mouse_q1") else "false"
+        mouse_q2 = "true" if request.form.get("mouse_q2") else "false"
+        environment_q1 = "true" if request.form.get("environment_q1") else "false"
+        environment_q2 = "true" if request.form.get("environment_q2") else "false"
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         check = {
@@ -118,6 +127,15 @@ def add_check():
             "dept_name": request.form.get("dept_name"),
             "max_total_time": request.form.get("max_total_time"),
             "screen_q1": screen_q1,
+            "screen_q2": screen_q2,
+            "chair_q1": chair_q1,
+            "chair_q2": chair_q2,
+            "keyboard_q1": keyboard_q1,
+            "keyboard_q2": keyboard_q2,
+            "mouse_q1": mouse_q1,
+            "mouse_q2": mouse_q2,
+            "environment_q1": environment_q1,
+            "environment_q2": environment_q2,
             "created_by": session["user"],
             "created_date": (dt_string),
             "dsp_created_date": (dt_string)

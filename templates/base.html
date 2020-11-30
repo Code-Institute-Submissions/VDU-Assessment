@@ -31,7 +31,7 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('add_check') }}">Create VDU Assessment</a></li>
-                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Admin <i class="fas fa-caret-down"></i></i></a></li>
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Admin <i class="fas fa-caret-down"></i></a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -40,7 +40,11 @@
 				</ul>
 			</div>
 		</nav>
-
+         <!-- Dropdown Structure -->
+            <ul id="dropdown2" class="dropdown-content">
+            <li><a href="{{ url_for('get_managers') }}">Manager Maintenance</a></li>
+            <li><a href="{{ url_for('get_departments') }}">Department Maintenance</a></li>
+            </ul>
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align light-blue-text text-darken 4">Task Manager</h4></li>
@@ -48,7 +52,7 @@
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_check') }}">Create VDU Assessment</a></li>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Admin <i class="fas fa-caret-down"></i></i></a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Admin <i class="fas fa-caret-down"></i></a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
