@@ -40,6 +40,13 @@
 					<label for="dept_name">Department</label>
 				</div>
 			</div>
+            <!-- Max Total Time -->
+            <div class="row">
+                <p class="range-field">
+                    <label for="max_total_time">Maximum total hours spent on computer per working day:</label>
+                    <input type="range" id="max_total_time" name="max_total_time" min="1" max="24" value="{{ check.max_total_time }}"/>
+                </p>
+            </div>
             <!-- screen image stability -->
             <div class="row">
 				<div class="input-field col s12">
@@ -55,13 +62,141 @@
 					</div>
 				</div>
 			</div>
-            <!-- Max Total Time -->
+            <!-- screen glare or reflections -->
             <div class="row">
-                <p class="range-field">
-                    <label for="max_total_time">Maximum total hours spent on computer per working day:</label>
-                    <input type="range" id="max_total_time" name="max_total_time" min="1" max="24" value="{{ check.max_total_time }}"/>
-                </p>
-            </div>
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="screen_q2">
+                            {% if check.screen_q2 == "true" %}
+                                <input type="checkbox" id="screen_q2" name="screen_q2" checked>
+                            {% else %}
+                                <input type="checkbox" id="screen_q2" name="screen_q2">
+                            {% endif %}
+                            <span class="checkbox">Do you have any problems with glare or reflections on your screen which you are unable to resolve?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+             <!-- height of your seat -->
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="chair_q1">
+                            {% if check.chair_q1 == "true" %}
+                                <input type="checkbox" id="chair_q1" name="chair_q1" checked>
+                            {% else %}
+                                <input type="checkbox" id="chair_q1" name="chair_q1">
+                            {% endif %}
+                            <span class="checkbox">Can you adjust the height of your seat to a comfortable position?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+            <!-- backrest of your chair  -->
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="chair_q2">
+                            {% if check.chair_q2 == "true" %}
+                                <input type="checkbox" id="chair_q2" name="chair_q2" checked>
+                            {% else %}
+                                <input type="checkbox" id="chair_q2" name="chair_q2">
+                            {% endif %}
+                            <span class="checkbox">Is the backrest of your chair adjustable to support your back correctly and comfortably?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+             <!-- comfortable keying position   -->
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="keyboard_q1">
+                            {% if check.keyboard_q1 == "true" %}
+                                <input type="checkbox" id="keyboard_q1" name="keyboard_q1" checked>
+                            {% else %}
+                                <input type="checkbox" id="keyboard_q1" name="keyboard_q1">
+                            {% endif %}
+                            <span class="checkbox">Can you find a comfortable keying position?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+             <!-- enough space to rest your hands    -->
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="keyboard_q2">
+                            {% if check.keyboard_q2 == "true" %}
+                                <input type="checkbox" id="keyboard_q2" name="keyboard_q2" checked>
+                            {% else %}
+                                <input type="checkbox" id="keyboard_q2" name="keyboard_q2">
+                            {% endif %}
+                            <span class="checkbox">Is there enough space to rest your hands in front of the keyboard?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+             <!-- mouse seperate from keyboard   -->
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="mouse_q1">
+                            {% if check.mouse_q1 == "true" %}
+                                <input type="checkbox" id="mouse_q1" name="mouse_q1" checked>
+                            {% else %}
+                                <input type="checkbox" id="mouse_q1" name="mouse_q1">
+                            {% endif %}
+                            <span class="checkbox">Is the device (mouse or trackball etc.) you use separate from the keyboard and easy to use?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+             <!-- mouse  work smoothly   -->
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="mouse_q2">
+                            {% if check.mouse_q2 == "true" %}
+                                <input type="checkbox" id="mouse_q2" name="mouse_q2" checked>
+                            {% else %}
+                                <input type="checkbox" id="mouse_q2" name="mouse_q2">
+                            {% endif %}
+                            <span class="checkbox">Is the device (mouse or trackball etc.) you use separate from the keyboard and easy to use?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+             <!-- room at your workstation   -->
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="environment_q1">
+                            {% if check.environment_q1 == "true" %}
+                                <input type="checkbox" id="environment_q1" name="environment_q1" checked>
+                            {% else %}
+                                <input type="checkbox" id="environment_q1" name="environment_q1">
+                            {% endif %}
+                            <span class="checkbox">Is there enough room at your workstation for you to change position and vary movement?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
+            <!-- lighting level at workstation   -->
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="environment_q2">
+                            {% if check.environment_q2 == "true" %}
+                                <input type="checkbox" id="environment_q2" name="environment_q2" checked>
+                            {% else %}
+                                <input type="checkbox" id="environment_q2" name="environment_q2">
+                            {% endif %}
+                            <span class="checkbox">Is the lighting level around your workstation comfortable to work in?</span>
+                        </label>
+					</div>
+				</div>
+			</div>
             <!-- buttons -->
             <div class="row">
                 <div class="col s12 center-align">
