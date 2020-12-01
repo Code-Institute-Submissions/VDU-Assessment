@@ -215,7 +215,7 @@ def get_departments():
 
 @app.route("/get_users")
 def get_users():
-    users = list(mongo.db.users.find().sort("user_fname", 1))
+    users = mongo.db.users.find()
     return render_template("users.html", users=users)
 
 @app.route("/add_manager", methods=["GET", "POST"])
@@ -270,6 +270,24 @@ def edit_department(department_id):
 
     department = mongo.db.departments.find_one({"_id": ObjectId(department_id)})
     return render_template("edit_department.html", department=department)
+
+
+@app.route("/edit_user/<user_id>", methods=["GET", "POST"])
+def edit_user(user_id):
+    if request.method == "POST":
+        is_admin = "true" if request.form.get("is_admin") else "false"
+        submit = {
+            "username": request.form.get("username"),
+            "fname": request.form.get("fname"),
+            "password": request.form.get("password"),
+            "is_admin": is_admin
+        }
+        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+        flash("User Successfully Updated")
+        return redirect(url_for("get_users"))
+
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    return render_template("edit_user.html", user=user)
 
 
 @app.route("/delete_manager/<manager_id>")

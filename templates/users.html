@@ -11,7 +11,7 @@
                         <span class="card-title">{{ user.fname }}</span>
                     </div>
                     <div class="card-action">
-                        <a href="#" class="btn green accent-4">Edit</a>
+                        <a href="{{ url_for('edit_user', user_id=user._id) }}" class="btn green accent-4">Edit</a>
                         <a href="#" class="btn light-blue lighten-1">Delete</a>
                     </div>
                 </div>
