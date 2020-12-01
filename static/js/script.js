@@ -8,6 +8,7 @@ $(document).ready(function () {
     $(".tooltipped").tooltip();
     $("select").formSelect();
     $(".dropdown-trigger").dropdown();
+    $('.modal').modal();
     $(".datepicker").datepicker({
         format: "dd mmmm, yyyy",
         yearRange: 3,
@@ -17,32 +18,7 @@ $(document).ready(function () {
         }
     });
 
- 
 
-    /**
-     * Inserts the correct urls into the confirm delete modal buttons when one 
-     * of the delete buttons on the page are clicked.
-     */
-    $('.delete-button').click(function () {
-        let manager_id = this.id;
-        let href = '/delete_manager?manager_id=' + manager_id;
-        $('#confirm-delete').attr('href', href);
-        openDeleteWarningModal();
-        return;
-    });
-    
-    $('#delete-modal-submit-button').click(function () {
-    openDeleteWarningModal();
-    return;
-    });
-
-    /**
-     * opens the delete warning modal.
-     */
-    function openDeleteWarningModal() {
-        $('#delete-warning-modal').toggleClass('active');
-        return;
-    }
    validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
