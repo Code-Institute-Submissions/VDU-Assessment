@@ -213,6 +213,11 @@ def get_departments():
     return render_template("departments.html", departments=departments)
 
 
+@app.route("/get_users")
+def get_users():
+    users = list(mongo.db.users.find().sort("user_fname", 1))
+    return render_template("users.html", users=users)
+
 @app.route("/add_manager", methods=["GET", "POST"])
 def add_manager():
     if request.method == "POST":
