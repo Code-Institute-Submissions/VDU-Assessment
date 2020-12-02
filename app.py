@@ -45,6 +45,15 @@ def register():
             flash("Username already exists")
             return redirect(url_for("register"))
 
+        # confirm password using werkzeug.security.check_password_hash(pwhash, password)
+        if check_password_hash(generate_password_hash
+        (request.form.get("password")),
+        request.form.get("cpassword")):
+            flash("Registration Successful!")
+        else:
+            flash("passwords don't match, please try again")
+            return redirect(url_for("register"))
+
         register = {
             "fname": request.form.get("fname").lower(),
             "username": request.form.get("username").lower(),
@@ -54,7 +63,6 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
