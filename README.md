@@ -1,4 +1,4 @@
-<h1 align="center">Abbott Business Traveller Guide</h1>
+<h1 align="center">VDU Assessment</h1>
 
 [View the live project here.]( https://bridcourtney.github.io/Business-Travel-Guide/)
 
