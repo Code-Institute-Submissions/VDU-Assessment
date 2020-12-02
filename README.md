@@ -2,19 +2,8 @@
 
 [View the live project here.]( https://bridcourtney.github.io/Business-Travel-Guide/)
 
-The Abbott Business Traveller Guide, will give Visitors immediate access to information and map location of all our Abbott Sites Accross the Globe.  
+To create an online application that allows user to complete & submit their VDU (Visual Display Unit) Assessment.  Assessments will be categorised per user submission for further analysis and follow up by Accessor
 
-Abbott Laboratories is an American multinational medical devices and health care company with headquarters in Abbott Park, Illinois, United States. The company was founded by Chicago physician Wallace Calvin Abbott in 1888.  Today, it sells medical devices, diagnostics, branded generic medicines and nutritional products.
-
-Abbott has over 160 office locations across 77 countries.  Employing over 100,00 people around the world.
-
-Business Travel frequency will depend on the employees position in the company.  It is highly probable that most employee will experience business travel as an Abbott Employee at some stage in their Abbott career e.g. when working on large projects across multiple sites, Training Courses etc.
-
-The 'Abbott Business Traveller Guide' will be a valuable resource to all employees that will provide an information bank on Abbott Site & locations.  For example you are with the Company 2 years, your Manager informs you of an opportinity to join a project that will involve a visit to Japan.  The Guide will provide you with site information as well as Hotels, Restaurants etc in the area  
-
-The 'Contact Us' link will provide users an opportunity to provide feedback and suggestions.
-
-It is designed to be responsive and accessible on a range of devices, making it easy to navigate for employees.
 
 
 
