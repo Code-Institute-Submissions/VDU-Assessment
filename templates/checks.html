@@ -56,8 +56,10 @@
                             <p><em>by: {{ check.created_by }}</em></p>
                             <strong>{{ check.dept_name }}</strong> 
                             {{ check.manager_name }}
+                            <div class="row">
                              <img src="{{ check.image }}"  class="responsive-img" 
-                      alt="workstation Image"/> 
+                                alt="workstation Image"/> 
+                            </div>
                         </div>
                 </li>
                 {% endif %}
