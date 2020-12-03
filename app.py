@@ -6,6 +6,7 @@ from flask_pymongo import PyMongo
 from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from myforms.forms import Add_CheckForm
 if os.path.exists("env.py"):
     import env
 
@@ -115,9 +116,12 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+#The function calls Add_CheckForm class from forms.py
 @app.route("/add_check", methods=["GET", "POST"])
+# form variable to initialise the form
+
 def add_check():
+    form = Add_CheckForm()
     if request.method == "POST":
         screen_q1 = "true" if request.form.get("screen_q1") else "false"
         screen_q2 = "true" if request.form.get("screen_q2") else "false"
@@ -146,6 +150,7 @@ def add_check():
             "mouse_q2": mouse_q2,
             "environment_q1": environment_q1,
             "environment_q2": environment_q2,
+            "image": request.form.get("image"),
             "created_by": session["user"],
             "created_date": (dt_string),
             "dsp_created_date": (dt_string)
@@ -156,7 +161,7 @@ def add_check():
         
     managers = mongo.db.managers.find().sort("manager_name", 1)
     departments = mongo.db.departments.find().sort("dept_name", 1)
-    return render_template("add_check.html", managers=managers, departments=departments)
+    return render_template("add_check.html", managers=managers, departments=departments, form=form)
 
 @app.route("/edit_check/<check_id>", methods=["GET", "POST"])
 def edit_check(check_id):
@@ -190,6 +195,7 @@ def edit_check(check_id):
             "mouse_q2": mouse_q2,
             "environment_q1": environment_q1,
             "environment_q2": environment_q2,
+            "image": request.form.get("workstation_image"),
             "created_by": session["user"],
             "updated_date": (dt_string)
         }
