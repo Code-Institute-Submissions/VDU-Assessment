@@ -4,52 +4,73 @@
     <h3 class="center-align">Register</h3>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12 m8 offset-m2" method="POST" action="">
+        {{ form.hidden_tag() }}
             <div class="card-panel">
-            <!-- username -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="fname" name="fname" type="text" minlength="2"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{2,15}$" class="validate" required>
-						<label for="fname"> First name</label>
-					</div>
-                </div>
-
+                <!-- firstname -->
+                <div class="row"> 
+                    <div class="input-field col s12"> 
+                        <i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i> 
+                        {{ form.fname(placeholder="Enter your name", id="fname") }} 
+                        <label for="fname">Firstname <i class="fas fa-question-circle tooltipped" data-position="top" 
+                                data-tooltip="2-15 characters, case sensitive"></i></label> 
+                        {% for error in form.username.errors %} 
+                        <span class="text-red">{{ error }}</span> 
+                        {% endfor %} 
+                    </div> 
+                </div> 
                 <!-- username -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-						<label for="username">Username</label>
-					</div>
-                </div>
-                <!-- passowrd -->
-                <div class="row">
-                    <div class="input-field col s12">
-						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
-                        <input id="password" name="password" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <!--Confirm Password--> 
+                 <div class="row"> 
+                    <div class="input-field col s12"> 
+                        <i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i> 
+                        {{ form.username(placeholder="Enter username", id="username") }} 
+                        <label for="username">Username <i class="fas fa-question-circle tooltipped" data-position="top" 
+                                data-tooltip="3-15 characters, case sensitive"></i></label> 
+                        {% for error in form.username.errors %} 
+                        <span class="text-red">{{ error }}</span> 
+                        {% endfor %} 
+                    </div> 
+                </div> 
+                <!-- password -->
                 <div class="row">
                     <div class="input-field col s12">
 						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
-                        <input id="cpassword" name="cpassword" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label for="cpassword">Confirm Password</label>
+                        {{ form.password (placeholder="Enter password", id="password") }} 
+                        <label for="password">Password <i class="fas fa-question-circle tooltipped" data-position="top" 
+                             data-tooltip="3-15 characters, case sensitive"></i></label> 
+                        {% for error in form.password.errors %} 
+                        <span class="text-red">{{ error }}</span> 
+                        {% endfor %} 
                     </div>
                 </div>
-
+               <!--Confirm Password--> 
+                <div class="row"> 
+                    <div class="input-field col s12"> 
+                        <i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i> 
+                        {{ form.confirm.label }} 
+                        {{ form.confirm(placeholder="Confirm password") }} 
+                        {% for error in form.confirm.errors %} 
+                        <span class="text-red">{{ error }}</span> 
+                        {% endfor %} 
+                    </div> 
+                </div> 
+                <!--Error messages--> 
+                <div class="row center-align"> 
+                    {% with messages = get_flashed_messages() %} 
+                    {% if messages %}
+                    {% for message in messages %} 
+                    <p class="text-red"> 
+                    {{ message }} 
+                    </p> 
+                    {% endfor %} {% endif %} {% endwith %} 
+                </div> 
                 <!-- register -->
-                <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                        Register <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                </div>
+                <div class="row"> 
+                    <div class="col s12 center-align"> 
+                     {{ form.submit(class="btn-large light-blue darken-4 text-shadow") }}
+                     <i class="fas fa-sign-in-alt"></i> 
+                    </div> 
+                </div> 
             </div>
         </form>
     </div>
