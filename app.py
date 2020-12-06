@@ -6,7 +6,7 @@ from flask_pymongo import PyMongo
 from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from myforms.forms import RegistrationForm, Add_CheckForm
+from myforms.forms import RegistrationForm, Add_CheckForm, LoginForm
 if os.path.exists("env.py"):
     import env
     
@@ -34,6 +34,12 @@ def search():
     checks = list(mongo.db.checks.find({"$text": {"$search": query}}))
     return render_template("checks.html", checks=checks)
 
+'''
+The Register function calls RegistrationForm class from forms.py. 
+form.py checks that the username and passwords are valid 
+Checks if the username already exists in database. 
+Hashes the entered password and adds a new user to session.
+'''
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -60,11 +66,17 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html", form=form)
 
+'''
+The login function calls LoginForm class from forms.py. 
+form.py checks that the username and passwords 
+are valid. User is added to the session. 
 
+'''
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
+    form = LoginForm()
+    if form.validate() and request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -87,7 +99,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html",form=form)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
