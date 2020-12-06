@@ -128,7 +128,7 @@ def logout():
 
 def add_check():
     form = Add_CheckForm()
-    if request.method == "POST":
+    if form.validate() and request.method == "POST":
         screen_q1 = "true" if request.form.get("screen_q1") else "false"
         screen_q2 = "true" if request.form.get("screen_q2") else "false"
         chair_q1 = "true" if request.form.get("chair_q1") else "false"

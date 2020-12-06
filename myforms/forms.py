@@ -19,5 +19,5 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class Add_CheckForm(FlaskForm):
-
+    screen_q1 = BooleanField('Screen image stable and flicker free', validators=[Optional()])
     image = StringField('Workstation Image', validators=[Optional()])

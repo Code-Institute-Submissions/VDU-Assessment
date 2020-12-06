@@ -4,7 +4,8 @@
     <h3 class="light-blue-text text-darken-4 center-align">Add VDU Assessment</h3>
 
     <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('add_check') }}">
+        <form class="col s12" method="POST" action="">
+        {{ form.hidden_tag() }}
         <!-- manager dropdown -->
 			<div class="row">
 				<div class="input-field col s12">
@@ -35,7 +36,7 @@
             <div class="row">
                 <p class="range-field">
                     <label for="max_total_time">Your maximum total hours spent on computer per working day:</label>
-                    <input type="range" id="max_total_time" name="max_total_time" min="1" max="24" />
+                    <input type="range" id=("max_total_time").ionRangeSlider() name="max_total_time" min="1" max="24" />
                 </p>
             </div>
             <!-- Max Continuous Time -->
@@ -47,16 +48,13 @@
             </div>
            <div class="card-panel blue lighten-4"><i class="fas fa-desktop"></i>  Your Screen</div>
             <!-- screen image stability -->
-            <div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="screen_q1">
-                            <input type="checkbox" id="screen_q1" name="screen_q1">
-                            <span class="checkbox">Is the screen image stable and flicker free?</span>
-                        </label>
-					</div>
-				</div>
-			</div>
+            <div class="input-field col s12"> 
+                <div class="switch">
+                    {{ form.screen_q1(id="screen_q1", placeholder="Is the screen image stable and flicker free?", class="validate") }} 
+                <label for="screen_q1">If your answer is Yes, tick the box.  Otherwise leave blank  
+                <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="If your answer is Yes, tick the box.  Otherwise leave blank "></i> 
+                </label> 
+            </div>
              <!-- screen glare or reflections  -->
             <div class="row">
 				<div class="input-field col s12">
