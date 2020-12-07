@@ -23,13 +23,25 @@
                          <!-- Modal Trigger -->
                         <a href="#modal1" class="btn light-blue lighten-1 modal-trigger">Delete</a>
                     </div>
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                            <h4>Delete Manager</h4>
+                            <p>Are you sure you want to delete this Manager?</p>
+                            </div>
+                            <div class="modal-footer">
+                                {% for manager in managers %}
+                                    <a href="{{ url_for('delete_manager', manager_id=manager._id) }}" class="modal-close btn-small blue text-shadow">
+                                {% endfor %}
+                                Yes <i class="fas fa-check-circle right"></i></a>
+                                <a href="{{ url_for('get_managers') }}" class="btn-small red text-shadow">
+                                            Cancel <i class="fas fa-times-circle right"></i></a>
+                            </div>
+                        </div>
                 </div>
             </div>
         {% endfor %}
     </div>
-     <!-- Modal Trigger -->
-
-
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
