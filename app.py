@@ -19,8 +19,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
 @app.route("/")
+@app.route("/home")
+def home():
+  return render_template("home.html")
+
+  
 @app.route("/get_checks")
 def get_checks():
     checks = mongo.db.checks.find()
@@ -44,7 +48,7 @@ Hashes the entered password and adds a new user to session.
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
-    if form.validate() and request.method == "POST":
+    if request.method == "POST" and form.validate():
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username")})
