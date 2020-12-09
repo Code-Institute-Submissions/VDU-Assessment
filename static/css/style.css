@@ -23,13 +23,18 @@
      color: red; 
  } 
 
+/* Navbar Brand*/ 
+
+#brand-wording{
+  padding-left:6%;   
+}
 
 /* Home page*/ 
  .home-container { 
      padding-left:10px; 
      padding-right: 10px; 
      border-radius: 1rem; 
-     height: 100vh; 
+     height: 70vh; 
      display:flex; 
      margin-top:2em; 
  } 
@@ -41,7 +46,7 @@
  .hero-image {
      background-image: radial-gradient(rgba(249, 238, 238, 0.91), 
                       rgba(152, 142, 142, 0.04)), 
-                      url(../images/home-bg.jpg); 
+                      url(../images/bg-home.jpg); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -59,7 +64,7 @@
      top: 50%; 
      left: 50%; 
      transform: translate(-50%, -50%); 
-     color: var(--black); 
+     color: black; 
      width: inherit; 
      padding: 9px; 
  }

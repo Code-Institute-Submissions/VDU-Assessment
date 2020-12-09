@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 def home():
   return render_template("home.html")
 
-  
+
 @app.route("/get_checks")
 def get_checks():
     checks = mongo.db.checks.find()
@@ -80,10 +80,11 @@ are valid. User is added to the session.
 @app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
-    if form.validate() and request.method == "POST":
+    if request.method == "POST" and form.validate():
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
+
 
         if existing_user:
             # ensure hashed password matches user input
@@ -93,6 +94,8 @@ def login():
                     flash("Welcome, {}".format(request.form.get("username")))
                     return redirect(url_for(
                         "profile", username=session["user"]))
+
+                        
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -106,16 +109,18 @@ def login():
     return render_template("login.html",form=form)
 
 
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
     user = mongo.db.users.find_one({"username": username.lower()})
-
+    
 
     if "user" in session:
         return render_template(
            "profile.html", user=user)
-
+        
+        
     return redirect(url_for("login"))
 
 
@@ -300,7 +305,7 @@ def edit_department(department_id):
 @app.route("/edit_user/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
     if request.method == "POST":
-        is_admin = "true" if request.form.get("is_admin") else "false"
+        is_admin = True if request.form.get("is_admin") else False
         submit = {
             "username": request.form.get("username"),
             "fname": request.form.get("fname"),

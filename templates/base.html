@@ -14,15 +14,25 @@
 <body>
 
 	<header>
-       
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="{{ url_for('get_managers') }}">Manager Maintenance</a></li>
+            <li><a href="{{ url_for('get_departments') }}">Department Maintenance</a></li>
+            <li><a href="{{ url_for('get_users') }}">User Maintenance</a></li>
+        </ul>
         <!-- top navbar -->
 		<nav class="nav-extended text-shadow light-blue darken-1">
 			<div class="nav-wrapper">
-				<a href="{{ url_for('get_checks') }}" class="brand-logo">VDU Assessment Manager</a>
+                <a href="{{ url_for('home') }}"> <img src="{{ url_for('static', filename='images/logo.png') }}" class="brand-logo left"></a>
+                <a href="{{ url_for('home') }}" class="brand-logo hide-on-med-and-down" id="brand-wording">VDU Assessment Manager</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('get_checks') }}">Home</a></li>
+                        {% if "user" in session and session["user"].is_admin %}
+                            <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Admin <i class="fas fa-caret-down"></i></a></li>
+                        {% endif %}
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
                     {% if session.user %}
+                        <li><a href="{{ url_for('get_checks') }}">View Assessments</a></li>
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('add_check') }}">Create VDU Assessment</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -33,10 +43,17 @@
 				</ul>
 			</div>
 		</nav>
+         <!-- Dropdown Structure -->
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="{{ url_for('get_managers') }}">Manager Maintenance</a></li>
+            <li><a href="{{ url_for('get_departments') }}">Department Maintenance</a></li>
+            <li><a href="{{ url_for('get_users') }}">User Maintenance</a></li>
+        </ul>
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align light-blue-text text-darken 4">VDU Assessment Manager</h4></li>
-            <li><a href="{{ url_for('get_checks') }}">Home</a></li>
+            
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_check') }}">Create VDU Assessment</a></li>
