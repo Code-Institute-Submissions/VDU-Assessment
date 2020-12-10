@@ -18,53 +18,117 @@
             </div>
         </form>
     </div>
-    
-
-
-
         <ul class="collapsible">
-            {% for check in checks %}
-                {% if session.user|lower == check.created_by|lower %}
-                <li>
-                    <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                        <div class="col s3">
-                            <i class="fas fa-caret-down"></i>
-                            <a href="{{ url_for('delete_check', check_id=check._id) }}" class="btn-small green accent-4">Delete</a>
-                            <a href="{{ url_for('edit_check', check_id=check._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                        </div>
-                        <div class="col s9">
-                            <strong>{{ check.created_date }}</strong>
-                        </div>
-                    </div>
-                        <div class="collapsible-body">
-                            {% if check.screen_q2 == "false" %}
-                            <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
-                                data-position="right" data-tooltip="URGENT!"></i>
-                                <p>{{"Glare and reflection on screen"}}</p>
-                            {% endif %}
-                            {% if check.screen_q1 == "false" %}
-                                <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
-                                    data-position="right" data-tooltip="URGENT!"></i>
-                                    <p>{{"Screen image stability"}}</p>
-                                {% else %}
-                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2 tooltipped"
-                                    data-position="right" data-tooltip="URGENT!"></i>
-                                    <p>{{"Screen image stability"}}</p>
-                            {% endif %}
-                            <strong>{{ check.max_continuous_time }}</strong>
-                            <p>{{ check.max_total_time }}</p>
-                            <p><em>by: {{ check.created_by }}</em></p>
-                            <strong>{{ check.dept_name }}</strong> 
-                            {{ check.manager_name }}
-                            <div class="row">
-                             <img src="{{ check.image }}"  class="responsive-img" 
-                                alt="workstation Image"/> 
+                {% for check in checks %}
+                    {% if session.user|lower == check.created_by|lower %}
+                    <li>
+                        <div class="collapsible-header white-text light-blue darken-4 text-shadow">
+                            <div class="col s3">
+                                <i class="fas fa-caret-down"></i>
+                                <a href="{{ url_for('delete_check', check_id=check._id) }}" class="btn-small green accent-4">Delete</a>
+                                <a href="{{ url_for('edit_check', check_id=check._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                            </div>
+                            <div class="col s9">     
+                                    <strong>Created by {{ check.created_by }} on the {{ check.created_date }}</strong>            
                             </div>
                         </div>
-                </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
+                            <div class="collapsible-body">
+                             <table>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Manager:</b></td>
+                                        <td>{{check.manager_name}}</td>
+                                        <td><b>Department:</b></td>        
+                                        <td>{{check.dept_name}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Your maximum total hours spent on computer per working day:</b></td>
+                                        <td></td>
+                                        <td>{{check.max_total_time}}</td>       
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Your maximum continuous hours spent on computer before you change activity:</b></td>        
+                                        <td></td>        
+                                        <td>{{check.max_continuous_time}}</td>
+                                        <td></td>
+                                    </tr>  
+                                 </tbody>
+                            </table>            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><h5><b>Screen Results</b></h5></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {% if check.screen_q1 == "false" %}
+                                                <i class="fas fa-thumbs-down light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Screen image stability</td>
+                                        <td>
+                                            {% if check.screen_q2 == "false" %}
+                                                <i class="fas fa-thumbs-down light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Glare and reflection on screen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                                {% if check.screen_q2 == "false" %}
+                                <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
+                                    data-position="right" data-tooltip="URGENT!"></i>
+                                    <p>{{"Glare and reflection on screen"}}</p>
+                                {% endif %}
+                                {% if check.screen_q1 == "false" %}
+                                    <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
+                                        data-position="right" data-tooltip="URGENT!"></i>
+                                        <p>{{"Screen image stability"}}</p>
+                                    {% else %}
+                                    <i class="fas fa-thumbs-up light-blue-text text-lighten-2 tooltipped"
+                                        data-position="right" data-tooltip="URGENT!"></i>
+                                        <p>{{"Screen image stability"}}</p>
+                                {% endif %}
+                                <strong>{{ check.max_continuous_time }}</strong>
+                                <p>{{ check.max_total_time }}</p>
+                                <p><em>by: {{ check.created_by }}</em></p>
+                                 
+                                {{ check.manager_name }}
+                                <div class="row">
+                                <img src="{{ check.image }}"  class="responsive-img" 
+                                    alt="workstation Image"/> 
+                                </div>
+                                 <div class="divider"></div>
+                                <div class="section">
+                                    <h5>Section 1</h5>
+                                    <p>Stuff</p>
+                                </div>
+                            </div>
+                           
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>       
+    
 
 {% endblock %}
