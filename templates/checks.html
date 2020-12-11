@@ -107,35 +107,157 @@
                                 </tr>
                             </tbody>
                         </table>
-                                {% if check.screen_q2%}
-                                <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
-                                    data-position="right" data-tooltip="URGENT!"></i>
-                                    <p>{{"Glare and reflection on screen"}}</p>
-                                {% endif %}
-                                {% if check.screen_q1 == "false" %}
-                                    <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
-                                        data-position="right" data-tooltip="URGENT!"></i>
-                                        <p>{{"Screen image stability"}}</p>
-                                    {% else %}
-                                    <i class="fas fa-thumbs-up light-blue-text text-lighten-2 tooltipped"
-                                        data-position="right" data-tooltip="URGENT!"></i>
-                                        <p>{{"Screen image stability"}}</p>
-                                {% endif %}
-                                <strong>{{ check.max_continuous_time }}</strong>
-                                <p>{{ check.max_total_time }}</p>
-                                <p><em>by: {{ check.created_by }}</em></p>
-                                 
-                                {{ check.manager_name }}
+                        <table class="striped light-blue-text">
+                                <tbody>
+                                    <tr>
+                                        <td><h6><b>Chair Results</b></h6></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {% if check.chair_q1 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Seat height adjustability</td>
+                                        <td>
+                                            {% if check.chair_q2 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Seat backrest adjustability</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="striped light-blue-text">
+                                <tbody>
+                                    <tr>
+                                        <td><h6><b>Keyboard Results</b></h6></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {% if check.keyboard_q1 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Able to find comfortable keying position</td>
+                                        <td>
+                                            {% if check.keyboard_q2 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Suitable lighting level around workstation and comfortable to work in</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="striped light-blue-text">
+                                <tbody>
+                                    <tr>
+                                        <td><h6><b>Mouse Results</b></h6></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {% if check.mouse_q1 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Pointing device separate & easy to use</td>
+                                        <td>
+                                            {% if check.mouse_q2 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Pointing device smooth & suitable speed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                        <table class="striped light-blue-text">
+                                <tbody>
+                                    <tr>
+                                        <td><h6><b>Environment Results</b></h6></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                        <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {% if check.environment_q1 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Enough room to change position and vary movement</td>
+                                        <td>
+                                            {% if check.environment_q2 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                data-position="right"></i>
+                                                {% else %}
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
+                                                data-position="right"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>Pointing device smooth & suitable speed</td>
+                                </tr>
+                            </tbody>
+                        </table>       
                                 <div class="row">
                                 <img src="{{ check.image }}"  class="responsive-img" 
                                     alt="workstation Image"/> 
                                 </div>
-                                 <div class="divider"></div>
-                                <div class="section">
-                                    <h5>Section 1</h5>
-                                    <p>Stuff</p>
-                                </div>
-                            </div>
+                              
+                            
                            
                     </li>
                     {% endif %}
