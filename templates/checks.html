@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h3 class="light-blue-text text-darken-4 center-align">All Assessments</h3>
-    <div class="row card-panel grey lighten-5">
+    <div class="row card-panel hoverable grey lighten-5">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8">
@@ -22,18 +22,18 @@
                 {% for check in checks %}
                     {% if session.user|lower == check.created_by|lower %}
                     <li>
-                        <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                            <div class="col s3">
-                                <i class="fas fa-caret-down"></i>
-                                <a href="{{ url_for('delete_check', check_id=check._id) }}" class="btn-small green accent-4">Delete</a>
-                                <a href="{{ url_for('edit_check', check_id=check._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                            </div>
-                            <div class="col s9">     
-                                    <strong>Created by {{ check.created_by }} on the {{ check.created_date }}</strong>            
-                            </div>
+                        <div class="collapsible-header white-text light-blue darken-4 text-shadow hide-on-med-and-down">
+                                <div class="col s3 hide-on-med-and-down">
+                                    <i class="fas fa-caret-down"></i>
+                                    <a href="{{ url_for('delete_check', check_id=check._id) }}" class="btn-small green accent-4">Delete</a>
+                                    <a href="{{ url_for('edit_check', check_id=check._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                                </div>
+                                <div class="col s9">     
+                                        <strong>Created by {{ check.created_by }} on the {{ check.created_date }}</strong>            
+                                </div> 
                         </div>
                             <div class="collapsible-body">
-                             <table>
+                             <table class="striped">
                                 <tbody>
                                     <tr>
                                         <td><b>Manager:</b></td>
@@ -43,7 +43,7 @@
                                     </tr>
                                 </tbody>
                             </table>            
-                            <table>
+                            <table class="highlight">
                                 <tbody>
                                     <tr>
                                         <td><b>Your maximum total hours spent on computer per working day:</b></td>
@@ -59,10 +59,10 @@
                                     </tr>  
                                  </tbody>
                             </table>            
-                            <table>
+                            <table class="striped light-blue-text">
                                 <tbody>
                                     <tr>
-                                        <td><h5><b>Screen Results</b></h5></td>
+                                        <td><h6><b>Screen Results</b></h6></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

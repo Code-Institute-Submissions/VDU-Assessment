@@ -138,8 +138,8 @@ def logout():
 def add_check():
     form = Add_CheckForm()
     if form.validate() and request.method == "POST":
-        screen_q1 = "true" if request.form.get("screen_q1") else "false"
-        screen_q2 = "true" if request.form.get("screen_q2") else "false"
+        screen_q1 = True if request.form.get("screen_q1") else False
+        screen_q2 = True if request.form.get("screen_q2") else False
         chair_q1 = "true" if request.form.get("chair_q1") else "false"
         chair_q2 = "true" if request.form.get("chair_q2") else "false"
         keyboard_q1 = "true" if request.form.get("keyboard_q1") else "false"
@@ -181,8 +181,8 @@ def add_check():
 @app.route("/edit_check/<check_id>", methods=["GET", "POST"])
 def edit_check(check_id):
     if request.method == "POST":
-        screen_q1 = "true" if request.form.get("screen_q1") else "false"
-        screen_q2 = "true" if request.form.get("screen_q2") else "false"
+        screen_q1 = True if request.form.get("screen_q1") else False
+        screen_q2 = True if request.form.get("screen_q2") else False
         chair_q1 = "true" if request.form.get("chair_q1") else "false"
         chair_q2 = "true" if request.form.get("chair_q2") else "false"
         keyboard_q1 = "true" if request.form.get("keyboard_q1") else "false"

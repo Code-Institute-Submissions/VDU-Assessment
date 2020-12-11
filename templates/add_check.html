@@ -35,38 +35,42 @@
             <!-- Max Total Time -->
             <div class="row">
                 <p class="range-field">
-                    <label for="max_total_time">Your maximum total hours spent on computer per working day:</label>
+                    <label for="max_total_time">Select your maximum total hours spent on computer per working day:</label>
                     <input type="range" id=("max_total_time").ionRangeSlider() name="max_total_time" min="1" max="24" />
                 </p>
             </div>
             <!-- Max Continuous Time -->
             <div class="row">
                 <p class="range-field">
-                    <label for="max_continuous_time">Your maximum continuous hours spent on computer before you change activity:</label>
+                    <label for="max_continuous_time">Select your maximum continuous hours spent on computer before you change activity:</label>
                     <input type="range" id="max_continuous_time" name="max_continuous_time" min="1" max="24" />
                 </p>
             </div>
-           <div class="card-panel blue lighten-4"><i class="fas fa-desktop"></i>  Your Screen</div>
-            <!-- screen image stability -->
-            <div class="input-field col s12"> 
-                <div class="switch">
-                    {{ form.screen_q1(id="screen_q1", placeholder="Is the screen image stable and flicker free?", class="validate") }} 
-                <label for="screen_q1">If your answer is Yes, tick the box.  Otherwise leave blank  
-                <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="If your answer is Yes, tick the box.  Otherwise leave blank "></i> 
-                </label> 
+           <div class="card-panel blue lighten-4"><i class="fas fa-desktop"></i><b> Screen -</b> If your answer is Yes, tick the box.  Otherwise leave blank
             </div>
-             <!-- screen glare or reflections  -->
-            <div class="row">
+                <!-- screen image stability -->
+             <div class="row">
 				<div class="input-field col s12">
 					<div class="switch">
-						<label for="screen_q2">
-                            <input type="checkbox" id="screen_q2" name="screen_q2">
-                            <span class="checkbox">Do you have any problems with glare or reflections on your screen which you are unable to resolve?</span>
+						<label for="screen_q1">
+                            <input type="checkbox" id="screen_q1" name="screen_q1">
+                            <span class="checkbox">Is the screen image stable and flicker free?</span>
                         </label>
 					</div>
 				</div>
+			
+                <!-- screen glare or reflections  -->
+                <div class="input-field col s12">
+                    <div class="switch">
+                        <label for="screen_q2">
+                            <input type="checkbox" id="screen_q2" name="screen_q2">
+                            <span class="checkbox">Do you have any problems with glare or reflections on your screen which you are unable to resolve?</span>
+                        </label>
+                    </div>
+                </div>
 			</div>
-            <div class="card-panel blue lighten-4"><i class="fas fa-chair"></i>  Your Chair</div>
+            <div class="card-panel blue lighten-4"><i class="fas fa-chair"></i>  <b> Your Chair -</b> If your answer is Yes, tick the box.  Otherwise leave blank
+            </div>
             <!-- height of your seat  -->
             <div class="row">
 				<div class="input-field col s12">
@@ -77,9 +81,8 @@
                         </label>
 					</div>
 				</div>
-			</div>
+			
              <!-- backrest of your chair  -->
-            <div class="row">
 				<div class="input-field col s12">
 					<div class="switch">
 						<label for="chair_q2">
@@ -89,7 +92,8 @@
 					</div>
 				</div>
 			</div>
-            <div class="card-panel blue lighten-4"><i class="fas fa-keyboard"></i>  Your Keyboard</div>
+            <div class="card-panel blue lighten-4"><i class="fas fa-keyboard"></i><b> Your Keyboard -</b> If your answer is Yes, tick the box.  Otherwise leave blank
+            </div>
             <!-- comfortable keying position -->
             <div class="row">
 				<div class="input-field col s12">
@@ -100,9 +104,7 @@
                         </label>
 					</div>
 				</div>
-			</div>
-             <!--  enough space to rest your hands -->
-            <div class="row">
+                <!--  enough space to rest your hands -->
 				<div class="input-field col s12">
 					<div class="switch">
 						<label for="keyboard_q2">
@@ -112,7 +114,7 @@
 					</div>
 				</div>
 			</div>
-            <div class="card-panel blue lighten-4"><i class="fas fa-mouse"></i>  Your Mouse</div>
+            <div class="card-panel blue lighten-4"><i class="fas fa-mouse"></i><b> Your Mouse -</b> If your answer is Yes, tick the box.  Otherwise leave blank</div>
             <!--  mouse seperate from keyboard  -->
             <div class="row">
 				<div class="input-field col s12">
@@ -123,9 +125,7 @@
                         </label>
 					</div>
 				</div>
-			</div>
-            <!--  mouse  work smoothly  -->
-            <div class="row">
+                <!--  mouse  work smoothly  -->
 				<div class="input-field col s12">
 					<div class="switch">
 						<label for="mouse_q2">
@@ -135,7 +135,7 @@
 					</div>
 				</div>
 			</div>
-            <div class="card-panel blue lighten-4"><i class="far fa-building"></i>  Your Environment</div>
+            <div class="card-panel blue lighten-4"><i class="far fa-building"></i><b> Your Environment -</b> If your answer is Yes, tick the box.  Otherwise leave blank</div>
             <!--  room at your workstation  -->
             <div class="row">
 				<div class="input-field col s12">
@@ -146,9 +146,7 @@
                         </label>
 					</div>
 				</div>
-			</div>
-            <!--  lighting level at workstation  -->
-            <div class="row">
+                <!--  lighting level at workstation  -->
 				<div class="input-field col s12">
 					<div class="switch">
 						<label for="environment_q2">
