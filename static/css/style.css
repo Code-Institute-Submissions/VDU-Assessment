@@ -10,6 +10,25 @@ body {
      overflow-x: hidden; 
  } 
 
+.container-vduinfo { 
+     width: 85%;   
+ } 
+
+ .btn-home { 
+     background-color: orange; 
+     color: white; 
+     border-radius: 1.5rem; 
+     margin-top: 20px; 
+     margin-bottom: -20px; 
+
+ } 
+ 
+ 
+ .btn-home:hover, 
+ .btn-home:active, 
+ .btn-home:focus { 
+     background-color: #ffcc80; 
+ } 
 .flashes h4 {
     line-height: 2;
 }

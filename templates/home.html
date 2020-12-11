@@ -12,10 +12,27 @@
              To access computer users VDU (Visual Display Unit) in accordance with
 		     Health and Safety legislation and HSA guidelines. 
            </p> 
-           
+            {% if "user" in session %}
+                <a href="{{ url_for('get_checks') }}" 
+                class="waves-effect waves-light btn uppercase z-depth-3 btn-home" ><i class="fas fa-eye"></i> 
+                View Assessments
+                </a>
+                <a href="{{ url_for('add_check') }}" 
+                class="waves-effect waves-light btn uppercase z-depth-3 btn-home" ><i class="fas fa-plus-square"></i> 
+                Create VDU Assessment
+                </a>
+            {% endif %}
  	   </div> 
        </div> 
      </div> 
    </div> 
  </div>
+ 
+ <div class="row container-vduinfo"> 
+   <h4 class="sub-heading center-align"> 
+     Working Safely 
+  </h4> 
+   <div class="divider"></div>  
+</div> 
+
  {% endblock %}
