@@ -1,4 +1,14 @@
 
+body { 
+     display: flex; 
+     min-height: 100vh; 
+     flex-direction: column; 
+     margin: 0; 
+     padding: 0;  
+	font-weight: 400; 
+     line-height: 1.7rem; 
+     overflow-x: hidden; 
+ } 
 
 .flashes h4 {
     line-height: 2;
