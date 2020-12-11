@@ -140,14 +140,14 @@ def add_check():
     if form.validate() and request.method == "POST":
         screen_q1 = True if request.form.get("screen_q1") else False
         screen_q2 = True if request.form.get("screen_q2") else False
-        chair_q1 = "true" if request.form.get("chair_q1") else "false"
-        chair_q2 = "true" if request.form.get("chair_q2") else "false"
-        keyboard_q1 = "true" if request.form.get("keyboard_q1") else "false"
-        keyboard_q2 = "true" if request.form.get("keyboard_q2") else "false"
-        mouse_q1 = "true" if request.form.get("mouse_q1") else "false"
-        mouse_q2 = "true" if request.form.get("mouse_q2") else "false"
-        environment_q1 = "true" if request.form.get("environment_q1") else "false"
-        environment_q2 = "true" if request.form.get("environment_q2") else "false"
+        chair_q1 = True if request.form.get("chair_q1") else False
+        chair_q2 = True if request.form.get("chair_q2") else False
+        keyboard_q1 = True if request.form.get("keyboard_q1") else False
+        keyboard_q2 = True if request.form.get("keyboard_q2") else False
+        mouse_q1 = True if request.form.get("mouse_q1") else False
+        mouse_q2 = True if request.form.get("mouse_q2") else False
+        environment_q1 = True if request.form.get("environment_q1") else False
+        environment_q2 = True if request.form.get("environment_q2") else False
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         check = {
@@ -183,14 +183,14 @@ def edit_check(check_id):
     if request.method == "POST":
         screen_q1 = True if request.form.get("screen_q1") else False
         screen_q2 = True if request.form.get("screen_q2") else False
-        chair_q1 = "true" if request.form.get("chair_q1") else "false"
-        chair_q2 = "true" if request.form.get("chair_q2") else "false"
-        keyboard_q1 = "true" if request.form.get("keyboard_q1") else "false"
-        keyboard_q2 = "true" if request.form.get("keyboard_q2") else "false"
-        mouse_q1 = "true" if request.form.get("mouse_q1") else "false"
-        mouse_q2 = "true" if request.form.get("mouse_q2") else "false"
-        environment_q1 = "true" if request.form.get("environment_q1") else "false"
-        environment_q2 = "true" if request.form.get("environment_q2") else "false"
+        chair_q1 = True if request.form.get("chair_q1") else False
+        chair_q2 = True if request.form.get("chair_q2") else False
+        keyboard_q1 = True if request.form.get("keyboard_q1") else False
+        keyboard_q2 = True if request.form.get("keyboard_q2") else False
+        mouse_q1 = True if request.form.get("mouse_q1") else False
+        mouse_q2 = True if request.form.get("mouse_q2") else False
+        environment_q1 = True if request.form.get("environment_q1") else False
+        environment_q2 = True if request.form.get("environment_q2") else False
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         submit = {

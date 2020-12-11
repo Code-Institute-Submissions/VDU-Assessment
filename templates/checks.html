@@ -73,21 +73,21 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            {% if check.screen_q1 == "false" %}
-                                                <i class="fas fa-thumbs-down light-blue-text text-lighten-2"
+                                            {% if check.screen_q1 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
                                                 data-position="right"></i>
                                                 {% else %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
                                                 data-position="right"></i>
                                             {% endif %}
                                         </td>
                                         <td>Screen image stability</td>
                                         <td>
-                                            {% if check.screen_q2 == "false" %}
-                                                <i class="fas fa-thumbs-down light-blue-text text-lighten-2"
+                                            {% if check.screen_q2 %}
+                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
                                                 data-position="right"></i>
                                                 {% else %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
+                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
                                                 data-position="right"></i>
                                             {% endif %}
                                         </td>
@@ -95,7 +95,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                                {% if check.screen_q2 == "false" %}
+                                {% if check.screen_q2%}
                                 <i class="fas fa-thumbs-down light-blue-text text-lighten-2 tooltipped"
                                     data-position="right" data-tooltip="URGENT!"></i>
                                     <p>{{"Glare and reflection on screen"}}</p>
