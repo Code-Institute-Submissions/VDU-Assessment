@@ -37,7 +37,7 @@
  
     <div class="row">
             <div class="col m4 s9">
-            <div class="card">
+            <div class="card hoverable">
                 <div class="card-image">
                 <img src="{{ url_for('static', filename='images/card2.jpg') }}">
                 <span class="card-title">Posture</span>
@@ -46,26 +46,28 @@
                 <p>Basic requirements for the office chair, to enable you to adopt a correct and comfortable posture.</p>
                 </div>
                 <div class="card-action">
-                <a href="#">Read More</a>
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal-posture">Read More</a>
                 </div>
             </div>
             </div>
             <div class="col m4 s9">
-            <div class="card">
+            <div class="card hoverable">
                 <div class="card-image">
                 <img src="{{ url_for('static', filename='images/card1.jpg') }}">
                 <span class="card-title">Remote Work</span>
                 </div>
                 <div class="card-content">
-                <p>Familiarize yourself with the technologies and tools available for remote work.</p>
+                <p>Tips to ensure you're successful, getting your work done and maintaining mental well-being</p>
                 </div>
                 <div class="card-action">
-                <a href="#">Read More</a>
+                <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal-wfh">Read More</a>
                 </div>
             </div>
             </div>
             <div class="col m4 s9">
-            <div class="card">
+            <div class="card hoverable">
                 <div class="card-image">
                 <img src="{{ url_for('static', filename='images/card4.jpg') }}">
                 <span class="card-title">Sitting/Standing</span>
@@ -74,10 +76,79 @@
                 <p>5 reasons why it is good for you to alternate between sitting/standing while you work</p>
                 </div>
                 <div class="card-action">
-                <a href="#">Read More</a>
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal-sit-stand">Read More</a>
+                </div>
                 </div>
             </div>
             </div>
     </div>
-
+    <!-- Modal Structure for Posture-->
+    <div id="modal-posture" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Posture</h4>
+             <p>1.	Each time you sit down to work, always check your chair and workstation are adjusted for 
+                your comfort.<br>
+                2.	Your chair should have an adjustable backrest and adjustable height.<br>
+                3.	Sit well back in your chair.<br>
+                4.	Have your back in a relaxed, upright position, with the backrest of your chair adjusted to provide good lumbar support.<br>
+                5.	Move your chair close enough to your desk so that you can reach the keyboard comfortably.<br>
+                6.	You should always have enough room in front of your keyboard to rest your wrists and hands during pauses in work.<br> 
+                7.	When keying, keep arms loosely at your side (don't over-reach), your forearms horizontal, and reduce the angle of your wrists to a minimum.<br>
+                8.	Keep your legs uncrossed with both feet firmly on the floor.<br>
+                9.	If your feet cannot rest comfortably on the floor, use a footrest.<br>
+                10.	To ensure that your feet and legs are free to move there should never be any obstacles under your desk.</p>
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
+        </div>
+    </div>
+      <!-- Modal Structure for Work from home-->
+    <div id="modal-wfh" class="modal modal-fixed-footer">
+        <div class="modal-content">
+        <h4>Working from Home</h4>
+        <p>1. Get Dressed<br>
+        2. Designate a Workspace or Home Office<br>
+        3. Keep Clearly Defined Working Hours<br>
+        4. Build Transitions Into (and Out of) Work<br>
+        5. Don’t Get Too Sucked in by the News—or Anything Else<br>
+        6. Communicate, Communicate, Communicate</p>
+        </div>
+        <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
+        </div>
+    </div>
+       <!-- Modal Structure for Sitting / Standing-->
+    <div id="modal-sit-stand" class="modal modal-fixed-footer">
+        <div class="modal-content">
+        <h4>Sitting / Standing</h4>
+        <p><u>What Is a Standing Desk?</u><br>
+            <br>
+            A standing desk, also called a stand-up desk, is basically a desk that allows you to stand up comfortably while working<br>
+            <br>
+            <u>1. Standing Lowers Your Risk of Weight Gain and Obesity</u><br>
+            <br>
+            Weight gain is ultimately caused by taking in more calories than you burn. Conversely, burning more calories than you take in results in weight loss. While exercise is the most effective way to burn calories quickly, simply choosing to stand instead of sitting can also be beneficial.<br>
+            <br>
+            <u>2. Using a Standing Desk May Lower Blood Sugar Levels</u><br>
+            <br>
+            The more your blood sugar levels increase after meals, the worse it is for your health. This is especially true for those with insulin resistance or type 2 diabetes. In a small study of 10 office workers, standing for 180 minutes after lunch reduced the blood sugar spike by 43% compared to sitting for the same amount of time<br>
+            <br>
+            <u>3. Standing May Lower Your Risk of Heart Disease</u><br>
+            <br>
+            The idea that standing is better for heart health was first proposed in 1953. A study found that bus conductors who stood all day had half the risk of heart disease-related deaths as their colleagues in the driver’s seats<br>
+            <br>
+            <u>4. Standing Desks Appear to Reduce Back Pain</u>
+            <br>
+            Back pain is one of the most common complaints of office workers who sit all day. To determine if standing desks could improve this, several studies have been done on employees with long-term back pain.  Participants have reported up to a 32% improvement in lower back pain after several weeks of using standing desks<br>
+            <br>
+            <u>5. Standing Desks Help Improve Mood and Energy Levels</u>
+            <br>
+            Standing desks appear to have a positive influence on overall well-being.  In one 7-week study, participants using standing desks reported less stress and fatigue than those who remained seated the entire work day.  Additionally, 87% of those using standing desks reported increased vigor and energy throughout the day.<br>
+            </p>
+        </div>
+        <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
+        </div>
+    </div>     
  {% endblock %}
