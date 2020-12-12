@@ -7,7 +7,7 @@
      <div class="row"> 
        <div class="col s12"> 
          <div class="text-block-home center-align"> 
-           <h1 class="uppercase primary-heading">Health & Safety VDU Assessment</h1> 
+           <h2>Health & Safety VDU Assessment</h2> 
            <p class="home-paragraph"> 
              To access computer users VDU (Visual Display Unit) in accordance with
 		     Health and Safety legislation and HSA guidelines. 
@@ -30,9 +30,54 @@
  
  <div class="row container-vduinfo"> 
    <h4 class="sub-heading center-align"> 
-     Working Safely 
+     Working Safely Guidance
   </h4> 
    <div class="divider"></div>  
-</div> 
+</div>
+ 
+    <div class="row">
+            <div class="col m4 s9">
+            <div class="card">
+                <div class="card-image">
+                <img src="{{ url_for('static', filename='images/card2.jpg') }}">
+                <span class="card-title">Posture</span>
+                </div>
+                <div class="card-content">
+                <p>Basic requirements for the office chair, to enable you to adopt a correct and comfortable posture.</p>
+                </div>
+                <div class="card-action">
+                <a href="#">Read More</a>
+                </div>
+            </div>
+            </div>
+            <div class="col m4 s9">
+            <div class="card">
+                <div class="card-image">
+                <img src="{{ url_for('static', filename='images/card1.jpg') }}">
+                <span class="card-title">Remote Work</span>
+                </div>
+                <div class="card-content">
+                <p>Familiarize yourself with the technologies and tools available for remote work.</p>
+                </div>
+                <div class="card-action">
+                <a href="#">Read More</a>
+                </div>
+            </div>
+            </div>
+            <div class="col m4 s9">
+            <div class="card">
+                <div class="card-image">
+                <img src="{{ url_for('static', filename='images/card4.jpg') }}">
+                <span class="card-title">Sitting/Standing</span>
+                </div>
+                <div class="card-content">
+                <p>5 reasons why it is good for you to alternate between sitting/standing while you work</p>
+                </div>
+                <div class="card-action">
+                <a href="#">Read More</a>
+                </div>
+            </div>
+            </div>
+    </div>
 
  {% endblock %}

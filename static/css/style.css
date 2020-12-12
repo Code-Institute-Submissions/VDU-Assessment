@@ -60,8 +60,6 @@ body {
 
 /* Home page*/ 
  .home-container { 
-     padding-left:10px; 
-     padding-right: 10px; 
      border-radius: 1rem; 
      height: 70vh;
      display:flex; 
@@ -85,8 +83,6 @@ body {
 
  .home-paragraph { 
      font-size: 1rem; 
-     color:black;
-     font-weight: bold;
  }
 
  .text-block-home { 
@@ -94,7 +90,7 @@ body {
      top: 50%; 
      left: 50%;
      transform: translate(-50%, -50%);  
-     color: orange; 
+     color: black;
      width: inherit; 
      padding: 9px; 
  }
