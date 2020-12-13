@@ -6,24 +6,6 @@
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=user._id) }}">
            
-            <!-- username -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="username" name="username" minlength="3" maxlength="50"
-                        value="{{ user.username }}" type="text" class="validate" required>
-                    <label for="username">User Name</label>
-                </div>
-            </div>
-            <!-- first name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="fname" name="fname" minlength="3" maxlength="50"
-                        value="{{ user.fname }}" type="text" class="validate" required>
-                    <label for="fname">First Name</label>
-                </div>
-            </div>
             <!-- is admin toggle -->
 			<div class="row">
 				<div class="input-field col s12">
@@ -38,8 +20,29 @@
                         </label>
 					</div>
 				</div>
-			</div>
-            <!-- Hidden password field -->
+            </div>
+            <!-- is manager toggle -->
+			<div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="is_manager">
+                            {% if user.is_manager %}
+                                <input type="checkbox" id="is_manager" name="is_manager" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_manager" name="is_manager">
+                            {% endif %}
+                            <span class="checkbox">Manager</span>
+                        </label>
+					</div>
+				</div>
+            </div>
+                <!-- username hidden -->
+                <input id="username" name="username" minlength="3" maxlength="50"
+                            hidden value="{{ user.username }}" type="text" class="validate" required>
+                <!-- firstname hidden -->
+                <input id="fname" name="fname" minlength="3" maxlength="50"
+                            hidden value="{{ user.fname }}" type="text" class="validate" required>
+                <!-- Hidden password field -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="password" name="password" type="password" hidden value="{{ user.password }}" >
