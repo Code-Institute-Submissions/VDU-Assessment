@@ -6,7 +6,9 @@ from flask_pymongo import PyMongo
 from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from myforms.forms import RegistrationForm, Add_CheckForm, LoginForm
+from myforms.forms import ChangePassForm, RegistrationForm,\
+Add_CheckForm, LoginForm
+
 if os.path.exists("env.py"):
     import env
     
@@ -137,7 +139,7 @@ def logout():
 
 def add_check():
     form = Add_CheckForm()
-    if form.validate() and request.method == "POST":
+    if request.method == "POST" and form.validate():
         screen_q1 = True if request.form.get("screen_q1") else False
         screen_q2 = True if request.form.get("screen_q2") else False
         chair_q1 = True if request.form.get("chair_q1") else False
@@ -318,6 +320,24 @@ def edit_user(user_id):
 
     user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
     return render_template("edit_user.html", user=user)
+
+@app.route("/change_password/<user_id>", methods=["GET", "POST"])
+def change_password(user_id):
+    form = ChangePassForm()
+    if request.method == "POST" and form.validate():
+        is_admin = True if request.form.get("is_admin") else False
+        submit = {
+            "username": request.form.get("username"),
+            "fname": request.form.get("fname"),
+            "password": generate_password_hash(request.form.get("password")),
+            "is_admin": is_admin
+        }
+        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+        flash("Password Successfully Updated")
+        return redirect(url_for("profile", username=session["user"]))
+
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    return render_template("change_password.html", user=user, form=form)
 
 
 @app.route("/delete_manager/<manager_id>")
