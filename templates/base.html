@@ -14,12 +14,6 @@
 <body>
 
 	<header>
-        <!-- Admin Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="{{ url_for('get_managers') }}">Manager Maintenance</a></li>
-            <li><a href="{{ url_for('get_departments') }}">Department Maintenance</a></li>
-            <li><a href="{{ url_for('get_users') }}">User Maintenance</a></li>
-        </ul>
         <!-- top navbar -->
 		<nav class="nav-extended text-shadow light-blue darken-1">
 			<div class="nav-wrapper">
@@ -27,9 +21,6 @@
                 <a href="{{ url_for('home') }}" class="brand-logo hide-on-med-and-down" id="brand-wording">VDU Assessment Manager</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-                        {% if "user" in session and session["user"].is_admin %}
-                            <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Admin <i class="fas fa-caret-down"></i></a></li>
-                        {% endif %}
                     <li><a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-id-card-alt"></i> Profile</a></li>
@@ -41,18 +32,9 @@
 				</ul>
 			</div>
 		</nav>
-         <!-- Dropdown Structure -->
-        <ul id="dropdown3" class="dropdown-content">
-            <li><a href="{{ url_for('get_managers') }}">Manager Maintenance</a></li>
-            <li><a href="{{ url_for('get_departments') }}">Department Maintenance</a></li>
-            <li><a href="{{ url_for('get_users') }}">User Maintenance</a></li>
-        </ul>
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align light-blue-text text-darken 4">VDU Assessment Manager</h4></li>
-             {% if "user" in session and session["user"].is_admin %}
-                <li><a class="dropdown-trigger" href="#" data-target="dropdown3">Admin <i class="fas fa-caret-down"></i></a></li>
-            {% endif %}
             <li><a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-id-card-alt"></i> Profile</a></li>
