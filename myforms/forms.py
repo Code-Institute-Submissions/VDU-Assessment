@@ -15,11 +15,10 @@ class RegistrationForm(FlaskForm):
 
 
 class ChangePassForm(FlaskForm):
-    password = PasswordField('New Password', [
-        validators.DataRequired(),
+    password = PasswordField('New Password', [validators.length(min=3, max=15),
         validators.EqualTo('confirm', message='Passwords must match')])
     confirm = PasswordField('Repeat Password')
-    submit = SubmitField('Change')
+    submit = SubmitField('Change Password')
 
 
 class LoginForm(FlaskForm):
