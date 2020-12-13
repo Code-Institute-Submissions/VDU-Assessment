@@ -21,6 +21,21 @@
 					</div>
 				</div>
             </div>
+            <!-- is manager toggle -->
+			<div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+						<label for="is_manager">
+                            {% if user.is_manager %}
+                                <input type="checkbox" id="is_manager" name="is_manager" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_manager" name="is_manager">
+                            {% endif %}
+                            <span class="checkbox">Manager</span>
+                        </label>
+					</div>
+				</div>
+            </div>
                 <!-- username hidden -->
                 <input id="username" name="username" minlength="3" maxlength="50"
                             hidden value="{{ user.username }}" type="text" class="validate" required>

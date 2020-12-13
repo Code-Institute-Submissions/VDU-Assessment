@@ -120,11 +120,10 @@ def login():
 def profile(username):
     # grab the session user's username from db
     user = mongo.db.users.find_one({"username": username.lower()})
-    check = mongo.db.checks.find_one({"username": username.lower()})
 
     if "user" in session:
         return render_template(
-           "profile.html", user=user, check=check)
+           "profile.html", user=user)
         
         
     return redirect(url_for("login"))
@@ -312,11 +311,13 @@ def edit_department(department_id):
 def edit_user(user_id):
     if request.method == "POST":
         is_admin = True if request.form.get("is_admin") else False
+        is_manager = True if request.form.get("is_manager") else False
         submit = {
             "username": request.form.get("username"),
             "fname": request.form.get("fname"),
             "password": request.form.get("password"),
-            "is_admin": is_admin
+            "is_admin": is_admin,
+            "is_manager": is_manager
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
         flash("User Successfully Updated")
