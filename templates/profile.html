@@ -15,7 +15,9 @@
                    {% if user.is_admin %}
                             <a href="#" class="btn-small orange lighten-1 dropdown-trigger" data-target="dropdown1"><i class="fas fa-tools"></i> Maintenance</a>
                         {% endif %}
+                    {% if user.is_manager %}
                     <a href="{{ url_for('get_manager_checks', user_id=user._id) }}" class="btn-small orange lighten-1"><i class="fas fa-eye"></i> Your Reports Assessments</a>
+                    {% endif %}
                 </div>
                 <div class="card-content">
                         <table class="striped">
@@ -28,15 +30,33 @@
                                     </tr>
                                 </tbody>
                             </table>
-                             <table class="highlight">
+                            <table class="highlight">
                                 <tbody>
                                     <tr>
-                                        <td><b>Are you an Admin User:</b></td>        
-                                        <td>{{user.is_admin}}</td>
+                                        <td><b>Are you Admin User ? </b></td>        
+                                        <td>{% if user.is_admin %}
+                                                <a>Yes</a>
+                                                {% else %}
+                                                <a>No</a>
+                                            {% endif %}
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-                    
+                            <table class="highlight">
+                                <tbody>
+                                    <tr>
+                                        <td><b>Are you a Manager ? </b></td>        
+                                        <td>{% if user.is_manager %}
+                                                <a>Yes</a>
+                                                {% else %}
+                                                <a>No</a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          
                     </div>
                 <div class="card-image">
                 <img src="{{ url_for('static', filename='images/profile.jpg') }}">
