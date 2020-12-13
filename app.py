@@ -32,6 +32,10 @@ def get_checks():
     checks = mongo.db.checks.find()
     return render_template("checks.html", checks=checks)
 
+@app.route("/get_manager_checks")
+def get_manager_checks():
+    checks = mongo.db.checks.find()
+    return render_template("manager_checks.html", checks=checks)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -116,11 +120,11 @@ def login():
 def profile(username):
     # grab the session user's username from db
     user = mongo.db.users.find_one({"username": username.lower()})
-    
+    check = mongo.db.checks.find_one({"username": username.lower()})
 
     if "user" in session:
         return render_template(
-           "profile.html", user=user)
+           "profile.html", user=user, check=check)
         
         
     return redirect(url_for("login"))
