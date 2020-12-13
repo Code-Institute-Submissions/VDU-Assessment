@@ -10,47 +10,34 @@ body {
      overflow-x: hidden; 
  } 
 
-.container-vduinfo { 
-     width: 85%;   
- } 
+ /* Flash message on Base Page*/
 
- .btn-home { 
-     background-color: orange; 
-     color: white; 
-     border-radius: 1.5rem; 
-     margin-top: 20px; 
-     margin-bottom: -20px; 
-
- } 
- 
- 
- .btn-home:hover, 
- .btn-home:active, 
- .btn-home:focus { 
-     background-color: #ffcc80; 
- } 
 .flashes h4 {
     line-height: 2;
 }
 
-.btn-small {
-    margin: 5px;
-}
+.text-red { 
+     color: red; 
+ } 
+
+/* collapsible header on All Assessmemt & reports Assessments*/
 
 .collapsible-header .col strong {
     margin: 5px;
     line-height: 42px;
 }
 
+.btn-small {
+    margin: 5px;
+}
+
+/* For Maintenace Dropdown on Profie Page*/
 .dropdown-content{
    width: max-content !important;
    height:auto !important;
   
 }
 
-.text-red { 
-     color: red; 
- } 
 
 /* Navbar Brand*/ 
 
@@ -74,11 +61,11 @@ body {
      background-image: radial-gradient(rgba(249, 238, 238, 0.91), 
                       rgba(152, 142, 142, 0.04)), 
                       url(../images/bg-home.jpg); 
-    background-position: center;
+     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative; 
-    width: 100%; 
+    width: 100%;
  }
 
  .home-paragraph { 
@@ -94,3 +81,22 @@ body {
      width: inherit; 
      padding: 9px; 
  }
+
+ .btn-home { 
+     background-color: orange; 
+     color: white; 
+     border-radius: 1.5rem; 
+     margin-top: 20px; 
+     margin-bottom: -20px; 
+
+ } 
+ 
+ .btn-home:hover, 
+ .btn-home:active, 
+ .btn-home:focus { 
+     background-color: #ffcc80; 
+ } 
+
+ .container-vduinfo { 
+     width: 85%;   
+ } 
