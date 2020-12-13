@@ -6,23 +6,39 @@
             <li><a href="{{ url_for('get_departments') }}">Department Maintenance</a></li>
             <li><a href="{{ url_for('get_users') }}">User Maintenance</a></li>
         </ul>
-  <h3 class="center-align light-blue-text text-darken 4"><i class="fas fa-id-card-alt"></i> Your Profile</h3>
   <div class="row">
             <div class="col s12 m8 offset-m2">
             <div class="card hoverable">
+                <h3 class="center-align light-blue-text text-darken 4"><i class="fas fa-id-card-alt"></i> Your Profile</h3>
                  <div class="card-action center-align">
                    <a href="{{ url_for('change_password', user_id=user._id) }}" class="btn-small orange lighten-1"><i class="fas fa-unlock"></i> Change Password</a>
                    {% if user.is_admin %}
                             <a href="#" class="btn-small orange lighten-1 dropdown-trigger" data-target="dropdown1"><i class="fas fa-tools"></i> Maintenance</a>
                         {% endif %}
                 </div>
+                <div class="card-content">
+                        <table class="striped">
+                                <tbody>
+                                    <tr>
+                                        <td><b>Name:</b></td>
+                                        <td>{{user.fname}}</td>
+                                        <td><b>Username:</b></td>        
+                                        <td>{{user.username}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                             <table class="highlight">
+                                <tbody>
+                                    <tr>
+                                        <td><b>Are you an Admin User:</b></td>        
+                                        <td>{{user.is_admin}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    
+                    </div>
                 <div class="card-image">
                 <img src="{{ url_for('static', filename='images/profile.jpg') }}">
                 </div>
-                    <div class="card-content">
-                    <p><h3 class="center-align light-blue-text text-darken 4">
-                    {{ user.fname }}'s Profile
-                    {{ user.is_admin }}</h3></p>
-                    </div>
-            </div>
+        </div>
 {% endblock %}
