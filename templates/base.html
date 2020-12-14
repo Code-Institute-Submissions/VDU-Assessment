@@ -71,6 +71,9 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2020 Copyright all rights reserved
+                {% if "user" in session %}
+                 {{session.user}} is signed In
+                 {% endif %}
             </div>
         </div>
     </footer>
