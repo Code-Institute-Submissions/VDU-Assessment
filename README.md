@@ -17,15 +17,15 @@ To create an online application that allows user to complete & submit their VDU 
     + [Sub-sub-heading](#sub-sub-heading-2)
 
 
-# UX
+# Heading levels
 
 > This is a fixture to test heading levels
 
 <!-- toc -->
 
-## Goals
+## Heading
 
-
+This is an h1 heading
 
 ### Sub-heading
 
