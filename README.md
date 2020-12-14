@@ -4,19 +4,6 @@
 
 To create an online application that allows user to complete & submit their VDU (Visual Display Unit) Assessment.  Assessments will be categorised per user submission for further analysis and follow up by Accessor
 
-<h2>Table of Contents</h2>
-
-- [UX](#heading)
-  * [Goals](#sub-heading)
-    + [Visitor Goals](#sub-sub-heading)
-    + [Business Goals](#sub-sub-heading)
-- [Heading](#heading-1)
-  * [Sub-heading](#sub-heading-1)
-    + [Sub-sub-heading](#sub-sub-heading-1)
-- [Heading](#heading-2)
-  * [Sub-heading](#sub-heading-2)
-    + [Sub-sub-heading](#sub-sub-heading-2)
-
 # User Experience (UX)
 
 -   # Goals
@@ -28,15 +15,15 @@ To create an online application that allows user to complete & submit their VDU 
         - All Contactors 
  
        User Goals are:
-           - Register / Login to VDU Assessment Manager
-           - Complete my VDU Assessment
-           - View Completed VDU Assessments
-           - Edit my Completed VDU Assessments
-           - Delete my Completed VDU Assessments
+           * Register / Login to VDU Assessment Manager
+           * Complete my VDU Assessment
+           * View Completed VDU Assessments
+           * Edit my Completed VDU Assessments
+           * Delete my Completed VDU Assessments
 
-   Manager Goals are:
- - Register / Login to VDU Assessment Manager
- - View my reports VDU Assessments
+       Manager Goals are:
+     - Register / Login to VDU Assessment Manager
+     - View my reports VDU Assessments
 
 Admin Goals are:
  - Register / Login to VDU Assessment Manager
