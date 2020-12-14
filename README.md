@@ -80,7 +80,7 @@ To create an online application that allows user to complete & submit their VDU 
     
 # Features
 
--   # Navbar
+-   ## Navbar
 
     The navigation bar features the VDU Assessment Manager logo in the top left corner.
 
@@ -103,17 +103,14 @@ To create an online application that allows user to complete & submit their VDU 
 
     The practical design choice was made not to fix the navbar to the top of the page as the user
 
--   # Footer
+-   ## Footer
 
     The footer is the same colour as the Navbar, is very simple with only Copyright text
 
 -   ## Home Page 
 
-    For visitors to the site who are not logged in, 'Working Safely Guidance' liks are available for them to use on the Homepage.  Also the following links in the Navbar
+    ### Hero Image
 
-       - Home
-       - Log in
-       - Register
 
 ## Features
 
