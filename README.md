@@ -107,7 +107,13 @@ To create an online application that allows user to complete & submit their VDU 
 
     The footer is the same colour as the Navbar, is very simple with only Copyright text
 
+-   ## Home Page 
 
+    For visitors to the site who are not logged in, 'Working Safely Guidance' liks are available for them to use on the Homepage.  Also the following links in the Navbar
+
+       - Home
+       - Log in
+       - Register
 
 ## Features
 
