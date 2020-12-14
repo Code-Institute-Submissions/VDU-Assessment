@@ -58,12 +58,12 @@ To create an online application that allows user to complete & submit their VDU 
         - There is alot of whitespace in the application, the whitespace draws attention and attracts the user to the eyecatching buttons and good quality images
     
       -   ## Imagery 
-        -   I selected images that are relevant to the content of the application.   The icon in the navbar has an orange seat, and the buttons on the home page are orange.                 This small detail improves the asthetics of the application
+        - I selected images that are relevant to the content of the application.   The icon in the navbar has an orange seat, and the buttons on the home page are orange.                 This small detail improves the asthetics of the application
        
       -   ## Icons 
-        -   The icon in the navbar is a good fit for the theme of the application
-        -   Icons break up the information visually, creating space for the user and not overwhelming them with too much info at once.
-        -   Each icon was chosen for it's clarity in quickly explaining the relevant meaning with an image.
+        -  The icon in the navbar is a good fit for the theme of the application
+        -  Icons break up the information visually, creating space for the user and not overwhelming them with too much info at once.
+        -  Each icon was chosen for it's clarity in quickly explaining the relevant meaning with an image.
 
 
 -   # Wireframes
