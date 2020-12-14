@@ -5,8 +5,8 @@
 To create an online application that allows user to complete & submit their VDU (Visual Display Unit) Assessment.  Assessments will be categorised per user submission for further analysis and follow up by Accessor
 
 <h2>Table of Contents</h2>
-- [UX](#heading)
-  * [Goals](#sub-heading)
+- UX[Heading](#heading)
+  * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
   * [Sub-heading](#sub-heading-1)
@@ -15,12 +15,12 @@ To create an online application that allows user to complete & submit their VDU 
   * [Sub-heading](#sub-heading-2)
     + [Sub-sub-heading](#sub-sub-heading-2)
 
+
 # Heading levels
 
 > This is a fixture to test heading levels
 
 <!-- toc -->
-
 
 ## Heading
 
