@@ -23,6 +23,7 @@
                 {% for check in checks %}
                     {% if session.user == check.created_by %}
                     <li>
+                        ! --This layout will be hidden on small devices only--
                         <div class="collapsible-header white-text light-blue darken-4 text-shadow hide-on-small-only">
                                 <div class="col s3">
                                     <i class="fas fa-caret-down"></i>
@@ -47,6 +48,7 @@
                                         <strong>Created by {{ check.created_by }} on the {{ check.created_date }}</strong>            
                                 </div> 
                         </div>
+                          ! --This layout will be visible on small devices only, pushes text below the buttons to improve layout--
                         <div class="collapsible-header white-text light-blue darken-4 text-shadow hide-on-med-and-up">
                                     <div class="col s12">
                                         <i class="fas fa-caret-down"></i>
