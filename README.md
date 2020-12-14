@@ -19,9 +19,9 @@ To create an online application that allows user to complete & submit their VDU 
 
 # User Experience (UX)
 
--   ### Goals
+-   # Goals
 
-    -   #### Visitor Goals
+    -   ## Visitor Goals
 
         The central target audience for VDU Assessment Manager are:
         - All Employees
