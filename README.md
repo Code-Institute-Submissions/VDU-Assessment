@@ -17,7 +17,7 @@ To create an online application that allows user to complete & submit their VDU 
   * [Sub-heading](#sub-heading-2)
     + [Sub-sub-heading](#sub-sub-heading-2)
 
-## User Experience (UX)
+# User Experience (UX)
 
 -   ### Goals
 
@@ -27,14 +27,14 @@ To create an online application that allows user to complete & submit their VDU 
         - All Employees
         - All Contactors 
  
-      User Goals are:
-         - Register / Login to VDU Assessment Manager
-         - Complete my VDU Assessment
-         - View Completed VDU Assessments
-         - Edit my Completed VDU Assessments
-         - Delete my Completed VDU Assessments
- 
- Manager Goals are:
+       User Goals are:
+           - Register / Login to VDU Assessment Manager
+           - Complete my VDU Assessment
+           - View Completed VDU Assessments
+           - Edit my Completed VDU Assessments
+           - Delete my Completed VDU Assessments
+
+   Manager Goals are:
  - Register / Login to VDU Assessment Manager
  - View my reports VDU Assessments
 
