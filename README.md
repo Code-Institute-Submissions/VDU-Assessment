@@ -15,6 +15,7 @@ To create an online application that allows user to complete & submit their VDU 
         - All Contactors 
  
        User Goals are:
+      - Register / Login to VDU Assessment Manager
            * Register / Login to VDU Assessment Manager
            * Complete my VDU Assessment
            * View Completed VDU Assessments
