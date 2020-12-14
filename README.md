@@ -21,18 +21,26 @@ To create an online application that allows user to complete & submit their VDU 
       - Edit my Completed VDU Assessments
       - Delete my Completed VDU Assessments
 
-       Manager Goals are:
+      Manager Goals are:
      - Register / Login to VDU Assessment Manager
      - View my reports VDU Assessments
 
-       Admin Goals are:
+      Admin Goals are:
      - Register / Login to VDU Assessment Manager
      - Access Maintenance Section to maintain Department and Manager Dropdowns
      - Access Maintenance Section to maintain is_admin & is_manager rights
         
+    Business Goals are:
+      - Provide a repository to gather Employee and Contractor VDU feedback
+     
+-   # User Stories
+  
+      -   ## Visitor Goals
+  
+  As a visitor to VDU Manager I expect:
+1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.
 
-        
-
+2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
 
 
 
