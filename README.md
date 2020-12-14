@@ -6,7 +6,7 @@ To create an online application that allows user to complete & submit their VDU 
 
 <h2>Table of Contents</h2>
 
-- [Heading](#heading)
+- [UX](#heading)
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
