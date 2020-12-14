@@ -23,17 +23,19 @@ To create an online application that allows user to complete & submit their VDU 
 
 <!-- toc -->
 
-## Heading
+## UX
 
-This is an h1 heading
 
-### Sub-heading
 
-This is an h2 heading
+### Goals
 
-#### Sub-sub-heading
 
-This is an h3 heading
+
+#### Visitor Goals
+
+The central target audience for VDU Assessment Manager are :
+ - gtrty
+ - 
 
 ## Heading
 
