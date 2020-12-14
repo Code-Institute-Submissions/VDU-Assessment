@@ -1,258 +1,251 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 center-align">Edit Assessment</h3>
+<h3 class="light-blue-text text-darken-4 center-align">Edit Assessment</h3>
 
-    <div class="row card-panel grey lighten-5">
-    
-        <form class="col s12" method="POST" action="{{ url_for('edit_check', check_id=check._id) }}">
-            <!-- manager dropdown -->
-			<div class="row">
-				<div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-					<select id="manager_name" name="manager_name" class="validate" required>
-                        <option value="" disabled>Select your Manager</option>
-                        {% for manager in managers %}
-                            {% if manager.manager_name == check.manager_name %}
-                             <option value="{{ manager.manager_name }}" selected>{{ manager.manager_name }}</option>
-                            {% else %}
-                                <option value="{{ manager.manager_name }}">{{ manager.manager_name }}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-					<label for="manager_name">Select your Manager</label>
-				</div>
-			</div>
-            <!-- department dropdown -->
-            <div class="row">
-				<div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-					<select id="dept_name" name="dept_name" class="validate" required>
-                        <option value="" disabled>Select your Department</option>
-                        {% for dept in departments %}
-                            {% if dept.dept_name == check.dept_name %}
-                             <option value="{{ dept.dept_name }}" selected>{{ dept.dept_name }}</option>
-                            {% else %}
-                                <option value="{{ dept.dept_name }}">{{ dept.dept_name }}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-					<label for="dept_name">Select your Department</label>
-				</div>
-			</div>
-            <!-- Max Total Time -->
-            <div class="row">
-                <p class="range-field">
-                    <label for="max_total_time">Select maximum total hours spent on computer per working day:</label>
-                    <input type="range" id="max_total_time" name="max_total_time" min="1" max="24" value="{{ check.max_total_time }}"/>
-                </p>
-            </div>
-            <!-- Max Continuous Time -->
-            <div class="row">
-                <p class="range-field">
-                    <label for="max_continuous_time">Select maximum continuous hours spent on computer before you change activity:</label>
-                    <input type="range" id="max_continuous_time" name="max_continuous_time" min="1" max="24" value="{{ check.max_continuous_time }}"/>
-                </p>
-            </div>
-            <div class="card-panel blue lighten-4"><i class="fas fa-desktop"></i><b> Screen -</b> If your answer is Yes, tick the box.  Otherwise leave blank
-            </div>
-            <!-- screen image stability -->
-            <div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="screen_q1">
-                            {% if check.screen_q1%}
-                                <input type="checkbox" id="screen_q1" name="screen_q1" checked>
-                            {% else %}
-                                <input type="checkbox" id="screen_q1" name="screen_q1">
-                            {% endif %}
-                            <span class="checkbox">Is the screen image stable and flicker free?</span>
-                        </label>
-					</div>
-				</div>
-                <!-- screen glare or reflections -->
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="screen_q2">
-                            {% if check.screen_q2%}
-                                <input type="checkbox" id="screen_q2" name="screen_q2" checked>
-                            {% else %}
-                                <input type="checkbox" id="screen_q2" name="screen_q2">
-                            {% endif %}
-                            <span class="checkbox">Do you have any problems with glare or reflections on your screen which you are unable to resolve?</span>
-                        </label>
-					</div>
-				</div>
-            </div>
-            <div class="card-panel blue lighten-4"><i class="fas fa-chair"></i>  <b> Your Chair -</b> If your answer is Yes, tick the box.  Otherwise leave blank
-            </div>
-             <!-- height of your seat -->
-            <div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="chair_q1">
-                            {% if check.chair_q1%}
-                                <input type="checkbox" id="chair_q1" name="chair_q1" checked>
-                            {% else %}
-                                <input type="checkbox" id="chair_q1" name="chair_q1">
-                            {% endif %}
-                            <span class="checkbox">Can you adjust the height of your seat to a comfortable position?</span>
-                        </label>
-					</div>
-				</div>
-                <!-- backrest of your chair  -->
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="chair_q2">
-                            {% if check.chair_q2%}
-                                <input type="checkbox" id="chair_q2" name="chair_q2" checked>
-                            {% else %}
-                                <input type="checkbox" id="chair_q2" name="chair_q2">
-                            {% endif %}
-                            <span class="checkbox">Is the backrest of your chair adjustable to support your back correctly and comfortably?</span>
-                        </label>
-					</div>
-				</div>
-            </div>
-            <div class="card-panel blue lighten-4"><i class="fas fa-keyboard"></i><b> Your Keyboard -</b> If your answer is Yes, tick the box.  Otherwise leave blank
-            </div>
-             <!-- comfortable keying position   -->
-            <div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="keyboard_q1">
-                            {% if check.keyboard_q1%}
-                                <input type="checkbox" id="keyboard_q1" name="keyboard_q1" checked>
-                            {% else %}
-                                <input type="checkbox" id="keyboard_q1" name="keyboard_q1">
-                            {% endif %}
-                            <span class="checkbox">Can you find a comfortable keying position?</span>
-                        </label>
-					</div>
-				</div>
-                <!-- enough space to rest your hands    -->
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="keyboard_q2">
-                            {% if check.keyboard_q2%}
-                                <input type="checkbox" id="keyboard_q2" name="keyboard_q2" checked>
-                            {% else %}
-                                <input type="checkbox" id="keyboard_q2" name="keyboard_q2">
-                            {% endif %}
-                            <span class="checkbox">Is there enough space to rest your hands in front of the keyboard?</span>
-                        </label>
-					</div>
-				</div>
-            </div>
-            <div class="card-panel blue lighten-4"><i class="fas fa-mouse"></i><b> Your Mouse -</b> If your answer is Yes, tick the box.  Otherwise leave blank</div>
-             <!-- mouse seperate from keyboard   -->
-            <div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="mouse_q1">
-                            {% if check.mouse_q1%}
-                                <input type="checkbox" id="mouse_q1" name="mouse_q1" checked>
-                            {% else %}
-                                <input type="checkbox" id="mouse_q1" name="mouse_q1">
-                            {% endif %}
-                            <span class="checkbox">Is the device (mouse or trackball etc.) you use separate from the keyboard and easy to use?</span>
-                        </label>
-					</div>
-				</div>
-                <!-- mouse  work smoothly   -->
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="mouse_q2">
-                            {% if check.mouse_q2%}
-                                <input type="checkbox" id="mouse_q2" name="mouse_q2" checked>
-                            {% else %}
-                                <input type="checkbox" id="mouse_q2" name="mouse_q2">
-                            {% endif %}
-                            <span class="checkbox">Does your device work smoothly and at a speed that is suitable to you?</span>
-                        </label>
-					</div>
-				</div>
-            </div>
-            <div class="card-panel blue lighten-4"><i class="far fa-building"></i><b> Your Environment -</b> If your answer is Yes, tick the box.  Otherwise leave blank</div>
-             <!-- room at your workstation   -->
-            <div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="environment_q1">
-                            {% if check.environment_q1%}
-                                <input type="checkbox" id="environment_q1" name="environment_q1" checked>
-                            {% else %}
-                                <input type="checkbox" id="environment_q1" name="environment_q1">
-                            {% endif %}
-                            <span class="checkbox">Is there enough room at your workstation for you to change position and vary movement?</span>
-                        </label>
-					</div>
-				</div>
-                <!-- lighting level at workstation   -->
-				<div class="input-field col s12">
-					<div class="switch">
-						<label for="environment_q2">
-                            {% if check.environment_q2%}
-                                <input type="checkbox" id="environment_q2" name="environment_q2" checked>
-                            {% else %}
-                                <input type="checkbox" id="environment_q2" name="environment_q2">
-                            {% endif %}
-                            <span class="checkbox">Is the lighting level around your workstation comfortable to work in?</span>
-                        </label>
-					</div>
-				</div>
-			</div>
-            <!-- Image Workstation--> 
-            <div class="input-field col s12"> 
-                <i class="far fa-images prefix"></i> 
-                <input 
-                    id="workstation_image" 
-                    name="workstation_image" 
-                    value="{{ check.image}}" 
-                    placeholder="Provide URL for your Workstation image" 
-                    type="text" 
-                    class="validate" /> 
-                <label for="workstation_image">Workstation Image URL (optional) 
-                <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="You can upload your image to a free image hosting website (e.g. Flickr) and paste direct link here"></i> 
-                </label> 
-            </div> 
-            <!-- buttons -->
-            <div class="row">
-                <div class="col s12 center-align">
-                     <!-- cancel button -->
-                    <a href="{{ url_for('get_checks') }}" class="btn-small red text-shadow">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
-                    <!-- submit button -->
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Assessment <i class="fas fa-edit right"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Hidden Created Date Time   -->
-             <div class="row">
-                <div class="input-field col s12">
-                    <input id="created_date" name="created_date" 
-                    hidden value="{{ check.created_date }}" type="text" class="validate">
-                </div>
-            </div>
-            <!-- Disabled Created Date Time for Display-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="{{ check.dsp_created_date }}"  name="dsp_created_date" id="disabled" type="text" class="validate">
-                    <label for="disabled">Date & Time Created</label>
-                </div>
-           </div>
-            <!-- Disabled last updated Date Time for Display-->
-          <div class="row">
+<div class="row card-panel grey lighten-5">
+
+    <form class="col s12" method="POST" action="{{ url_for('edit_check', check_id=check._id) }}">
+        <!-- manager dropdown -->
+        <div class="row">
             <div class="input-field col s12">
-                <input disabled value="{{ check.updated_date }}"  name="updated_date" id="disabled" type="text" class="validate">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="manager_name" name="manager_name" class="validate" required>
+                    <option value="" disabled>Select your Manager</option>
+                    {% for manager in managers %}
+                    {% if manager.manager_name == check.manager_name %}
+                    <option value="{{ manager.manager_name }}" selected>{{ manager.manager_name }}</option>
+                    {% else %}
+                    <option value="{{ manager.manager_name }}">{{ manager.manager_name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="manager_name">Select your Manager</label>
+            </div>
+        </div>
+        <!-- department dropdown -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="dept_name" name="dept_name" class="validate" required>
+                    <option value="" disabled>Select your Department</option>
+                    {% for dept in departments %}
+                    {% if dept.dept_name == check.dept_name %}
+                    <option value="{{ dept.dept_name }}" selected>{{ dept.dept_name }}</option>
+                    {% else %}
+                    <option value="{{ dept.dept_name }}">{{ dept.dept_name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="dept_name">Select your Department</label>
+            </div>
+        </div>
+        <!-- Max Total Time -->
+        <div class="row">
+            <p class="range-field">
+                <label for="max_total_time">Select maximum total hours spent on computer per working day:</label>
+                <input type="range" id="max_total_time" name="max_total_time" min="1" max="24" value="{{ check.max_total_time }}" />
+            </p>
+        </div>
+        <!-- Max Continuous Time -->
+        <div class="row">
+            <p class="range-field">
+                <label for="max_continuous_time">Select maximum continuous hours spent on computer before you change activity:</label>
+                <input type="range" id="max_continuous_time" name="max_continuous_time" min="1" max="24" value="{{ check.max_continuous_time }}" />
+            </p>
+        </div>
+        <div class="card-panel blue lighten-4"><i class="fas fa-desktop"></i><b> Screen -</b> If your answer is Yes, tick the box. Otherwise leave blank
+        </div>
+        <!-- screen image stability -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="screen_q1">
+                        {% if check.screen_q1%}
+                        <input type="checkbox" id="screen_q1" name="screen_q1" checked>
+                        {% else %}
+                        <input type="checkbox" id="screen_q1" name="screen_q1">
+                        {% endif %}
+                        <span class="checkbox">Is the screen image stable and flicker free?</span>
+                    </label>
+                </div>
+            </div>
+            <!-- screen glare or reflections -->
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="screen_q2">
+                        {% if check.screen_q2%}
+                        <input type="checkbox" id="screen_q2" name="screen_q2" checked>
+                        {% else %}
+                        <input type="checkbox" id="screen_q2" name="screen_q2">
+                        {% endif %}
+                        <span class="checkbox">Do you have any problems with glare or reflections on your screen which you are unable to resolve?</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="card-panel blue lighten-4"><i class="fas fa-chair"></i> <b> Your Chair -</b> If your answer is Yes, tick the box. Otherwise leave blank
+        </div>
+        <!-- height of your seat -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="chair_q1">
+                        {% if check.chair_q1%}
+                        <input type="checkbox" id="chair_q1" name="chair_q1" checked>
+                        {% else %}
+                        <input type="checkbox" id="chair_q1" name="chair_q1">
+                        {% endif %}
+                        <span class="checkbox">Can you adjust the height of your seat to a comfortable position?</span>
+                    </label>
+                </div>
+            </div>
+            <!-- backrest of your chair  -->
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="chair_q2">
+                        {% if check.chair_q2%}
+                        <input type="checkbox" id="chair_q2" name="chair_q2" checked>
+                        {% else %}
+                        <input type="checkbox" id="chair_q2" name="chair_q2">
+                        {% endif %}
+                        <span class="checkbox">Is the backrest of your chair adjustable to support your back correctly and comfortably?</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="card-panel blue lighten-4"><i class="fas fa-keyboard"></i><b> Your Keyboard -</b> If your answer is Yes, tick the box. Otherwise leave blank
+        </div>
+        <!-- comfortable keying position   -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="keyboard_q1">
+                        {% if check.keyboard_q1%}
+                        <input type="checkbox" id="keyboard_q1" name="keyboard_q1" checked>
+                        {% else %}
+                        <input type="checkbox" id="keyboard_q1" name="keyboard_q1">
+                        {% endif %}
+                        <span class="checkbox">Can you find a comfortable keying position?</span>
+                    </label>
+                </div>
+            </div>
+            <!-- enough space to rest your hands    -->
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="keyboard_q2">
+                        {% if check.keyboard_q2%}
+                        <input type="checkbox" id="keyboard_q2" name="keyboard_q2" checked>
+                        {% else %}
+                        <input type="checkbox" id="keyboard_q2" name="keyboard_q2">
+                        {% endif %}
+                        <span class="checkbox">Is there enough space to rest your hands in front of the keyboard?</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="card-panel blue lighten-4"><i class="fas fa-mouse"></i><b> Your Mouse -</b> If your answer is Yes, tick the box. Otherwise leave blank</div>
+        <!-- mouse seperate from keyboard   -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="mouse_q1">
+                        {% if check.mouse_q1%}
+                        <input type="checkbox" id="mouse_q1" name="mouse_q1" checked>
+                        {% else %}
+                        <input type="checkbox" id="mouse_q1" name="mouse_q1">
+                        {% endif %}
+                        <span class="checkbox">Is the device (mouse or trackball etc.) you use separate from the keyboard and easy to use?</span>
+                    </label>
+                </div>
+            </div>
+            <!-- mouse  work smoothly   -->
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="mouse_q2">
+                        {% if check.mouse_q2%}
+                        <input type="checkbox" id="mouse_q2" name="mouse_q2" checked>
+                        {% else %}
+                        <input type="checkbox" id="mouse_q2" name="mouse_q2">
+                        {% endif %}
+                        <span class="checkbox">Does your device work smoothly and at a speed that is suitable to you?</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="card-panel blue lighten-4"><i class="far fa-building"></i><b> Your Environment -</b> If your answer is Yes, tick the box. Otherwise leave blank</div>
+        <!-- room at your workstation   -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="environment_q1">
+                        {% if check.environment_q1%}
+                        <input type="checkbox" id="environment_q1" name="environment_q1" checked>
+                        {% else %}
+                        <input type="checkbox" id="environment_q1" name="environment_q1">
+                        {% endif %}
+                        <span class="checkbox">Is there enough room at your workstation for you to change position and vary movement?</span>
+                    </label>
+                </div>
+            </div>
+            <!-- lighting level at workstation   -->
+            <div class="input-field col s12">
+                <div class="switch">
+                    <label for="environment_q2">
+                        {% if check.environment_q2%}
+                        <input type="checkbox" id="environment_q2" name="environment_q2" checked>
+                        {% else %}
+                        <input type="checkbox" id="environment_q2" name="environment_q2">
+                        {% endif %}
+                        <span class="checkbox">Is the lighting level around your workstation comfortable to work in?</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Image Workstation-->
+        <div class="input-field col s12">
+            <i class="far fa-images prefix"></i>
+            <input id="workstation_image" name="workstation_image" value="{{ check.image}}" placeholder="Provide URL for your Workstation image" type="text" class="validate" />
+            <label for="workstation_image">Workstation Image URL (optional)
+                <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="You can upload your image to a free image hosting website (e.g. Flickr) and paste direct link here"></i>
+            </label>
+        </div>
+        <!-- buttons -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <!-- cancel button -->
+                <a href="{{ url_for('get_checks') }}" class="btn-small red text-shadow">
+                    Cancel <i class="fas fa-times-circle right"></i>
+                </a>
+                <!-- submit button -->
+                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    Edit Assessment <i class="fas fa-edit right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Hidden Created Date Time   -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="created_date" name="created_date" hidden value="{{ check.created_date }}" type="text" class="validate">
+            </div>
+        </div>
+        <!-- Disabled Created Date Time for Display-->
+        <div class="row">
+            <div class="input-field col s12">
+                <input disabled value="{{ check.dsp_created_date }}" name="dsp_created_date" id="disabled" type="text" class="validate">
+                <label for="disabled">Date & Time Created</label>
+            </div>
+        </div>
+        <!-- Disabled last updated Date Time for Display-->
+        <div class="row">
+            <div class="input-field col s12">
+                <input disabled value="{{ check.updated_date }}" name="updated_date" id="disabled" type="text" class="validate">
                 <label for="disabled">Last Date & Time Updated</label>
             </div>
-          </div>
-          
-           
-        </form>
-    </div>
+        </div>
+
+
+    </form>
+</div>
 
 {% endblock %}

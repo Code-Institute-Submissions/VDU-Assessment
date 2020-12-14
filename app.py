@@ -42,7 +42,7 @@ def get_manager_checks():
 def search():
     query = request.form.get("query")
     checks = list(mongo.db.checks.find({"$text": {"$search": query}}))
-    return render_template("checks.html", checks=checks)
+    return render_template("manager_checks.html", checks=checks)
 
 '''
 The Register function calls RegistrationForm class from forms.py. 

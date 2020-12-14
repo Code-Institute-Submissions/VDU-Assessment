@@ -1,126 +1,124 @@
 {% extends "base.html" %}
 {% block content %}
 
- <!-- Main section, hero image --> 
- <div class="container home-container container-hero"> 
-   <div class="hero-image">
-     <div class="row"> 
-       <div class="col s12"> 
-         <div class="text-block-home center-align"> 
-           <h2>Health & Safety VDU Assessment</h2> 
-           <p class="home-paragraph"> 
-             To access computer users VDU (Visual Display Unit) in accordance with
-		     Health and Safety legislation and HSA guidelines. 
-           </p> 
-            {% if "user" in session %}
-                <a href="{{ url_for('get_checks') }}" 
-                class="waves-effect waves-light btn uppercase z-depth-3 btn-home" ><i class="fas fa-eye"></i> 
-                View Assessments
-                </a>
-                <a href="{{ url_for('add_check') }}" 
-                class="waves-effect waves-light btn uppercase z-depth-3 btn-home" ><i class="fas fa-plus-square"></i> 
-                Create VDU Assessment
-                </a>
-            {% endif %}
- 	   </div> 
-       </div> 
-     </div> 
-   </div> 
- </div>
- 
- <div class="row container-vduinfo"> 
-   <h4 class="sub-heading center-align"> 
-     Working Safely Guidance
-  </h4> 
-   <div class="divider"></div>  
+<!-- Main section, hero image -->
+<div class="container home-container container-hero">
+    <div class="hero-image">
+        <div class="row">
+            <div class="col s12">
+                <div class="text-block-home center-align">
+                    <h2>Health & Safety VDU Assessment</h2>
+                    <p class="home-paragraph">
+                        To access computer users VDU (Visual Display Unit) in accordance with
+                        Health and Safety legislation and HSA guidelines.
+                    </p>
+                    {% if "user" in session %}
+                    <a href="{{ url_for('get_checks') }}" class="waves-effect waves-light btn uppercase z-depth-3 btn-home"><i class="fas fa-eye"></i>
+                        View Assessments
+                    </a>
+                    <a href="{{ url_for('add_check') }}" class="waves-effect waves-light btn uppercase z-depth-3 btn-home"><i class="fas fa-plus-square"></i>
+                        Create VDU Assessment
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
- 
-    <div class="row">
-            <div class="col m4 s9">
-            <div class="card hoverable">
-                <div class="card-image">
+
+<div class="row container-vduinfo">
+    <h4 class="sub-heading center-align">
+        Working Safely Guidance
+    </h4>
+    <div class="divider"></div>
+</div>
+
+<div class="row">
+    <div class="col m4 s9">
+        <div class="card hoverable">
+            <div class="card-image">
                 <img src="{{ url_for('static', filename='images/card2.jpg') }}">
                 <span class="card-title">Posture</span>
-                </div>
-                <div class="card-content">
+            </div>
+            <div class="card-content">
                 <p>Basic requirements for the office chair, to enable you to adopt a correct and comfortable posture.</p>
-                </div>
-                <div class="card-action">
-                    <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal-posture">Read More</a>
-                </div>
             </div>
+            <div class="card-action">
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal-posture">Read More</a>
             </div>
-            <div class="col m4 s9">
-            <div class="card hoverable">
-                <div class="card-image">
+        </div>
+    </div>
+    <div class="col m4 s9">
+        <div class="card hoverable">
+            <div class="card-image">
                 <img src="{{ url_for('static', filename='images/card1.jpg') }}">
                 <span class="card-title">Remote Work</span>
-                </div>
-                <div class="card-content">
+            </div>
+            <div class="card-content">
                 <p>Tips to ensure you're successful, getting your work done and maintaining mental well-being</p>
-                </div>
-                <div class="card-action">
+            </div>
+            <div class="card-action">
                 <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal-wfh">Read More</a>
-                </div>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal-wfh">Read More</a>
             </div>
-            </div>
-            <div class="col m4 s9">
-            <div class="card hoverable">
-                <div class="card-image">
+        </div>
+    </div>
+    <div class="col m4 s9">
+        <div class="card hoverable">
+            <div class="card-image">
                 <img src="{{ url_for('static', filename='images/card4.jpg') }}">
                 <span class="card-title">Sitting/Standing</span>
-                </div>
-                <div class="card-content">
+            </div>
+            <div class="card-content">
                 <p>5 reasons why it is good for you to alternate between sitting/standing while you work</p>
-                </div>
-                <div class="card-action">
-                    <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal-sit-stand">Read More</a>
-                </div>
-                </div>
             </div>
+            <div class="card-action">
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal-sit-stand">Read More</a>
             </div>
-    </div>
-    <!-- Modal Structure for Posture-->
-    <div id="modal-posture" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>Posture</h4>
-             <p>1.	Each time you sit down to work, always check your chair and workstation are adjusted for 
-                your comfort.<br>
-                2.	Your chair should have an adjustable backrest and adjustable height.<br>
-                3.	Sit well back in your chair.<br>
-                4.	Have your back in a relaxed, upright position, with the backrest of your chair adjusted to provide good lumbar support.<br>
-                5.	Move your chair close enough to your desk so that you can reach the keyboard comfortably.<br>
-                6.	You should always have enough room in front of your keyboard to rest your wrists and hands during pauses in work.<br> 
-                7.	When keying, keep arms loosely at your side (don't over-reach), your forearms horizontal, and reduce the angle of your wrists to a minimum.<br>
-                8.	Keep your legs uncrossed with both feet firmly on the floor.<br>
-                9.	If your feet cannot rest comfortably on the floor, use a footrest.<br>
-                10.	To ensure that your feet and legs are free to move there should never be any obstacles under your desk.</p>
-            </div>
-            <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
         </div>
     </div>
-      <!-- Modal Structure for Work from home-->
-    <div id="modal-wfh" class="modal modal-fixed-footer">
-        <div class="modal-content">
+</div>
+
+<!-- Modal Structure for Posture-->
+<div id="modal-posture" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Posture</h4>
+        <p>1. Each time you sit down to work, always check your chair and workstation are adjusted for
+            your comfort.<br>
+            2. Your chair should have an adjustable backrest and adjustable height.<br>
+            3. Sit well back in your chair.<br>
+            4. Have your back in a relaxed, upright position, with the backrest of your chair adjusted to provide good lumbar support.<br>
+            5. Move your chair close enough to your desk so that you can reach the keyboard comfortably.<br>
+            6. You should always have enough room in front of your keyboard to rest your wrists and hands during pauses in work.<br>
+            7. When keying, keep arms loosely at your side (don't over-reach), your forearms horizontal, and reduce the angle of your wrists to a minimum.<br>
+            8. Keep your legs uncrossed with both feet firmly on the floor.<br>
+            9. If your feet cannot rest comfortably on the floor, use a footrest.<br>
+            10. To ensure that your feet and legs are free to move there should never be any obstacles under your desk.</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
+    </div>
+</div>
+<!-- Modal Structure for Work from home-->
+<div id="modal-wfh" class="modal modal-fixed-footer">
+    <div class="modal-content">
         <h4>Working from Home</h4>
         <p>1. Get Dressed<br>
-        2. Designate a Workspace or Home Office<br>
-        3. Keep Clearly Defined Working Hours<br>
-        4. Build Transitions Into (and Out of) Work<br>
-        5. Don’t Get Too Sucked in by the News—or Anything Else<br>
-        6. Communicate, Communicate, Communicate</p>
-        </div>
-        <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
-        </div>
+            2. Designate a Workspace or Home Office<br>
+            3. Keep Clearly Defined Working Hours<br>
+            4. Build Transitions Into (and Out of) Work<br>
+            5. Don’t Get Too Sucked in by the News—or Anything Else<br>
+            6. Communicate, Communicate, Communicate</p>
     </div>
-       <!-- Modal Structure for Sitting / Standing-->
-    <div id="modal-sit-stand" class="modal modal-fixed-footer">
-        <div class="modal-content">
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
+    </div>
+</div>
+<!-- Modal Structure for Sitting / Standing-->
+<div id="modal-sit-stand" class="modal modal-fixed-footer">
+    <div class="modal-content">
         <h4>Sitting / Standing</h4>
         <p><u>What Is a Standing Desk?</u><br>
             <br>
@@ -140,15 +138,15 @@
             <br>
             <u>4. Standing Desks Appear to Reduce Back Pain</u>
             <br>
-            Back pain is one of the most common complaints of office workers who sit all day. To determine if standing desks could improve this, several studies have been done on employees with long-term back pain.  Participants have reported up to a 32% improvement in lower back pain after several weeks of using standing desks<br>
+            Back pain is one of the most common complaints of office workers who sit all day. To determine if standing desks could improve this, several studies have been done on employees with long-term back pain. Participants have reported up to a 32% improvement in lower back pain after several weeks of using standing desks<br>
             <br>
             <u>5. Standing Desks Help Improve Mood and Energy Levels</u>
             <br>
-            Standing desks appear to have a positive influence on overall well-being.  In one 7-week study, participants using standing desks reported less stress and fatigue than those who remained seated the entire work day.  Additionally, 87% of those using standing desks reported increased vigor and energy throughout the day.<br>
-            </p>
-        </div>
-        <div class="modal-footer">
+            Standing desks appear to have a positive influence on overall well-being. In one 7-week study, participants using standing desks reported less stress and fatigue than those who remained seated the entire work day. Additionally, 87% of those using standing desks reported increased vigor and energy throughout the day.<br>
+        </p>
+    </div>
+    <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok</a>
-        </div>
-    </div>     
- {% endblock %}
+    </div>
+</div>
+{% endblock %}

@@ -1,267 +1,256 @@
 {% extends "base.html" %}
 {% block content %}
-        <h3 class="light-blue-text text-darken-4 center-align">Your completed Assessments</h3>
-        <ul class="collapsible">
-                {% for check in checks %}
-                    {% if session.user == check.created_by %}
-                    <li>
-                        ! --This layout will be hidden on small devices only--
-                        <div class="collapsible-header white-text light-blue darken-4 text-shadow hide-on-small-only">
-                                <div class="col s3">
-                                    <i class="fas fa-caret-down"></i>
-                                    <!-- Modal Trigger -->
-                                    <a href="#modal_assessment" class="btn-small red lighten-1 modal-trigger">Delete</a>
-                                    <!-- Modal Structure -->
-                                        <div id="modal_assessment" class="modal">
-                                            <div class="modal-content blue">
-                                                <h4>Delete Assessment</h4>
-                                                <p>Are you sure you want to delete this Assessment?</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a href="{{ url_for('delete_check', check_id=check._id) }}" class="modal-close btn-small blue text-shadow">
-                                                Yes <i class="fas fa-check-circle right"></i></a>
-                                                <a href="{{ url_for('get_checks') }}" class="btn-small red text-shadow">
-                                                Cancel <i class="fas fa-times-circle right"></i></a>
-                                            </div>
-                                        </div>   
-                                    <a href="{{ url_for('edit_check', check_id=check._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                                </div>
-                                <div class="col s9">     
-                                        <strong>Created by {{ check.created_by }} on the {{ check.created_date }}</strong>            
-                                </div> 
-                        </div>
-                          ! --This layout will be visible on small devices only, pushes text below the buttons to improve layout--
-                        <div class="collapsible-header white-text light-blue darken-4 text-shadow hide-on-med-and-up">
-                                    <div class="col s12">
-                                        <i class="fas fa-caret-down"></i>
-                                        <a href="{{ url_for('delete_check', check_id=check._id) }}" class="btn-small green accent-4">Delete</a>
-                                        <a href="{{ url_for('edit_check', check_id=check._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                            
-                                        <div class="col s12">     
-                                            <strong>Created by {{ check.created_by }} on the {{ check.created_date }}</strong>            
-                                        </div>
-                                </div>  
-                        </div>
-                            <div class="collapsible-body">
-                                <h5 class="text">Assessment Report</h5>
-                             <table class="striped">
-                                <tbody>
-                                    <tr>
-                                        <td><b>Manager:</b></td>
-                                        <td>{{check.manager_name}}</td>
-                                        <td><b>Department:</b></td>        
-                                        <td>{{check.dept_name}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>            
-                            <table class="highlight">
-                                <tbody>
-                                    <tr>
-                                        <td><b>Your maximum total hours spent on computer per working day:</b></td>
-                                        <td></td>
-                                        <td>{{check.max_total_time}}</td>       
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Your maximum continuous hours spent on computer before you change activity:</b></td>        
-                                        <td></td>        
-                                        <td>{{check.max_continuous_time}}</td>
-                                        <td></td>
-                                    </tr>  
-                                 </tbody>
-                            </table>            
-                            <table class="striped light-blue-text">
-                                <tbody>
-                                    <tr>
-                                        <td><h6><b>Screen Results</b></h6></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>            
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {% if check.screen_q1 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Screen image stability</td>
-                                        <td>
-                                            {% if check.screen_q2 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Glare and reflection on screen</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="striped light-blue-text">
-                                <tbody>
-                                    <tr>
-                                        <td><h6><b>Chair Results</b></h6></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>            
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {% if check.chair_q1 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Seat height adjustability</td>
-                                        <td>
-                                            {% if check.chair_q2 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Seat backrest adjustability</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="striped light-blue-text">
-                                <tbody>
-                                    <tr>
-                                        <td><h6><b>Keyboard Results</b></h6></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {% if check.keyboard_q1 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Able to find comfortable keying position</td>
-                                        <td>
-                                            {% if check.keyboard_q2 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Suitable lighting level around workstation and comfortable to work in</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="striped light-blue-text">
-                                <tbody>
-                                    <tr>
-                                        <td><h6><b>Mouse Results</b></h6></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {% if check.mouse_q1 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Pointing device separate & easy to use</td>
-                                        <td>
-                                            {% if check.mouse_q2 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Pointing device smooth & suitable speed</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                        <table class="striped light-blue-text">
-                                <tbody>
-                                    <tr>
-                                        <td><h6><b>Environment Results</b></h6></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                        </table>
-                        <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {% if check.environment_q1 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Enough room to change position and vary movement</td>
-                                        <td>
-                                            {% if check.environment_q2 %}
-                                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2"
-                                                data-position="right"></i>
-                                                {% else %}
-                                                <i class="fas fa-thumbs-down red-text text-lighten-2"
-                                                data-position="right"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td>Pointing device smooth & suitable speed</td>
-                                </tr>
-                            </tbody>
-                        </table>
+<h3 class="light-blue-text text-darken-4 center-align">Your completed Assessments</h3>
+<ul class="collapsible">
+    {% for check in checks %}
+    {% if session.user == check.created_by %}
+    <li>
+        ! --This layout will be hidden on small devices only--
+        <div class="collapsible-header white-text light-blue darken-4 text-shadow hide-on-small-only">
+            <div class="col s3">
+                <i class="fas fa-caret-down"></i>
+                <!-- Modal Trigger -->
+                <a href="#modal_assessment" class="btn-small red lighten-1 modal-trigger">Delete</a>
+                <!-- Modal Structure -->
+                <div id="modal_assessment" class="modal">
+                    <div class="modal-content blue">
+                        <h4>Delete Assessment</h4>
+                        <p>Are you sure you want to delete this Assessment?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for('delete_check', check_id=check._id) }}" class="modal-close btn-small blue text-shadow">
+                            Yes <i class="fas fa-check-circle right"></i></a>
+                        <a href="{{ url_for('get_checks') }}" class="btn-small red text-shadow">
+                            Cancel <i class="fas fa-times-circle right"></i></a>
+                    </div>
+                </div>
+                <a href="{{ url_for('edit_check', check_id=check._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+            </div>
+            <div class="col s9">
+                <strong>Created by {{ check.created_by }} on the {{ check.created_date }}</strong>
+            </div>
+        </div>
+        ! --This layout will be visible on small devices only, pushes text below the buttons to improve layout--
+        <div class="collapsible-header white-text light-blue darken-4 text-shadow hide-on-med-and-up">
+            <div class="col s12">
+                <i class="fas fa-caret-down"></i>
+                <a href="{{ url_for('delete_check', check_id=check._id) }}" class="btn-small green accent-4">Delete</a>
+                <a href="{{ url_for('edit_check', check_id=check._id) }}" class="btn-small light-blue lighten-1">Edit</a>
 
-                                <div class="row">
-                                <img src="{{ check.image }}"  class="responsive-img" 
-                                    alt="workstation Image"/> 
-                                </div>
-                              
-                            
-                           
-                    </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-             
+                <div class="col s12">
+                    <strong>Created by {{ check.created_by }} on the {{ check.created_date }}</strong>
+                </div>
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <h5 class="text">Assessment Report</h5>
+            <table class="striped">
+                <tbody>
+                    <tr>
+                        <td><b>Manager:</b></td>
+                        <td>{{check.manager_name}}</td>
+                        <td><b>Department:</b></td>
+                        <td>{{check.dept_name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="highlight">
+                <tbody>
+                    <tr>
+                        <td><b>Your maximum total hours spent on computer per working day:</b></td>
+                        <td></td>
+                        <td>{{check.max_total_time}}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><b>Your maximum continuous hours spent on computer before you change activity:</b></td>
+                        <td></td>
+                        <td>{{check.max_continuous_time}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="striped light-blue-text">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h6><b>Screen Results</b></h6>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            {% if check.screen_q1 %}
+                            <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                            {% else %}
+                            <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                            {% endif %}
+                        </td>
+                        <td>Screen image stability</td>
+                        <td>
+                            {% if check.screen_q2 %}
+                            <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                            {% else %}
+                            <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                            {% endif %}
+                        </td>
+                        <td>Glare and reflection on screen</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="striped light-blue-text">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h6><b>Chair Results</b></h6>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            {% if check.chair_q1 %}
+                            <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                            {% else %}
+                            <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                            {% endif %}
+                        </td>
+                        <td>Seat height adjustability</td>
+                        <td>
+                            {% if check.chair_q2 %}
+                            <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                            {% else %}
+                            <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                            {% endif %}
+                        </td>
+                        <td>Seat backrest adjustability</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="striped light-blue-text">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h6><b>Keyboard Results</b></h6>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            {% if check.keyboard_q1 %}
+                            <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                            {% else %}
+                            <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                            {% endif %}
+                        </td>
+                        <td>Able to find comfortable keying position</td>
+                        <td>
+                            {% if check.keyboard_q2 %}
+                            <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                            {% else %}
+                            <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                            {% endif %}
+                        </td>
+                        <td>Suitable lighting level around workstation and comfortable to work in</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="striped light-blue-text">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h6><b>Mouse Results</b></h6>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            {% if check.mouse_q1 %}
+                            <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                            {% else %}
+                            <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                            {% endif %}
+                        </td>
+                        <td>Pointing device separate & easy to use</td>
+                        <td>
+                            {% if check.mouse_q2 %}
+                            <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                            {% else %}
+                            <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                            {% endif %}
+                        </td>
+                        <td>Pointing device smooth & suitable speed</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <table class="striped light-blue-text">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h6><b>Environment Results</b></h6>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {% if check.environment_q1 %}
+                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                                {% else %}
+                                <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                                {% endif %}
+                            </td>
+                            <td>Enough room to change position and vary movement</td>
+                            <td>
+                                {% if check.environment_q2 %}
+                                <i class="fas fa-thumbs-up light-blue-text text-lighten-2" data-position="right"></i>
+                                {% else %}
+                                <i class="fas fa-thumbs-down red-text text-lighten-2" data-position="right"></i>
+                                {% endif %}
+                            </td>
+                            <td>Pointing device smooth & suitable speed</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <img src="{{ check.image }}" class="responsive-img" alt="workstation Image" />
+                </div>
+
+
+
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
 {% endblock %}
