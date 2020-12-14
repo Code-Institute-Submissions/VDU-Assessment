@@ -7,8 +7,8 @@ To create an online application that allows user to complete & submit their VDU 
 <h2>Table of Contents</h2>
 
 - [UX](#heading)
-  * [Sub-heading](#sub-heading)
-    + [Sub-sub-heading](#sub-sub-heading)
+  * [Goals](#sub-heading)
+    + [Visitor Goals](#sub-sub-heading)
 - [Heading](#heading-1)
   * [Sub-heading](#sub-heading-1)
     + [Sub-sub-heading](#sub-sub-heading-1)
@@ -17,15 +17,15 @@ To create an online application that allows user to complete & submit their VDU 
     + [Sub-sub-heading](#sub-sub-heading-2)
 
 
-# Heading levels
+# UX
 
 > This is a fixture to test heading levels
 
 <!-- toc -->
 
-## Heading
+## Goals
 
-This is an h1 heading
+
 
 ### Sub-heading
 
