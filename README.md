@@ -115,8 +115,20 @@ To create an online application that allows user to complete & submit their VDU 
      ### Working Safely Guidance Cards
     Each Working Safely Guidance card on the home page gives the user brief and useful information about each of the listings displayed. The 'read more' button brings the User       to a Modal Form with more detail on the topic
 
--   ## Register Page
-    The register page allows user's to create a new account. The user is asked to fill the fields "username","firstname","password" and "confirm password". When adding a             username, the code compares it against existing usernames to ensure that it is unique. A username must be 3-15 characters long. The password field must be 6-15 characters       long. The "confirm password" field must match the original password. All passwords are hashed for security purposes. If user's input does not meet requirements, flash           messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is       also a link to the login page for existing users at the bottom of the form.
+-   ## Registration Page
+     - The register page allows user's to create a new account. The user is asked to fill the fields "username","firstname","password" and "confirm password". When adding a             username, the code compares it against existing usernames to ensure that it is unique. A username must be 3-15 characters long. 
+     - The password field must be 6-15 characters long. The "confirm password" field must match the original password. All passwords are hashed for security purposes. If user's         input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and           informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
+    
+-   ## Login Page
+     - The login page contains the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed password          match the ones in the database, a user is redirected to the home page and informed that the login was successful. Otherwise, flash messages will be displayed about              incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
+
+-   ## Logout
+
+    Clicking on the "logout" button by the logged in users ends their session and redirects to the Login page.
+
+-   ## View Assessments
+
+    Clicking on the "View Assessments" button on the Homepage brings the User to page where they can view all their completed assessments
 ## Features
 
 -   Responsive on all device sizes
