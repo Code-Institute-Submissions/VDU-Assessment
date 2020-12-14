@@ -35,26 +35,27 @@ To create an online application that allows user to complete & submit their VDU 
      
 -   # User Stories
   
-      -   ## Visitor Stories
+      - ## Visitor Stories
   
-  As a visitor to VDU Manager I expect:
-1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.
+      As a visitor to VDU Manager I expect:
+      
+    1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.
 
-2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
+    2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
 
--   ## Business Stories
-  
-  As a Business using VDU Manager I expect:
-  
-1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.
+    - ## Business Stories
 
-2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
+      As a Business using VDU Manager I expect:
+
+    1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.
+
+    2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
 
 
 -   # Design Choices
   
       -   ## Colour Scheme
-        - There is alot of whitespace in the application, the whitespace draws attention and attracts the user to the eyecatching buttons
+        - There is alot of whitespace in the application, the whitespace draws attention and attracts the user to the eyecatching buttons and good quality images
     
       -   ## Imagery 
         -   I selected images that are relevant to the content of the application.   The icon in the navbar has an orange seat, and the buttons on the home page are orange.                 This small detail improves the asthetics of the application
@@ -64,11 +65,53 @@ To create an online application that allows user to complete & submit their VDU 
         -   Icons break up the information visually, creating space for the user and not overwhelming them with too much info at once.
         -   Each icon was chosen for it's clarity in quickly explaining the relevant meaning with an image.
 
-*   ### Skeleton.
+
+-   # Wireframes
+    
+    These wireframes were created using Balsamiq during the Scope Plane part of the design and planning process for this project.
 
     -   Index Page Wireframe - [View](Business-Travel-Guide_Lgr&Med_Devices.pdf)
 
     -   Mobile / small device Wireframe - [View](Business-Travel-Guide_SM_Devices.pdf)
+    
+# Features
+
+-   # Navbar
+
+    The navigation bar features the VDU Assessment Manager logo in the top left corner.
+
+    For visitors to the site who are not logged in, 'Working Safely Guidance' links are available for them to use on the Homepage.
+
+       - Home
+Activities
+Create Account
+Log in
+Contact
+For users who are logged in, the list items are as follows:
+
+Home
+Activities
+Contact
+My account (this option is a dropdown menu)
+My listings
+Add new
+Settings
+Log out
+Python determines if the user is logged in or not by checking if 'user' in session and passes this data to Jinja to display the correct navbar for the user.
+
+The navbar is collapsed into a burger icon on small screens. On the activities page, where the activities filter takes up some of the width of the screen, the navbar is collapsed on medium screens as well, so that menu items did not start overlapping content.
+
+The practical design choice was made not to fix the navbar to the top of the page as the user scrolls. This was because I wanted as much screen height as possible to display the website information on and I did not want to take up precious space with a fixed navbar. To get around the problem of having to scroll up a long way to reach the navigation, I added a scroll to top button and essential links in the footer as well.
+
+Footer
+
+The footer features:
+Contact information for Family hub, including the address which is linked to google maps, an email address and Chamber of Commerce number (currently a fake number, but will be registered before launching this as a real site.)
+A profile photo of the website creator as well as a brief description of the purpose and mission for the site.
+A list of useful links users might need when viewing the footer.
+Copyright information.
+Links to social media locations (Which will eventually be linked up to the Family Hub social media platforms, once they exist).
+
 
 
 ## Features
