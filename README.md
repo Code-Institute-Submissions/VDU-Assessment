@@ -6,9 +6,9 @@ To create an online application that allows user to complete & submit their VDU 
 
 # User Experience (UX)
 
--   # Goals
+-   ## Goals
 
-    -   ## Visitor Goals
+    -   ### Visitor Goals
 
         The central target audience for VDU Assessment Manager are:
         - All Employees
@@ -35,7 +35,7 @@ To create an online application that allows user to complete & submit their VDU 
      
 -   ## User Stories
   
-      - ## Visitor Stories
+      - ### Visitor Stories
   
       As a visitor to VDU Manager I expect:
       
@@ -43,7 +43,7 @@ To create an online application that allows user to complete & submit their VDU 
 
     2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
 
-    - ## Business Stories
+    - ### Business Stories
 
       As a Business using VDU Manager I expect:
 
@@ -52,25 +52,25 @@ To create an online application that allows user to complete & submit their VDU 
     2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
 
 
--   # Design Choices
+-   ## Design Choices
   
-      -   ## Colour Scheme
+      -   ### Colour Scheme
         - There is alot of whitespace in the application, the whitespace draws attention and attracts the user to 
            the eyecatching buttons and good quality images
     
-      -   ## Imagery 
+      -   ### Imagery 
          - I selected images that are relevant to the content of the application.   The icon in the navbar has an orange seat, 
             and the buttons on the home page are orange.  This small detail improves the asthetics of the application
         
       
       
-      -   ## Icons 
+      -   ### Icons 
         -  The icon in the navbar is a good fit for the theme of the application
         -  Icons break up the information visually, creating space for the user and not overwhelming them with too much info at once.
         -  Each icon was chosen for it's clarity in quickly explaining the relevant meaning with an image.
 
 
--   # Wireframes
+-   ## Wireframes
     
     These wireframes were created using Balsamiq during the Scope Plane part of the design and planning process for this project.
 
