@@ -1,65 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
-     <!-- Admin Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="{{ url_for('get_managers') }}">Manager Maintenance</a></li>
-            <li><a href="{{ url_for('get_departments') }}">Department Maintenance</a></li>
-            <li><a href="{{ url_for('get_users') }}">User Maintenance</a></li>
-        </ul>
-  <div class="row">
-            <div class="col s12 m8 offset-m2">
-            <div class="card hoverable">
-                <h3 class="center-align light-blue-text text-darken 4"><i class="fas fa-id-card-alt"></i> Your Profile</h3>
-                 <div class="card-action center-align">
-                   <a href="{{ url_for('change_password', user_id=user._id) }}" class="btn-small orange lighten-1"><i class="fas fa-unlock"></i> Change Password</a>
-                   {% if user.is_admin %}
-                            <a href="#" class="btn-small orange lighten-1 dropdown-trigger" data-target="dropdown1"><i class="fas fa-tools"></i> Maintenance</a>
-                        {% endif %}
-                    {% if user.is_manager %}
-                    <a href="{{ url_for('get_manager_checks', user_id=user._id) }}" class="btn-small orange lighten-1"><i class="fas fa-eye"></i> Your Reports Assessments</a>
-                    {% endif %}
-                </div>
-                <div class="card-content">
-                        <table class="striped">
-                                <tbody>
-                                    <tr>
-                                        <td><b>Name:</b></td>
-                                        <td>{{user.fname}}</td>
-                                        <td><b>Username:</b></td>        
-                                        <td>{{user.username}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="highlight">
-                                <tbody>
-                                    <tr>
-                                        <td><b>Are you Admin User ? </b></td>        
-                                        <td>{% if user.is_admin %}
-                                                <a>Yes</a>
-                                                {% else %}
-                                                <a>No</a>
-                                            {% endif %}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="highlight">
-                                <tbody>
-                                    <tr>
-                                        <td><b>Are you a Manager ? </b></td>        
-                                        <td>{% if user.is_manager %}
-                                                <a>Yes</a>
-                                                {% else %}
-                                                <a>No</a>
-                                            {% endif %}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                          
-                    </div>
-                <div class="card-image">
+<!-- Admin Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="{{ url_for('get_managers') }}">Manager Maintenance</a></li>
+    <li><a href="{{ url_for('get_departments') }}">Department Maintenance</a></li>
+    <li><a href="{{ url_for('get_users') }}">User Maintenance</a></li>
+</ul>
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card hoverable">
+            <h3 class="center-align light-blue-text text-darken 4"><i class="fas fa-id-card-alt"></i> Your Profile</h3>
+            <div class="card-action center-align">
+                <a href="{{ url_for('change_password', user_id=user._id) }}" class="btn-small orange lighten-1"><i class="fas fa-unlock"></i> Change Password</a>
+                {% if user.is_admin %}
+                <a href="#" class="btn-small orange lighten-1 dropdown-trigger" data-target="dropdown1"><i class="fas fa-tools"></i> Maintenance</a>
+                {% endif %}
+                {% if user.is_manager %}
+                <a href="{{ url_for('get_manager_checks', user_id=user._id) }}" class="btn-small orange lighten-1"><i class="fas fa-eye"></i> Your Reports Assessments</a>
+                {% endif %}
+            </div>
+            <div class="card-content">
+                <table class="striped">
+                    <tbody>
+                        <tr>
+                            <td><b>Name:</b></td>
+                            <td>{{user.fname}}</td>
+                            <td><b>Username:</b></td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="highlight">
+                    <tbody>
+                        <tr>
+                            <td><b>Are you Admin User ? </b></td>
+                            <td>{% if user.is_admin %}
+                                <a>Yes</a>
+                                {% else %}
+                                <a>No</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="highlight">
+                    <tbody>
+                        <tr>
+                            <td><b>Are you a Manager ? </b></td>
+                            <td>{% if user.is_manager %}
+                                <a>Yes</a>
+                                {% else %}
+                                <a>No</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="card-image">
                 <img src="{{ url_for('static', filename='images/profile.jpg') }}">
-                </div>
+            </div>
         </div>
-{% endblock %}
+    </div>
+</div>
+        {% endblock %}

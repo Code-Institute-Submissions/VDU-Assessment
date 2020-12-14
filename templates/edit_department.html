@@ -1,31 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 center-align">Edit Department</h3>
+<h3 class="light-blue-text text-darken-4 center-align">Edit Department</h3>
 
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_department', department_id=department._id) }}">
-            <!-- department name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                    <input id="dept_name" name="dept_name" minlength="2" maxlength="25"
-                        type="text" value="{{department.dept_name}}" class="validate" required>
-                    <label for="dept_name">Department</label>
-                </div>
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_department', department_id=department._id) }}">
+        <!-- department name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <input id="dept_name" name="dept_name" minlength="2" maxlength="25" type="text" value="{{department.dept_name}}" class="validate" required>
+                <label for="dept_name">Department</label>
             </div>
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                      <a href="{{ url_for('get_departments') }}" class="btn-large red text-shadow">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Department <i class="fas fa-edit right"></i>
-                    </button>
-                </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_departments') }}" class="btn-large red text-shadow">
+                    Cancel <i class="fas fa-times-circle right"></i>
+                </a>
+                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    Edit Department <i class="fas fa-edit right"></i>
+                </button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

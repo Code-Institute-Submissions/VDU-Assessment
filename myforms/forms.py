@@ -22,7 +22,7 @@ class ChangePassForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', [validators.length(min=3, max=15)])
+    username = StringField('Username', [validators.DataRequired()])
     password = PasswordField('Password', [validators.DataRequired()])
     submit = SubmitField('Login')
 
