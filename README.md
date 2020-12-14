@@ -112,9 +112,11 @@ To create an online application that allows user to complete & submit their VDU 
     ### Hero Image
     The Hero image of a professional woman standing at her PC.  The womans desk is an good example of good ergonomics.  The applicaiton title and sub-heading accoss the hero         image is important for User knowledge & Guidance.  Once User is signed in the Create & View Asssesments buttons are available
     
-     ### Working Safely Guidance cards
+     ### Working Safely Guidance Cards
     Each Working Safely Guidance card on the home page gives the user brief and useful information about each of the listings displayed. The 'read more' button brings the User       to a Modal Form with more detail on the topic
 
+-   ## Register Page
+    The register page allows user's to create a new account. The user is asked to fill the fields "username","firstname","password" and "confirm password". When adding a             username, the code compares it against existing usernames to ensure that it is unique. A username must be 3-15 characters long. The password field must be 6-15 characters       long. The "confirm password" field must match the original password. All passwords are hashed for security purposes. If user's input does not meet requirements, flash           messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and informed that account was created. There is       also a link to the login page for existing users at the bottom of the form.
 ## Features
 
 -   Responsive on all device sizes
