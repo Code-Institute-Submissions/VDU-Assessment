@@ -5,7 +5,7 @@
 To create an online application that allows user to complete & submit their VDU (Visual Display Unit) Assessment.  Assessments will be categorised per user submission for further analysis and follow up by Accessor
 
 <h2>Table of Contents</h2>
-1 [UX](#heading)
+- [UX](#heading)
   * [Goals](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
