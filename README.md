@@ -33,7 +33,7 @@ To create an online application that allows user to complete & submit their VDU 
     Business Goals are:
       - Provide a repository to gather Employee and Contractor VDU feedback
      
--   # User Stories
+-   ## User Stories
   
       - ## Visitor Stories
   
