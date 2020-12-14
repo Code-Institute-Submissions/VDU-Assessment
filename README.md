@@ -110,7 +110,10 @@ To create an online application that allows user to complete & submit their VDU 
 -   ## Home Page 
 
     ### Hero Image
-
+    The Hero image of a professional woman standing at her PC.  The womans desk is an good example of good ergonomics.  The applicaiton title and sub-heading accoss the hero         image is important for User knowledge & Guidance.  Once User is signed in the Create & View Asssesments buttons are available
+    
+     ### Working Safely Guidance cards
+    Each Working Safely Guidance card on the home page gives the user brief and useful information about each of the listings displayed. The 'read more' button brings the User       to a Modal Form with more detail on the topic
 
 ## Features
 
