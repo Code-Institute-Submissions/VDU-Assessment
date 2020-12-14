@@ -101,16 +101,11 @@ To create an online application that allows user to complete & submit their VDU 
 
     The navbar is collapsed into a burger icon on small screens. On the activities page, where the activities filter takes up some of the width of the screen, the navbar is        collapsed on medium screens as well, so that menu items did not start overlapping content.
 
-    The practical design choice was made not to fix the navbar to the top of the page as the user scrolls. This was because I wanted as much screen height as possible to display    the website information on and I did not want to take up precious space with a fixed navbar. To get around the problem of having to scroll up a long way to reach the               navigation, I added a scroll to top button and essential links in the footer as well.
+    The practical design choice was made not to fix the navbar to the top of the page as the user
 
-Footer
+-   # Footer
 
-The footer features:
-Contact information for Family hub, including the address which is linked to google maps, an email address and Chamber of Commerce number (currently a fake number, but will be registered before launching this as a real site.)
-A profile photo of the website creator as well as a brief description of the purpose and mission for the site.
-A list of useful links users might need when viewing the footer.
-Copyright information.
-Links to social media locations (Which will eventually be linked up to the Family Hub social media platforms, once they exist).
+    The footer is the same colour as the Navbar, is very simple with only Copyright text
 
 
 
