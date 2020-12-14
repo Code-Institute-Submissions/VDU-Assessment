@@ -82,28 +82,24 @@ To create an online application that allows user to complete & submit their VDU 
 
     The navigation bar features the VDU Assessment Manager logo in the top left corner.
 
-    For visitors to the site who are not logged in, 'Working Safely Guidance' links are available for them to use on the Homepage.
+    For visitors to the site who are not logged in, 'Working Safely Guidance' liks are available for them to use on the Homepage.  Also the following links in the Navbar
 
        - Home
-Activities
-Create Account
-Log in
-Contact
-For users who are logged in, the list items are as follows:
+       - Log in
+       - Register
 
-Home
-Activities
-Contact
-My account (this option is a dropdown menu)
-My listings
-Add new
-Settings
-Log out
-Python determines if the user is logged in or not by checking if 'user' in session and passes this data to Jinja to display the correct navbar for the user.
+    For users who are logged in the Create & View Assessment buttons will be available, the NavBar items are as follows:
+       
+       - Home
+       - Log Out
+       - Profile
 
-The navbar is collapsed into a burger icon on small screens. On the activities page, where the activities filter takes up some of the width of the screen, the navbar is collapsed on medium screens as well, so that menu items did not start overlapping content.
+    
+    Python determines if the user is logged in or not by checking if 'user' in session and passes this data to Jinja to display the correct navbar for the user.
 
-The practical design choice was made not to fix the navbar to the top of the page as the user scrolls. This was because I wanted as much screen height as possible to display the website information on and I did not want to take up precious space with a fixed navbar. To get around the problem of having to scroll up a long way to reach the navigation, I added a scroll to top button and essential links in the footer as well.
+    The navbar is collapsed into a burger icon on small screens. On the activities page, where the activities filter takes up some of the width of the screen, the navbar is        collapsed on medium screens as well, so that menu items did not start overlapping content.
+
+    The practical design choice was made not to fix the navbar to the top of the page as the user scrolls. This was because I wanted as much screen height as possible to display    the website information on and I did not want to take up precious space with a fixed navbar. To get around the problem of having to scroll up a long way to reach the               navigation, I added a scroll to top button and essential links in the footer as well.
 
 Footer
 
