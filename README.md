@@ -35,32 +35,34 @@ To create an online application that allows user to complete & submit their VDU 
      
 -   # User Stories
   
-      -   ## Visitor Goals
+      -   ## Visitor Stories
   
   As a visitor to VDU Manager I expect:
 1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.
 
 2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
 
+-   ## Business Stories
+  
+  As a Business using VDU Manager I expect:
+  
+1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.
+
+2. The information I am presented with to be laid out in a way that is easy for me to navigate, so that I find what I need quickly and efficiently.
 
 
-
-
-
-
-
--   ### Structure
-    -   #### Multi Image Carousal
-         -  By mousing over the Site Image the User instantly is shown the site information and location on map.  The User can then move on to the next location and new details are loaded
-           -   The multi image carousal improves the user experience as it allow the user to view site information and location on map without scrolling down.
-       -   ### Design
-    -   #### Colour Scheme
-        -   Color is fundamental in the way we express the Abbott brand. The color palette I used includes, Dark in the header and light in the footer of each page.  The                   vibrant images in the Abbott Site carousal blend well with the background image.
-
-    -   #### Typography.
-        -   The 'Josefin Sans' font is the main font used throughout the whole website with sans-serif as the fallback font in case for any reason the font isn't being imported into the site correctly. The 'Josefin Sans'gives the Site an unified appearance throughtout. 
-    -   #### Imagery 
-        -   I selected vibrant images for each Site in the carousal that work well with the background image. 
+-   # Design Choices
+  
+      -   ## Colour Scheme
+        - There is alot of whitespace in the application, the whitespace draws attention and attracts the user to the eyecatching buttons
+    
+      -   ## Imagery 
+        -   I selected images that are relevant to the content of the application.   The icon in the navbar has an orange seat, and the buttons on the home page are orange.                 This small detail improves the asthetics of the application
+       
+      -   ## Icons 
+        -   The icon in the navbar is a good fit for the theme of the application
+        -   Icons break up the information visually, creating space for the user and not overwhelming them with too much info at once.
+        -   Each icon was chosen for it's clarity in quickly explaining the relevant meaning with an image.
 
 *   ### Skeleton.
 
