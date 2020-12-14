@@ -9,6 +9,7 @@ To create an online application that allows user to complete & submit their VDU 
 - [UX](#heading)
   * [Goals](#sub-heading)
     + [Visitor Goals](#sub-sub-heading)
+    + [Business Goals](#sub-sub-heading)
 - [Heading](#heading-1)
   * [Sub-heading](#sub-heading-1)
     + [Sub-sub-heading](#sub-sub-heading-1)
@@ -29,9 +30,25 @@ To create an online application that allows user to complete & submit their VDU 
 
 #### Visitor Goals
 
-The central target audience for VDU Assessment Manager are :
- - gtrty
- - 
+The central target audience for VDU Assessment Manager are:
+ - All Employees
+ - All Contactors 
+ 
+User Goals are:
+ - Register / Login to VDU Assessment Manager
+ - Complete my VDU Assessment
+ - View Completed VDU Assessments
+ - Edit my Completed VDU Assessments
+ - Delete my Completed VDU Assessments
+ 
+ Manager Goals are:
+ - Register / Login to VDU Assessment Manager
+ - View my reports VDU Assessments
+
+Admin Goals are:
+ - Register / Login to VDU Assessment Manager
+ - Access Maintenance Section to maintain Department and Manager Dropdowns
+ - Access Maintenance Section to maintain is_admin & is_manager rights
 
 ## Heading
 
