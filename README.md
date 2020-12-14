@@ -17,29 +17,22 @@ To create an online application that allows user to complete & submit their VDU 
   * [Sub-heading](#sub-heading-2)
     + [Sub-sub-heading](#sub-sub-heading-2)
 
+## User Experience (UX)
 
+-   ### Goals
 
+    -   #### Visitor Goals
 
-## UX
-
-
-
-### Goals
-
-
-
-#### Visitor Goals
-
-The central target audience for VDU Assessment Manager are:
- - All Employees
- - All Contactors 
+        The central target audience for VDU Assessment Manager are:
+        - All Employees
+        - All Contactors 
  
-User Goals are:
- - Register / Login to VDU Assessment Manager
- - Complete my VDU Assessment
- - View Completed VDU Assessments
- - Edit my Completed VDU Assessments
- - Delete my Completed VDU Assessments
+      User Goals are:
+         - Register / Login to VDU Assessment Manager
+         - Complete my VDU Assessment
+         - View Completed VDU Assessments
+         - Edit my Completed VDU Assessments
+         - Delete my Completed VDU Assessments
  
  Manager Goals are:
  - Register / Login to VDU Assessment Manager
@@ -49,43 +42,51 @@ Admin Goals are:
  - Register / Login to VDU Assessment Manager
  - Access Maintenance Section to maintain Department and Manager Dropdowns
  - Access Maintenance Section to maintain is_admin & is_manager rights
-
-## Heading
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
-
-#### Sub-sub-heading
-
-This is an h3 heading
-
-## Heading
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
-
-#### Sub-sub-heading
-
-This is an h3 heading
-
-
-
-## User Experience (UX)
-
--   ### User stories
-
-    -   #### Visitor Goals
-
-        1. As Visitor, I want to find the Abbot site I am visiting and learn more about the site e.g. is it Manufacturing, Commercial etc
-        2. As Visitor, I want to easily find out more about the area I am visiting e.g What Hotels, Restaurants and Attractions are in the vicinity
-        3. As Visitor, I want to be able to look for information from the Team managaging the Portal
         
+Admin Goals are:
+ - Register / Login to VDU Assessment Manager
+ - Access Maintenance Section to maintain Department and Manager Dropdowns
+ - Access Maintenance Section to maintain is_admin & is_manager rights
+        
+
+
+
+
+
+
+
+
+#### Visitor Goals
+
+
+
+## Heading
+
+This is an h1 heading
+
+### Sub-heading
+
+This is an h2 heading
+
+#### Sub-sub-heading
+
+This is an h3 heading
+
+## Heading
+
+This is an h1 heading
+
+### Sub-heading
+
+This is an h2 heading
+
+#### Sub-sub-heading
+
+This is an h3 heading
+
+
+
+
 -   ### Structure
     -   #### Multi Image Carousal
          -  By mousing over the Site Image the User instantly is shown the site information and location on map.  The User can then move on to the next location and new details are loaded
