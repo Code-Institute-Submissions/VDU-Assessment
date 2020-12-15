@@ -86,7 +86,7 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
     
     These wireframes were created using Balsamiq during the Scope Plane part of the design and planning process for this project.
 
-    -   Home Page Wireframe - [View](Business-Travel-Guide_Lgr&Med_Devices.pdf)
+    -   Home Page Wireframe - [View](Wireframes/HomePage.pdf)
     
 # Features
 
