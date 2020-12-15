@@ -176,6 +176,35 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
     - User Maintenace
     
     #### - Manager Maintenace
+    In Manager Maintenance the Admin person is responsible for the updating of the list of Managers available in dropdown to the User creating VDU Assessment. The Admin can        Edit the Records.  The Admin User can also delete a Manager.  After clicking the "delete" button, the delete modal will be triggered. The User will be      prompted to Confirm the deletion, there is an option to cancel the deletion or click Yes to permantly remove Manager from the database
+    
+    #### - Department Maintenace
+    In Department Maintenance the Admin person is responsible for the updating of the list of Department available in dropdown to the User creating VDU Assessment. The Admin       can Edit the Records.  The Admin User can also delete a Department.  After clicking the "delete" button, the delete modal will be triggered. The User will be prompted        to Confirm the deletion, there is an option to cancel the deletion or click Yes to permantly remove Department from the database
+    
+    #### - User Maintenace
+    In User Maintenance the Admin person can assign / unassign Manager and Admin privliges. The Admin User can also delete a User.  After clicking the "delete" button, the   delete modal will be triggered. The User will be prompted to Confirm the deletion, there is an option to cancel the deletion or click Yes to permantly remove User from the database
+    
+# Validators
+
+## Html
+
+All the HTML files were tested through W3C Markup Validation Service. I used the 'view page source' option, since W3C Markup Validation Service does not recognize Jinja2 templating language.  I was able to correct all findings.
+
+## CSS
+
+CSS files were tested through W3C CSS Validation Service. I was able to correct all findings.
+
+## JavaScript
+
+Script files were tested through W3C CSS Validation Service. I was able to correct all findings.
+
+
+## Python
+
+All python files were tested through PEP8 Online validator.  I was able to correct all findings.
+
+
+    
 ## Features
 
 -   Responsive on all device sizes
