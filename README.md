@@ -174,6 +174,8 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
     - Manager Maintenace
     - Department Maintenace
     - User Maintenace
+    
+    #### - Manager Maintenace
 ## Features
 
 -   Responsive on all device sizes
@@ -310,6 +312,6 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
  
 ### Acknowledgements
 
--   My Mentor for continuous helpful feedback.
+-   My Mentor Brian Macharia for continuous helpful feedback, excellent support material and very productive mentoring sessions
 
 -   Tutor support at Code Institute for their support.
