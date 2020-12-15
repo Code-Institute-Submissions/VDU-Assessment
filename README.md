@@ -156,12 +156,24 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
     The delete Assessment function allows only the created by person to delete Assessment. After a user clicks the "delete" button, the delete modal will be triggered. The       User will be prompted to Confirm the deletion, there is an option to cancel the deletion or click Yes to permantly remove Assessment from the database
 
 - ## User Profile Page
-     When the User selects Profile Option in the Navbar, they can view their profile.  The profile page consists of the persons firstname & Username Displayed.  Depending on      the Users level of access they following three options may be available -  
-  ### Change Password
+     When the User selects Profile Option in the Navbar, they can view their profile.  The profile page consists of the persons firstname & Username Displayed.  Depending on      the Users level of access they following three options may be available -
+     
+  ### 1. Change Password
 
-    A user can change their current password by filling the form that contains following fields:  "New password", "Confirm New password". Both new password need to match.         There is a question mark that displays requirements for the field when hovered over. If the form is successfully submitted, a      user is redirected to the account           settings page with a flash message about successfully changed password. There is also a button "Cancel" that simply redirects a user to       the account settings page.
-   
+    This button will be available to all users.  A user can change their current password by filling the form that contains following fields:  "New password", "Confirm New       password". Both new password need to match. There is a question mark that displays requirements for the field when hovered over. If the form is successfully submitted, a      user is redirected back to Profile Page with a flash message detailing successfully changed password. There is also a button "Cancel" that redirects User to Profile Page
+ 
+ ### 2. Your Reports Assessment
 
+    This button will only be available users that have been assigned the Manager role.  In the 'View Reports Assessment' page managers can view their reports Assessments.         Only the Assessments that the User is assigned as Manager in the database will be displayed, by limiting the find to Manager in Python.  The Manager also has the option       to search by Username, displaying all assessments created by particular username
+
+
+ ### 2. Maintenance
+
+    This button will only be available users that have been assigned the Admin role.  This button has a dropdown of three options - 
+    
+    - Manager Maintenace
+    - Department Maintenace
+    - User Maintenace
 ## Features
 
 -   Responsive on all device sizes
