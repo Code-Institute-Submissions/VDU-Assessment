@@ -1,6 +1,6 @@
-<h1 align="center">VDU Assessment</h1>
+<h1 align="center">VDU Assessment Manager</h1>
 
-[View the live project here.]( https://bridcourtney.github.io/Business-Travel-Guide/)
+[View the live project here.](https://vdu-assessment.herokuapp.com/)
 
 To create an online application that allows user to complete & submit their VDU (Visual Display Unit) Assessment.  Assessments will be categorised per user submission for further analysis and follow up by Accessor
 
