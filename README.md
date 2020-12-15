@@ -5,7 +5,13 @@ VDU Assessment Manager is an online application that allows user to complete & s
 
 Under the Safety, Health and Welfare at Work, (General Application) Regulations 2007, Chapter 5 of Part 2 outlines the requirements that must be adhered to in relation to Display Screen Equipment.
 
- - ### What constitutes a workstation under the Display Screen Equipment Regulation 2007?
+ - #### What constitutes a workstation under the Display Screen Equipment Regulation 2007 ?
+ 
+ “workstation” means an assembly comprising display screen equipment, which may be provided with a keyboard or input device or software, or a combination of the foregoing, determining the operator and machine interface, and includes—
+- #####  a work chair and work desk or work surface,
+- #####  any optional accessories and peripherals, and
+- #####  the immediate work environment of the display screen   equipment.
+
 
 # User Experience (UX)
 
