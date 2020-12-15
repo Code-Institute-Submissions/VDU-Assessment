@@ -155,7 +155,12 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
 
     The delete Assessment function allows only the created by person to delete Assessment. After a user clicks the "delete" button, the delete modal will be triggered. The       User will be prompted to Confirm the deletion, there is an option to cancel the deletion or click Yes to permantly remove Assessment from the database
 
-    
+- ## User Profile Page
+     When the User selects Profile Option in the Navbar, they can view their profile.  The profile page consists of the persons firstname & Username Displayed.  Depending on      the Users level of access they following three options may be available -  
+  ### Change Password
+
+    A user can change their current password by filling the form that contains following fields:  "New password", "Confirm New password". Both new password need to match.         There is a question mark that displays requirements for the field when hovered over. If the form is successfully submitted, a      user is redirected to the account           settings page with a flash message about successfully changed password. There is also a button "Cancel" that simply redirects a user to       the account settings page.
+   
 
 ## Features
 
