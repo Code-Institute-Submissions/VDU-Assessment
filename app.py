@@ -26,7 +26,7 @@ mongo = PyMongo(app)
 def home():
   return render_template("home.html")
 
-
+# This function searches the database for Assessments where created_by value matches session user.
 @app.route("/get_checks")
 def get_checks():
     if "user" in session:
@@ -34,12 +34,16 @@ def get_checks():
         return render_template("checks.html", checks=checks)
     else:
         return redirect(url_for("login"))
-        
+
+
+# This function searches the database for Assessments where manager_name value matches session user.
 @app.route("/get_manager_checks")
 def get_manager_checks():
-    checks = mongo.db.checks.find({"manager_name": session["user"]})
-    return render_template("manager_checks.html", checks=list(checks))
-
+    if "user" in session:
+        checks = mongo.db.checks.find({"manager_name": session["user"]})
+        return render_template("manager_checks.html", checks=list(checks))
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -234,10 +238,12 @@ def edit_check(check_id):
 
 @app.route("/delete_check/<check_id>")
 def delete_check(check_id):
-    mongo.db.checks.remove({"_id": ObjectId(check_id)})
-    flash("Assessment Successfully Deleted")
-    return redirect(url_for("get_checks"))
-
+    if "user" in session:
+        mongo.db.checks.remove({"_id": ObjectId(check_id)})
+        flash("Assessment Successfully Deleted")
+        return redirect(url_for("get_checks"))
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/get_managers")
 def get_managers():
@@ -247,126 +253,156 @@ def get_managers():
 
 @app.route("/get_departments")
 def get_departments():
-    departments = list(mongo.db.departments.find().sort("dept_name", 1))
-    return render_template("departments.html", departments=departments)
-
+    if "user" in session:
+        departments = list(mongo.db.departments.find().sort("dept_name", 1))
+        return render_template("departments.html", departments=departments)
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/get_users")
 def get_users():
-    users = mongo.db.users.find()
-    return render_template("users.html", users=users)
+    if "user" in session:
+        users = mongo.db.users.find()
+        return render_template("users.html", users=users)
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/add_manager", methods=["GET", "POST"])
-def add_manager():
-    if request.method == "POST":
-        manager = {
-            "manager_name": request.form.get("manager_name")
-        }
-        mongo.db.managers.insert_one(manager)
-        flash("New Manager Added")
-        return redirect(url_for("get_managers"))
+def add_manager():    
+    if "user" in session:
+        if request.method == "POST":
+            manager = {
+                "manager_name": request.form.get("manager_name")
+            }
+            mongo.db.managers.insert_one(manager)
+            flash("New Manager Added")
+            return redirect(url_for("get_managers"))
 
-    return render_template("add_manager.html")
+        return render_template("add_manager.html")
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/add_department", methods=["GET", "POST"])
 def add_department():
-    if request.method == "POST":
-        department = {
-            "dept_name": request.form.get("dept_name")
-        }
-        mongo.db.departments.insert_one(department)
-        flash("New Department Added")
-        return redirect(url_for("get_departments"))
+    if "user" in session:
+        if request.method == "POST":
+            department = {
+                "dept_name": request.form.get("dept_name")
+            }
+            mongo.db.departments.insert_one(department)
+            flash("New Department Added")
+            return redirect(url_for("get_departments"))
 
-    return render_template("add_department.html")
-
+        return render_template("add_department.html")
+    else:
+        return redirect(url_for("login"))  
 
 @app.route("/edit_manager/<manager_id>", methods=["GET", "POST"])
 def edit_manager(manager_id):
-    if request.method == "POST":
-        submit = {
-            "manager_name": request.form.get("manager_name")
-        }
-        mongo.db.managers.update({"_id": ObjectId(manager_id)}, submit)
-        flash("Manager Successfully Updated")
-        return redirect(url_for("get_managers"))
+    if "user" in session:
+        if request.method == "POST":
+            submit = {
+                "manager_name": request.form.get("manager_name")
+            }
+            mongo.db.managers.update({"_id": ObjectId(manager_id)}, submit)
+            flash("Manager Successfully Updated")
+            return redirect(url_for("get_managers"))
 
-    manager = mongo.db.managers.find_one({"_id": ObjectId(manager_id)})
-    return render_template("edit_manager.html", manager=manager)
-
+        manager = mongo.db.managers.find_one({"_id": ObjectId(manager_id)})
+        return render_template("edit_manager.html", manager=manager)
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/edit_department/<department_id>", methods=["GET", "POST"])
 def edit_department(department_id):
-    if request.method == "POST":
-        submit = {
-            "dept_name": request.form.get("dept_name")
-        }
-        mongo.db.departments.update({"_id": ObjectId(department_id)}, submit)
-        flash("Department Successfully Updated")
-        return redirect(url_for("get_departments"))
+    if "user" in session:
+        if request.method == "POST":
+            submit = {
+                "dept_name": request.form.get("dept_name")
+            }
+            mongo.db.departments.update({"_id": ObjectId(department_id)}, submit)
+            flash("Department Successfully Updated")
+            return redirect(url_for("get_departments"))
 
-    department = mongo.db.departments.find_one({"_id": ObjectId(department_id)})
-    return render_template("edit_department.html", department=department)
-
+        department = mongo.db.departments.find_one({"_id": ObjectId(department_id)})
+        return render_template("edit_department.html", department=department)
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/edit_user/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
-    if request.method == "POST":
-        is_admin = True if request.form.get("is_admin") else False
-        is_manager = True if request.form.get("is_manager") else False
-        submit = {
-            "username": request.form.get("username"),
-            "fname": request.form.get("fname"),
-            "password": request.form.get("password"),
-            "is_admin": is_admin,
-            "is_manager": is_manager
-        }
-        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
-        flash("User Successfully Updated")
-        return redirect(url_for("get_users"))
+    if "user" in session:
+        if request.method == "POST":
+            is_admin = True if request.form.get("is_admin") else False
+            is_manager = True if request.form.get("is_manager") else False
+            submit = {
+                "username": request.form.get("username"),
+                "fname": request.form.get("fname"),
+                "password": request.form.get("password"),
+                "is_admin": is_admin,
+                "is_manager": is_manager
+            }
+            mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+            flash("User Successfully Updated")
+            return redirect(url_for("get_users"))
 
-    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
-    return render_template("edit_user.html", user=user)
+        user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+        return render_template("edit_user.html", user=user)
+    else:
+        return redirect(url_for("login"))
 
 @app.route("/change_password/<user_id>", methods=["GET", "POST"])
 def change_password(user_id):
-    form = ChangePassForm()
-    if request.method == "POST" and form.validate():
-        is_admin = True if request.form.get("is_admin") else False
-        submit = {
-            "username": request.form.get("username"),
-            "fname": request.form.get("fname"),
-            "password": generate_password_hash(request.form.get("password")),
-            "is_admin": is_admin
-        }
-        mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
-        flash("Password Successfully Updated")
-        return redirect(url_for("profile", username=session["user"]))
+    if "user" in session:
+        form = ChangePassForm()
+        if request.method == "POST" and form.validate():
+            is_admin = True if request.form.get("is_admin") else False
+            submit = {
+                "username": request.form.get("username"),
+                "fname": request.form.get("fname"),
+                "password": generate_password_hash(request.form.get("password")),
+                "is_admin": is_admin
+            }
+            mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
+            flash("Password Successfully Updated")
+            return redirect(url_for("profile", username=session["user"]))
 
-    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
-    return render_template("change_password.html", user=user, form=form)
+        user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+        return render_template("change_password.html", user=user, form=form)
+    else:
+        return redirect(url_for("login"))
+
 
 
 @app.route("/delete_manager/<manager_id>")
 def delete_manager(manager_id):
-    mongo.db.managers.remove({"_id": ObjectId(manager_id)})
-    flash("Manager Successfully Deleted")
-    return redirect(url_for("get_managers"))
+    if "user" in session:
+        mongo.db.managers.remove({"_id": ObjectId(manager_id)})
+        flash("Manager Successfully Deleted")
+        return redirect(url_for("get_managers"))
+    else:
+        return redirect(url_for("login"))
+
 
 @app.route("/delete_department/<department_id>")
 def delete_department(department_id):
-    mongo.db.departments.remove({"_id": ObjectId(department_id)})
-    flash("Department Successfully Deleted")
-    return redirect(url_for("get_departments"))
+    if "user" in session:
+        mongo.db.departments.remove({"_id": ObjectId(department_id)})
+        flash("Department Successfully Deleted")
+        return redirect(url_for("get_departments"))
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/delete_user/<user_id>")
 def delete_user(user_id):
-    mongo.db.users.remove({"_id": ObjectId(user_id)})
-    flash("User Successfully Deleted")
-    return redirect(url_for("get_users"))
-
+    if "user" in session:
+        mongo.db.users.remove({"_id": ObjectId(user_id)})
+        flash("User Successfully Deleted")
+        return redirect(url_for("get_users"))
+    else:
+        return redirect(url_for("login"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
