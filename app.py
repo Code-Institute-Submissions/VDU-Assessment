@@ -2,17 +2,19 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
+import os
+from flask import (
+    Flask, flash, render_template,
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from myforms.forms import ChangePassForm, RegistrationForm,\
-Add_CheckForm, LoginForm
+  Add_CheckForm, LoginForm
 
 if os.path.exists("env.py"):
     import env
-    
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -21,12 +23,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/home")
 def home():
-  return render_template("home.html")
+    return render_template("home.html")
+# This function searches the database for Assessments where
+# created_by value matches session user.
 
-# This function searches the database for Assessments where created_by value matches session user.
+
 @app.route("/get_checks")
 def get_checks():
     if "user" in session:
@@ -36,7 +41,8 @@ def get_checks():
         return redirect(url_for("login"))
 
 
-# This function searches the database for Assessments where manager_name value matches session user.
+# This function searches the database for Assessments
+# where manager_name value matches session user.
 @app.route("/get_manager_checks")
 def get_manager_checks():
     if "user" in session:
@@ -45,6 +51,7 @@ def get_manager_checks():
     else:
         return redirect(url_for("login"))
 
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -52,11 +59,12 @@ def search():
     return render_template("manager_checks.html", checks=checks)
 
 '''
-The Register function calls RegistrationForm class from forms.py. 
-form.py checks that the username and passwords are valid 
-Checks if the username already exists in database. 
+The Register function calls RegistrationForm class from forms.py.
+form.py checks that the username and passwords are valid
+Checks if the username already exists in database.
 Hashes the entered password and adds a new user to session.
 '''
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -79,16 +87,17 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful! Welcome, {}".format(request.form.get("username")))
+        flash("Registration Successful! Welcome, {}".format
+        (request.form.get("username")))
         return redirect(url_for("home", username=session["user"]))
     return render_template("register.html", form=form)
 
 '''
-The login function calls LoginForm class from forms.py. 
-form.py checks that the username and passwords 
-are valid. User is added to the session. 
-
+The login function calls LoginForm class from forms.py.
+form.py checks that the username and passwords
+are valid. User is added to the session.
 '''
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -97,8 +106,6 @@ def login():
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
-
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
@@ -106,9 +113,7 @@ def login():
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for(
-                    "home", username=session["user"]))
-
-                        
+                    "home", username=session["user"]))                     
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -119,8 +124,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html",form=form)
-
+    return render_template("login.html", form=form)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -131,8 +135,6 @@ def profile(username):
     if "user" in session:
         return render_template(
            "profile.html", user=user)
-        
-        
     return redirect(url_for("login"))
 
 
@@ -143,10 +145,11 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-#The function calls Add_CheckForm class from forms.py
+# The function calls Add_CheckForm class from forms.py
+
+
 @app.route("/add_check", methods=["GET", "POST"])
 # form variable to initialise the form
-
 def add_check():
     form = Add_CheckForm()
     if request.method == "POST" and form.validate():
@@ -185,10 +188,11 @@ def add_check():
         mongo.db.checks.insert_one(check)
         flash("Assessment Successfully Added")
         return redirect(url_for("get_checks"))
-        
     managers = mongo.db.managers.find().sort("manager_name", 1)
     departments = mongo.db.departments.find().sort("dept_name", 1)
-    return render_template("add_check.html", managers=managers, departments=departments, form=form)
+    return render_template("add_check.html", 
+    managers=managers, departments=departments, form=form)
+
 
 @app.route("/edit_check/<check_id>", methods=["GET", "POST"])
 def edit_check(check_id):
@@ -233,7 +237,8 @@ def edit_check(check_id):
     check = mongo.db.checks.find_one({"_id": ObjectId(check_id)})
     managers = mongo.db.managers.find().sort("manager_name", 1)
     departments = mongo.db.departments.find().sort("dept_name", 1)
-    return render_template("edit_check.html", check=check, managers=managers, departments=departments)
+    return render_template("edit_check.html",
+    check=check, managers=managers, departments=departments)
 
 
 @app.route("/delete_check/<check_id>")
@@ -244,6 +249,7 @@ def delete_check(check_id):
         return redirect(url_for("get_checks"))
     else:
         return redirect(url_for("login"))
+
 
 @app.route("/get_managers")
 def get_managers():
@@ -259,6 +265,7 @@ def get_departments():
     else:
         return redirect(url_for("login"))
 
+
 @app.route("/get_users")
 def get_users():
     if "user" in session:
@@ -266,6 +273,7 @@ def get_users():
         return render_template("users.html", users=users)
     else:
         return redirect(url_for("login"))
+
 
 @app.route("/add_manager", methods=["GET", "POST"])
 def add_manager():    
@@ -298,6 +306,7 @@ def add_department():
     else:
         return redirect(url_for("login"))  
 
+
 @app.route("/edit_manager/<manager_id>", methods=["GET", "POST"])
 def edit_manager(manager_id):
     if "user" in session:
@@ -314,6 +323,7 @@ def edit_manager(manager_id):
     else:
         return redirect(url_for("login"))
 
+
 @app.route("/edit_department/<department_id>", methods=["GET", "POST"])
 def edit_department(department_id):
     if "user" in session:
@@ -325,10 +335,12 @@ def edit_department(department_id):
             flash("Department Successfully Updated")
             return redirect(url_for("get_departments"))
 
-        department = mongo.db.departments.find_one({"_id": ObjectId(department_id)})
+        department = mongo.db.departments.find_one
+        ({"_id": ObjectId(department_id)})
         return render_template("edit_department.html", department=department)
     else:
         return redirect(url_for("login"))
+
 
 @app.route("/edit_user/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
@@ -352,6 +364,7 @@ def edit_user(user_id):
     else:
         return redirect(url_for("login"))
 
+
 @app.route("/change_password/<user_id>", methods=["GET", "POST"])
 def change_password(user_id):
     if "user" in session:
@@ -361,7 +374,8 @@ def change_password(user_id):
             submit = {
                 "username": request.form.get("username"),
                 "fname": request.form.get("fname"),
-                "password": generate_password_hash(request.form.get("password")),
+                "password": generate_password_hash
+                (request.form.get("password")),
                 "is_admin": is_admin
             }
             mongo.db.users.update({"_id": ObjectId(user_id)}, submit)
@@ -372,7 +386,6 @@ def change_password(user_id):
         return render_template("change_password.html", user=user, form=form)
     else:
         return redirect(url_for("login"))
-
 
 
 @app.route("/delete_manager/<manager_id>")
@@ -405,6 +418,4 @@ def delete_user(user_id):
         return redirect(url_for("login"))
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+    app.run
