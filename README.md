@@ -2,7 +2,7 @@
 
 [View the live project here.](https://vdu-assessment.herokuapp.com/)
 
-<h2 align="center"><img src="static/images/Responsive_ShowCase.JPG"></h2>
+<h2 align="center"><img src="static/images/Responsice_ShowCase.JPG"></h2>
 
 The VDU Assessment Manager is an online application that allows user to complete & submit their VDU (Visual Display Unit) Assessment.  Assessments will be categorised per user submission for further analysis and follow up by Accessor.
 
