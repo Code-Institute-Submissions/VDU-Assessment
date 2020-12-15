@@ -43,13 +43,13 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
      - Access Maintenance Section to maintain is_admin & is_manager rights
         
     Business Goals are:
-      - Provide a repository to gather Employee and Contractor VDU feedback
+      - Provide a repository to gather Employee and Contractor VDU feedback for further assessment
      
 -   ## User Stories
   
       - ### Visitor Stories
   
-      As a visitor to VDU Manager I expect:
+      As a visitor to VDU Assessment Manager I expect:
       
     1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it.
 
@@ -117,7 +117,7 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
 
 -   ## Footer
 
-    The footer is the same colour as the Navbar, is very simple with only Copyright text
+    The footer is grey a differenct colour to the Navbar, is very simple with only Copyright text and also a useful feature of displaying the name of the user logged in
 
 -   ## Home Page 
 
@@ -125,22 +125,38 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
     The Hero image of a professional woman standing at her PC.  The womans desk is an good example of good ergonomics.  The applicaiton title and sub-heading accoss the hero         image is important for User knowledge & Guidance.  Once User is signed in the Create & View Asssesments buttons are available
     
      ### Working Safely Guidance Cards
-    Each Working Safely Guidance card on the home page gives the user brief and useful information about each of the listings displayed. The 'read more' button brings the User       to a Modal Form with more detail on the topic
+    Each Working Safely Guidance card on the home page gives the user brief and useful information about each of the listings displayed. The 'read more' button brings the         User to a Modal Form with more detail on the topic
 
 -   ## Registration Page
      - The register page allows user's to create a new account. The user is asked to fill the fields "username","firstname","password" and "confirm password". When adding a             username, the code compares it against existing usernames to ensure that it is unique. A username must be 3-15 characters long. 
-     - The password field must be 6-15 characters long. The "confirm password" field must match the original password. All passwords are hashed for security purposes. If user's         input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and           informed that account was created. There is also a link to the login page for existing users at the bottom of the form.
+     - The password field is a required field. The "confirm password" field must match the original password. All passwords are hashed for security purposes. If user's         input does not meet requirements, flash messages will inform a user about the error. When the form is submitted successfully, a user is redirected to the home page and           informed that account was created. There is also a link to the login page for existing users at the bottom of the Registration form.
     
 -   ## Login Page
-     - The login page contains the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed password          match the ones in the database, a user is redirected to the home page and informed that the login was successful. Otherwise, flash messages will be displayed about              incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
+     - The login page contains the form with "username" and "password" fields, allowing registered users to log into their account. If the entered username and hashed       password          match the ones in the database, a user is redirected to the home page and informed that the login was successful. Otherwise, flash messages will be displayed about              incorrect user's input. There is also a link to the register page for new users at the bottom of the form.
 
 -   ## Logout
 
     Clicking on the "logout" button by the logged in users ends their session and redirects to the Login page.
+    
+-   ## Create Assessments
+
+    Clicking on the "Create Assessments" button on the Homepage allows the User to create a new VDU Assessment
 
 -   ## View Assessments
 
     Clicking on the "View Assessments" button on the Homepage brings the User to page where they can view all their completed assessments
+    
+    ### Edit Assessments 
+
+    Fron the View Assessment page the User can Edit their existing assessments.  Assessments are only visible to person created by.  The Assessment form will be pre-populated     with the original Assessment details. After clicking "Edit Assessment" button, the Assessment is updated in the database and a user is redirected to their Assessments         Page.
+     There is also a Cancel button that redirects the User to the their Assessmments page
+
+    ### Delete Assessment
+
+    The delete Assessment function allows only the created by person to delete Assessment. After a user clicks the "delete" button, the delete modal will be triggered. The       User will be prompted to Confirm the deletion, there is an option to cancel the deletion or click Yes to permantly remove Assessment from the database
+
+    
+
 ## Features
 
 -   Responsive on all device sizes
