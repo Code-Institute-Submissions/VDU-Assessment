@@ -115,7 +115,9 @@ position: relative;
      width: 85%;   
  } 
 
- 
+ .card-bottom{
+     margin-bottom: 5%;
+ }
 
 
  
