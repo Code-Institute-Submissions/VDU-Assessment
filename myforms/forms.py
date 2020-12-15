@@ -1,3 +1,4 @@
+# CREDIT: https://github.com/irinatu17/MyCookBook & https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/
 from flask_wtf import FlaskForm
 from wtforms import Form, BooleanField, StringField,\
 validators, PasswordField, SubmitField
