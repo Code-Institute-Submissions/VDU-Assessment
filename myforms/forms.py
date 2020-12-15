@@ -1,7 +1,8 @@
-# CREDIT: https://github.com/irinatu17/MyCookBook & https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/
+# CREDIT: https://github.com/irinatu17/MyCookBook
+# & https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/
 from flask_wtf import FlaskForm
 from wtforms import Form, BooleanField, StringField,\
-validators, PasswordField, SubmitField
+    validators, PasswordField, SubmitField
 from wtforms.validators import DataRequired, length, EqualTo, Optional
 
 
@@ -17,7 +18,7 @@ class RegistrationForm(FlaskForm):
 
 class ChangePassForm(FlaskForm):
     password = PasswordField('Password', [validators.length(min=3, max=15),
-        validators.EqualTo('New Password', message='Passwords must match')])
+    validators.EqualTo('New Password', message='Passwords must match')])
     confirm = PasswordField('Repeat Password')
     submit = SubmitField('Change Password')
 
