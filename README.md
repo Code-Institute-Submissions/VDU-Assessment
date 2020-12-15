@@ -204,14 +204,11 @@ Script files were tested through W3C CSS Validation Service. I was able to corre
 All python files were tested through PEP8 Online validator.  I was able to correct all findings.
 
 
-    
-## Features
+# Compatibility and Responsiveness
 
--   Responsive on all device sizes
-
--   Interactive elements
-
-## Technologies Used
+ I used the Google Chrome's developer tools to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.
+ I also used Am I Responsive online tool for checking responsiveness on different devices.
+ 
 
 ### Languages Used
 
@@ -260,18 +257,7 @@ The W3C Markup Validator, W3C CSS Validator and jshint Services were used to val
 -   Link below is Test Script performed.
 -   Test Scripts - [View](Test-Protocol/Test_Scripts_performed.pdf)
      
-### Further Testing
--   During testing it was found the 'Geocoder failed due to: INVALID_REQUEST' error was appearing on startup, to fix this I added a default value to #latlng.
--   During testing users reported it was confusing that there was no response when Comment was submitted on Contact page, I fixed this by added a success and fail Alert.
--   The Website was tested on Google Chrome, Internet Explorer & Microsoft Edge.
--   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
--   A large amount of testing was done to ensure that all pages were linking correctly.
--   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
-### Known Bugs
-
--   Sometimes the user needs to hit the refresh button to load the map
--   It is not a bug, but the Geocode API reaches usage limit very quckly
 
 ## Deployment
 
