@@ -29,13 +29,16 @@ def home():
 
 @app.route("/get_checks")
 def get_checks():
-    checks = mongo.db.checks.find()
-    return render_template("checks.html", checks=checks)
-
+    if "user" in session:
+        checks = mongo.db.checks.find({"created_by": session["user"]})
+        return render_template("checks.html", checks=checks)
+    else:
+        return redirect(url_for("login"))
+        
 @app.route("/get_manager_checks")
 def get_manager_checks():
-    checks = mongo.db.checks.find()
-    return render_template("manager_checks.html", checks=checks)
+    checks = mongo.db.checks.find({"manager_name": session["user"]})
+    return render_template("manager_checks.html", checks=list(checks))
 
 
 @app.route("/search", methods=["GET", "POST"])
