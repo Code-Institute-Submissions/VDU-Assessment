@@ -1,8 +1,11 @@
 <h1 align="center">VDU Assessment Manager</h1>
 
 [View the live project here.](https://vdu-assessment.herokuapp.com/)
+VDU Assessment Manager is an online application that allows user to complete & submit their VDU (Visual Display Unit) Assessment.  Assessments will be categorised per user submission for further analysis and follow up by Accessor.
 
-To create an online application that allows user to complete & submit their VDU (Visual Display Unit) Assessment.  Assessments will be categorised per user submission for further analysis and follow up by Accessor
+Under the Safety, Health and Welfare at Work, (General Application) Regulations 2007, Chapter 5 of Part 2 outlines the requirements that must be adhered to in relation to Display Screen Equipment.
+
+ - ### What constitutes a workstation under the Display Screen Equipment Regulation 2007?
 
 # User Experience (UX)
 
