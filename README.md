@@ -158,16 +158,16 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
 - ## User Profile Page
      When the User selects Profile Option in the Navbar, they can view their profile.  The profile page consists of the persons firstname & Username Displayed.  Depending on      the Users level of access they following three options may be available -
      
-  ### 1. Change Password
+   ### Change Password
 
     This button will be available to all users.  A user can change their current password by filling the form that contains following fields:  "New password", "Confirm New       password". Both new password need to match. There is a question mark that displays requirements for the field when hovered over. If the form is successfully submitted, a      user is redirected back to Profile Page with a flash message detailing successfully changed password. There is also a button "Cancel" that redirects User to Profile Page
  
- ### 2. Your Reports Assessment
+   ### Your Reports Assessment
 
     This button will only be available users that have been assigned the Manager role.  In the 'View Reports Assessment' page managers can view their reports Assessments.         Only the Assessments that the User is assigned as Manager in the database will be displayed, by limiting the find to Manager in Python.  The Manager also has the option       to search by Username, displaying all assessments created by particular username
 
 
- ### 2. Maintenance
+  ### Maintenance
 
     This button will only be available users that have been assigned the Admin role.  This button has a dropdown of three options - 
     
