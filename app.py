@@ -418,4 +418,6 @@ def delete_user(user_id):
         return redirect(url_for("login"))
 
 if __name__ == "__main__":
-    app.run
+    app.run(host=os.getenv('IP'), port=os.getenv('PORT'), 
+    debug=False)
+    
