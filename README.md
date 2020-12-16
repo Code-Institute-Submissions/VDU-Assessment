@@ -273,7 +273,7 @@ To run this project, the following tools need to be installed:
  
  - 6.In "vdu_check" database create the following 4 collections:
 
-<h2 align="center"><img src="static/images/Responsice_ShowCase.JPG"></h2>
+<h2 align="center"><img src="static/images/db_Collections.JPG"></h2>
 
 
 ## Testing
