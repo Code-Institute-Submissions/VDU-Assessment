@@ -278,6 +278,22 @@ To run this project, the following tools need to be installed:
 
 
 ## Branching
+  I used branching in this project.  I found it very useful at stages when I was embarking on new functionaility and not sure how it was going to turn out, it was reassuring   to know I had a choice whether to merge with the master or not.
+  I soon realised each time I created a branch from Github, the following installs were required - 
+   - pip3 install Flask
+   - pip3 install Flask-PyMongo
+   - pip3 install dnspython
+   - pip3 install flask_wtf
+   
+  Also, very important reinstate the env.py
+
+## Code
+ - I referred to the following documentation sources: Flask and MongoDB.
+ - For building the Register, Login, Change Username/Password pages.  I followed the 'Python Mini Project Material'
+ - Flask WTForms Tutorials - Pretty Printed & https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/.  Also https://github.com/irinatu17/MyCookBook
+ - For UI & UX design concept I took inspiration from Pinterest & unsplash
+ - The idea of using prefix-icons, asterixes and question-mark tooltips in forms was taken https://github.com/irinatu17/MyCookBook
+
 
 ## Credits
 
