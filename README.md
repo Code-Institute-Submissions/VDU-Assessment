@@ -87,8 +87,8 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
     These wireframes were created using Balsamiq and also outlines I created myself during the Scope Plane part of the design and planning process for this project.
 
     -   Home Page Wireframe - [View](Wireframes/HomePage.pdf)
-    -   Home Page Wireframe - [View](Wireframes/HomePage.pdf)
-    
+    -   Profile Page Wireframe - [View](Wireframes/Profile_Page.JPG)
+     -  User Assessment Report Wireframe - [View](Wireframes/Assessment_Report.JPG)
     
     
 # Features
