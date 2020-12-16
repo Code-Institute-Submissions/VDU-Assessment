@@ -257,11 +257,13 @@ To run this project, the following tools need to be installed:
  - Python
 
 ### Directions
-/*:
-1.You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:
-git clone https://github.com/bridcourtney/VDU-Assessment.  Alternatively, you can save a copy of this repository by clicking the green button "Clone or download" , then "Download Zip" button, and after extract the Zip file to your folder.
-2.In the terminal window change directory (CD) to the correct file location (directory that you have just created).
-3.Set up environment variables: ◦Create .env file in the root directory.
+
+ - 1.You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:
+    git clone https://github.com/bridcourtney/VDU-Assessment.  Alternatively, you can save a copy of this repository by clicking the green button "Clone or download" , then      "Download Zip" button, and after extract the Zip file to your folder.
+    
+ - 2.In the terminal window change directory (CD) to the correct file location (directory that you have just created).
+ 
+ - 3.Set up environment variables: ◦Create .env file in the root directory.
 ◦On the top of the file add import os to set the environment variables in the operating system.
 ◦Set the connection to your MongoDB database(MONGO_URI) and a SECRET_KEY with the following syntax: os.environ["SECRET_KEY"] = "YourSecretKey"
 os.environ["MONGO_URI"] = "YourMongoURI"
@@ -271,7 +273,7 @@ Note: GitPod does not require sudo, so if you use another IDE, you will need to 
 5.Create a new Database called "vdu_check" in MongoDB Atlas.
 You can sign up for free account, if you do not have one.
 6.In "vdu_check" database create the following 4 collections:
-*/
+
 
 
 
