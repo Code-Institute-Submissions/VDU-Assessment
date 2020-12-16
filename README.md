@@ -263,18 +263,17 @@ To run this project, the following tools need to be installed:
     
  - 2.In the terminal window change directory (CD) to the correct file location (directory that you have just created).
  
- - 3.Set up environment variables: ◦Create .env file in the root directory.
-◦On the top of the file add import os to set the environment variables in the operating system.
-◦Set the connection to your MongoDB database(MONGO_URI) and a SECRET_KEY with the following syntax: os.environ["SECRET_KEY"] = "YourSecretKey"
-os.environ["MONGO_URI"] = "YourMongoURI"
-4.Install all requirements from the requirements.txt file putting this command into your terminal:
-pip3 install -r requirements.txt
-Note: GitPod does not require sudo, so if you use another IDE, you will need to include sudo in the beginning of the command: sudo pip3 install -r requirements.txt.
-5.Create a new Database called "vdu_check" in MongoDB Atlas.
-You can sign up for free account, if you do not have one.
-6.In "vdu_check" database create the following 4 collections:
+ - 3.Set up environment variables: ◦Create .env file in the root directory.  On the top of the file add import os to set the environment variables in the operating system.
+    Set the connection to your MongoDB database(MONGO_URI) and a SECRET_KEY with the following syntax: os.environ["SECRET_KEY"] = "YourSecretKey" os.environ["MONGO_URI"] =       "YourMongoURI"
+    
+ - 4.Install all requirements from the requirements.txt file putting this command into your terminal: pip3 install -r requirements.txt
+    Note: GitPod does not require sudo, so if you use another IDE, you will need to include sudo in the beginning of the command: sudo pip3 install -r requirements.txt.
+    
+ - 5.Create a new Database called "vdu_check" in MongoDB Atlas.  You can sign up for free account, if you do not have one.
+ 
+ - 6.In "vdu_check" database create the following 4 collections:
 
-
+<h2 align="center"><img src="static/images/Responsice_ShowCase.JPG"></h2>
 
 
 ## Testing
