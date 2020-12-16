@@ -209,14 +209,14 @@ All python files were tested through PEP8 Online validator.  I was able to corre
  I used the Google Chrome's developer tools to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.
  I also used Am I Responsive online tool for checking responsiveness on different devices.
  
-# Technologies Used
-•GitPod - an online IDE for developing this project.
-•Git - for version control.
-•GitHub - for remotely storing project's code.
-•PIP - for installation of necessary tools.
-•GIMP2 - for editing, compressing and resizing images.
-•Am I Responsive - for creation of the images in the readme file and checking responsiveness.
-•Flickr - to host Workstation images
+# Technology Used
+ - GitPod - an online IDE for developing this project.
+ - Git - for version control.
+ - GitHub - for remotely storing project's code.
+ - PIP - for installation of necessary tools.
+ - GIMP2 - for editing VDU logo.
+ - Am I Responsive - for creation of the images in the readme file and checking responsiveness.
+ - Flickr - to host Workstation images
 
  
 
