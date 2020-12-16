@@ -240,32 +240,37 @@ All python files were tested through PEP8 Online validator.  I was able to corre
 -   [JavaScript](https://www.javascript.com/)
 -   [jQuery](https://jqueryui.com)
 
+## Libraries
+- Materialize 1.0.0 - main responsive modern front-end framework used for grid and responsivesness.
+- Google Fonts - to import fonts.
+- FontAwesome - to provide icons used across the project.
 
-### Frameworks, Libraries & Programs Used
+# Deployment
 
-1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-    - Bootstrap was used to assist with the responsiveness and styling of the website.
-2. [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Josefin Sans' font into the style.css file which is used on all pages throughout the project.
-3. [jQuery:](https://jquery.com/)
-    - jQuery used to hide Site information on page open, and then mouseover & mouseout to show/hide
-4. [Git](https://git-scm.com/)
-    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-5. [GitHub:](https://github.com/)
-    - GitHub is used to store the projects code after being pushed from Git.
-6. [GIMP:](https://developer.gimp.org/)
-    - GIMP was used resizing images and editing photos for the website.
-7. [Balsamiq:](https://balsamiq.com/)
-    - Balsamiq was used to create the wireframes during the design process.
-8. [Places API:](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch#maps_places_autocomplete_hotelsearch-javascript)
-    - Place Autocomplete Hotel Search Tutorial
-9. Maps JavaScript API
-10. [Geocoding API:](https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse#maps_geocoding_reverse-javascript)
-    - Reverse Geocoding Tutorial
-11. [unsplash:](https://unsplash.com/)
-    - I used upsplash to find good quality images of countries and landmarks
-12. [EmailJS:](https://www.emailjs.com/)
-    - In the Contact Us page I used EmailJS to Send Email Directly From JavaScript 
+## Local Deployment
+
+To run this project, the following tools need to be installed:
+ - An IDE (I used GitPod online IDE for creating this project)
+ - MongoDB Atlas (for creation your database)
+ - Git
+ - PIP
+ - Python
+
+### Directions
+1.You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:
+git clone https://github.com/bridcourtney/VDU-Assessment.  Alternatively, you can save a copy of this repository by clicking the green button "Clone or download" , then "Download Zip" button, and after extract the Zip file to your folder.
+2.In the terminal window change directory (CD) to the correct file location (directory that you have just created).
+3.Set up environment variables: ◦Create .env file in the root directory.
+◦On the top of the file add import os to set the environment variables in the operating system.
+◦Set the connection to your MongoDB database(MONGO_URI) and a SECRET_KEY with the following syntax: os.environ["SECRET_KEY"] = "YourSecretKey"
+os.environ["MONGO_URI"] = "YourMongoURI"
+4.Install all requirements from the requirements.txt file putting this command into your terminal:
+pip3 install -r requirements.txt
+Note: GitPod does not require sudo, so if you use another IDE, you will need to include sudo in the beginning of the command: sudo pip3 install -r requirements.txt.
+5.Create a new Database called "vdu_check" in MongoDB Atlas.
+You can sign up for free account, if you do not have one.
+6.6.In "vdu_check" database create the following 4 collections:
+
 
 
 
