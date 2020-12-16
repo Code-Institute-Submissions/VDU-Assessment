@@ -257,6 +257,7 @@ To run this project, the following tools need to be installed:
  - Python
 
 ### Directions
+/*:
 1.You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:
 git clone https://github.com/bridcourtney/VDU-Assessment.  Alternatively, you can save a copy of this repository by clicking the green button "Clone or download" , then "Download Zip" button, and after extract the Zip file to your folder.
 2.In the terminal window change directory (CD) to the correct file location (directory that you have just created).
@@ -269,8 +270,8 @@ pip3 install -r requirements.txt
 Note: GitPod does not require sudo, so if you use another IDE, you will need to include sudo in the beginning of the command: sudo pip3 install -r requirements.txt.
 5.Create a new Database called "vdu_check" in MongoDB Atlas.
 You can sign up for free account, if you do not have one.
-6.6.In "vdu_check" database create the following 4 collections:
-
+6.In "vdu_check" database create the following 4 collections:
+*/
 
 
 
