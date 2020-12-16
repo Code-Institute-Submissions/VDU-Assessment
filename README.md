@@ -285,14 +285,14 @@ To run this project, the following tools need to be installed:
    - pip3 install dnspython
    - pip3 install flask_wtf
    
-  Also, very important reinstate the env.py
+  Also, very important reinstate the env.py. Check requirements.txt is up to date, otherwise you will have problems loading in Heroku
 
 ## Code & Credits
- - I referred to the following documentation sources: Flask and MongoDB.
- - For building the Register, Login, Change Username/Password pages.  I followed the 'Python Mini Project Material'
+ - I referred to Flask and MongoDB documentation sources.
+ - For building the Register, Login, Change Username/Password pages.  I followed the 'Python Mini Project Material'.
  - Flask WTForms Tutorials - Pretty Printed & https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/.  Also https://github.com/irinatu17/MyCookBook
  - For UI & UX design concept I took inspiration from Pinterest & unsplash
- - The idea of using prefix-icons, asterixes and question-mark tooltips in forms was taken https://github.com/irinatu17/MyCookBook
+ - The idea of using prefix-icons, asterixes and question-mark tooltips in forms was taken from https://github.com/irinatu17/MyCookBook
 
 ## Acknowledgements
 
