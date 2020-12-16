@@ -84,8 +84,9 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
 
 -   ## Wireframes
     
-    These wireframes were created using Balsamiq during the Scope Plane part of the design and planning process for this project.
+    These wireframes were created using Balsamiq and also outlines I created myself during the Scope Plane part of the design and planning process for this project.
 
+    -   Home Page Wireframe - [View](Wireframes/HomePage.pdf)
     -   Home Page Wireframe - [View](Wireframes/HomePage.pdf)
     
     
@@ -276,7 +277,6 @@ To run this project, the following tools need to be installed:
 <h2 align="center"><img src="static/images/db_Collections.JPG"></h2>
 
 
-
 ## Branching
   I used branching in this project.  I found it very useful at stages when I was embarking on new functionaility and not sure how it was going to turn out, it was reassuring   to know I had a choice whether to merge with the master or not.
   I soon realised each time I created a branch from Github, the following installs were required - 
@@ -287,33 +287,14 @@ To run this project, the following tools need to be installed:
    
   Also, very important reinstate the env.py
 
-## Code
+## Code & Credits
  - I referred to the following documentation sources: Flask and MongoDB.
  - For building the Register, Login, Change Username/Password pages.  I followed the 'Python Mini Project Material'
  - Flask WTForms Tutorials - Pretty Printed & https://flask.palletsprojects.com/en/1.1.x/patterns/wtforms/.  Also https://github.com/irinatu17/MyCookBook
  - For UI & UX design concept I took inspiration from Pinterest & unsplash
  - The idea of using prefix-icons, asterixes and question-mark tooltips in forms was taken https://github.com/irinatu17/MyCookBook
 
-
-## Credits
-
-### Code
-
--   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly     to make site responsive using the Bootstrap Grid System.
-
--   The Navbar code was taken from https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp, and taylored to meet my requirements
--   The Carousal code was taken from https://azmind.com/bootstrap-carousel-multiple-items/
--   Geocode API https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse#maps_geocoding_reverse-javascript)
--   Places API https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch#maps_places_autocomplete_hotelsearch-javascript
-
-
-### Content
-
--   All content was written by the developer.
-
-
- 
-### Acknowledgements
+## Acknowledgements
 
 -   My Mentor Brian Macharia for continuous helpful feedback, excellent support material and very productive mentoring sessions
 
