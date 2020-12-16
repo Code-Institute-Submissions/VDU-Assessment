@@ -184,6 +184,13 @@ Under the Safety, Health and Welfare at Work, (General Application) Regulations 
     
     #### - User Maintenace
     In User Maintenance the Admin person can assign / unassign Manager and Admin privliges. The Admin User can also delete a User.  After clicking the "delete" button, the   delete modal will be triggered. The User will be prompted to Confirm the deletion, there is an option to cancel the deletion or click Yes to permantly remove User from the database
+
+# Testing
+
+The application was tested heavily.  All requirement functionality was tested and objective evidence of each test script attached.  Please view the Executed Test Protocol in link below - 
+
+ -   Executed Test Protocol - [View](Test_Protocol/Test Scripts performed.pdf)
+
     
 # Validators
 
